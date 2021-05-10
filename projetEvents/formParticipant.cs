@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace projetEvents
 {
-    public partial class Form1 : Form
+    public partial class formParticipant : Form
     {
-        public Form1()
+        public formParticipant()
         {
             InitializeComponent();
         }
