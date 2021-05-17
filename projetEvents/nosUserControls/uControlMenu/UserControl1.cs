@@ -167,5 +167,11 @@ namespace uControlMenu
         {
             btnBilan.BackColor = Color.FromArgb(24, 30, 54);
         }
+
+        private void btnAccueil_MouseHover(object sender, EventArgs e)
+        {
+            //this.btnAccueil.Size = new Size(222,59);
+            //this.btnAccueil.Font = new System.Drawing.Font("Century Gothic", 12.2F);
+        }
     }
 }

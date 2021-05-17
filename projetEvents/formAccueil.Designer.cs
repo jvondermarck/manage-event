@@ -34,7 +34,7 @@ namespace projetEvents
             this.lblQuoi = new System.Windows.Forms.Label();
             this.lblCombien = new System.Windows.Forms.Label();
             this.lblPayePar = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBeneficiaire = new System.Windows.Forms.Label();
             this.ckbToutLeMonde = new System.Windows.Forms.CheckBox();
             this.clbListeBeneficiaire = new System.Windows.Forms.CheckedListBox();
             this.lblCommentaire = new System.Windows.Forms.Label();
@@ -48,13 +48,20 @@ namespace projetEvents
             this.Valider = new System.Windows.Forms.Button();
             this.Annuler = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.userControlMenu2 = new uControlMenu.userControlMenu();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelHeader = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pcbLoadingValidate = new System.Windows.Forms.PictureBox();
+            this.userControlMenu2 = new uControlMenu.userControlMenu();
+            this.lblErrorEvenement = new System.Windows.Forms.Label();
+            this.lblErrorQuoi = new System.Windows.Forms.Label();
+            this.lblErrorCombien = new System.Windows.Forms.Label();
+            this.lblErrorPayePar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEvents
@@ -95,33 +102,33 @@ namespace projetEvents
             this.lblPayePar.AutoSize = true;
             this.lblPayePar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayePar.ForeColor = System.Drawing.Color.White;
-            this.lblPayePar.Location = new System.Drawing.Point(240, 390);
+            this.lblPayePar.Location = new System.Drawing.Point(240, 394);
             this.lblPayePar.Name = "lblPayePar";
             this.lblPayePar.Size = new System.Drawing.Size(111, 23);
             this.lblPayePar.TabIndex = 1;
             this.lblPayePar.Text = "Payé par :";
             // 
-            // label1
+            // lblBeneficiaire
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(712, 268);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Bénéficiaires : ";
+            this.lblBeneficiaire.AutoSize = true;
+            this.lblBeneficiaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeneficiaire.ForeColor = System.Drawing.Color.White;
+            this.lblBeneficiaire.Location = new System.Drawing.Point(712, 290);
+            this.lblBeneficiaire.Name = "lblBeneficiaire";
+            this.lblBeneficiaire.Size = new System.Drawing.Size(145, 23);
+            this.lblBeneficiaire.TabIndex = 1;
+            this.lblBeneficiaire.Text = "Bénéficiaires : ";
             // 
             // ckbToutLeMonde
             // 
             this.ckbToutLeMonde.AutoSize = true;
             this.ckbToutLeMonde.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbToutLeMonde.ForeColor = System.Drawing.Color.White;
-            this.ckbToutLeMonde.Location = new System.Drawing.Point(961, 579);
+            this.ckbToutLeMonde.Location = new System.Drawing.Point(719, 554);
             this.ckbToutLeMonde.Name = "ckbToutLeMonde";
-            this.ckbToutLeMonde.Size = new System.Drawing.Size(173, 27);
-            this.ckbToutLeMonde.TabIndex = 2;
-            this.ckbToutLeMonde.Text = "Tout le monde";
+            this.ckbToutLeMonde.Size = new System.Drawing.Size(148, 27);
+            this.ckbToutLeMonde.TabIndex = 11;
+            this.ckbToutLeMonde.Text = "Tout cocher";
             this.ckbToutLeMonde.UseVisualStyleBackColor = true;
             this.ckbToutLeMonde.CheckedChanged += new System.EventHandler(this.ckbToutLeMonde_CheckedChanged);
             // 
@@ -131,11 +138,10 @@ namespace projetEvents
             this.clbListeBeneficiaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbListeBeneficiaire.ForeColor = System.Drawing.Color.White;
             this.clbListeBeneficiaire.FormattingEnabled = true;
-            this.clbListeBeneficiaire.Location = new System.Drawing.Point(716, 328);
+            this.clbListeBeneficiaire.Location = new System.Drawing.Point(716, 337);
             this.clbListeBeneficiaire.Name = "clbListeBeneficiaire";
-            this.clbListeBeneficiaire.Size = new System.Drawing.Size(428, 234);
-            this.clbListeBeneficiaire.Sorted = true;
-            this.clbListeBeneficiaire.TabIndex = 3;
+            this.clbListeBeneficiaire.Size = new System.Drawing.Size(428, 220);
+            this.clbListeBeneficiaire.TabIndex = 7;
             // 
             // lblCommentaire
             // 
@@ -157,7 +163,7 @@ namespace projetEvents
             this.rtbCommentaire.Location = new System.Drawing.Point(244, 515);
             this.rtbCommentaire.Name = "rtbCommentaire";
             this.rtbCommentaire.Size = new System.Drawing.Size(381, 175);
-            this.rtbCommentaire.TabIndex = 4;
+            this.rtbCommentaire.TabIndex = 5;
             this.rtbCommentaire.Text = "";
             // 
             // label2
@@ -175,10 +181,11 @@ namespace projetEvents
             // 
             this.dtpDepense.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDepense.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.dtpDepense.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDepense.Location = new System.Drawing.Point(818, 202);
             this.dtpDepense.Name = "dtpDepense";
-            this.dtpDepense.Size = new System.Drawing.Size(316, 28);
-            this.dtpDepense.TabIndex = 5;
+            this.dtpDepense.Size = new System.Drawing.Size(124, 28);
+            this.dtpDepense.TabIndex = 6;
             // 
             // cboEvenements
             // 
@@ -189,7 +196,8 @@ namespace projetEvents
             this.cboEvenements.Location = new System.Drawing.Point(371, 202);
             this.cboEvenements.Name = "cboEvenements";
             this.cboEvenements.Size = new System.Drawing.Size(254, 31);
-            this.cboEvenements.TabIndex = 6;
+            this.cboEvenements.TabIndex = 1;
+            this.cboEvenements.SelectedIndexChanged += new System.EventHandler(this.cboEvenements_SelectedIndexChanged);
             // 
             // cboPayePar
             // 
@@ -197,10 +205,10 @@ namespace projetEvents
             this.cboPayePar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPayePar.ForeColor = System.Drawing.Color.White;
             this.cboPayePar.FormattingEnabled = true;
-            this.cboPayePar.Location = new System.Drawing.Point(371, 389);
+            this.cboPayePar.Location = new System.Drawing.Point(371, 391);
             this.cboPayePar.Name = "cboPayePar";
             this.cboPayePar.Size = new System.Drawing.Size(254, 31);
-            this.cboPayePar.TabIndex = 6;
+            this.cboPayePar.TabIndex = 4;
             // 
             // txtQuoi
             // 
@@ -210,7 +218,7 @@ namespace projetEvents
             this.txtQuoi.Location = new System.Drawing.Point(371, 263);
             this.txtQuoi.Name = "txtQuoi";
             this.txtQuoi.Size = new System.Drawing.Size(254, 32);
-            this.txtQuoi.TabIndex = 7;
+            this.txtQuoi.TabIndex = 2;
             this.txtQuoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCombien
@@ -221,7 +229,7 @@ namespace projetEvents
             this.txtCombien.Location = new System.Drawing.Point(371, 328);
             this.txtCombien.Name = "txtCombien";
             this.txtCombien.Size = new System.Drawing.Size(254, 32);
-            this.txtCombien.TabIndex = 7;
+            this.txtCombien.TabIndex = 3;
             this.txtCombien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Valider
@@ -234,7 +242,7 @@ namespace projetEvents
             this.Valider.Location = new System.Drawing.Point(883, 689);
             this.Valider.Name = "Valider";
             this.Valider.Size = new System.Drawing.Size(108, 38);
-            this.Valider.TabIndex = 8;
+            this.Valider.TabIndex = 12;
             this.Valider.Text = "Valider";
             this.Valider.UseVisualStyleBackColor = false;
             this.Valider.Click += new System.EventHandler(this.Valider_Click);
@@ -249,7 +257,7 @@ namespace projetEvents
             this.Annuler.Location = new System.Drawing.Point(1009, 689);
             this.Annuler.Name = "Annuler";
             this.Annuler.Size = new System.Drawing.Size(108, 38);
-            this.Annuler.TabIndex = 8;
+            this.Annuler.TabIndex = 13;
             this.Annuler.Text = "Annuler";
             this.Annuler.UseVisualStyleBackColor = false;
             this.Annuler.Click += new System.EventHandler(this.Annuler_Click);
@@ -259,25 +267,47 @@ namespace projetEvents
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // userControlMenu2
+            // panelHeader
             // 
-            this.userControlMenu2.BarrePanel = 1;
-            this.userControlMenu2.Location = new System.Drawing.Point(0, 0);
-            this.userControlMenu2.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlMenu2.Name = "userControlMenu2";
-            this.userControlMenu2.Size = new System.Drawing.Size(207, 753);
-            this.userControlMenu2.TabIndex = 12;
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panelHeader.Controls.Add(this.button1);
+            this.panelHeader.Controls.Add(this.label5);
+            this.panelHeader.Controls.Add(this.label3);
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(0, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(1182, 96);
+            this.panelHeader.TabIndex = 3;
+            this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
+            this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseMove);
+            this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseUp);
             // 
-            // panel1
+            // button1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 96);
-            this.panel1.TabIndex = 13;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.button1.Location = new System.Drawing.Point(1093, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 37);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Quitter";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(531, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(647, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
             // 
             // label3
             // 
@@ -305,18 +335,73 @@ namespace projetEvents
             this.label4.TabIndex = 0;
             this.label4.Text = "Saissisez une nouvelle dépense...";
             // 
-            // label5
+            // pcbLoadingValidate
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(531, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(696, 26);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
+            this.pcbLoadingValidate.Image = global::projetEvents.Properties.Resources.loading2;
+            this.pcbLoadingValidate.Location = new System.Drawing.Point(810, 674);
+            this.pcbLoadingValidate.Name = "pcbLoadingValidate";
+            this.pcbLoadingValidate.Size = new System.Drawing.Size(69, 64);
+            this.pcbLoadingValidate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLoadingValidate.TabIndex = 16;
+            this.pcbLoadingValidate.TabStop = false;
+            this.pcbLoadingValidate.Visible = false;
+            // 
+            // userControlMenu2
+            // 
+            this.userControlMenu2.BarrePanel = 0;
+            this.userControlMenu2.Location = new System.Drawing.Point(-1, 0);
+            this.userControlMenu2.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlMenu2.Name = "userControlMenu2";
+            this.userControlMenu2.Size = new System.Drawing.Size(203, 753);
+            this.userControlMenu2.TabIndex = 15;
+            // 
+            // lblErrorEvenement
+            // 
+            this.lblErrorEvenement.AutoSize = true;
+            this.lblErrorEvenement.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorEvenement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblErrorEvenement.Location = new System.Drawing.Point(372, 235);
+            this.lblErrorEvenement.Name = "lblErrorEvenement";
+            this.lblErrorEvenement.Size = new System.Drawing.Size(255, 21);
+            this.lblErrorEvenement.TabIndex = 17;
+            this.lblErrorEvenement.Text = "Sélectionnez un évènement...";
+            this.lblErrorEvenement.Visible = false;
+            // 
+            // lblErrorQuoi
+            // 
+            this.lblErrorQuoi.AutoSize = true;
+            this.lblErrorQuoi.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorQuoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblErrorQuoi.Location = new System.Drawing.Point(372, 298);
+            this.lblErrorQuoi.Name = "lblErrorQuoi";
+            this.lblErrorQuoi.Size = new System.Drawing.Size(207, 21);
+            this.lblErrorQuoi.TabIndex = 17;
+            this.lblErrorQuoi.Text = "Veuillez inscrire un motif";
+            this.lblErrorQuoi.Visible = false;
+            // 
+            // lblErrorCombien
+            // 
+            this.lblErrorCombien.AutoSize = true;
+            this.lblErrorCombien.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCombien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblErrorCombien.Location = new System.Drawing.Point(374, 363);
+            this.lblErrorCombien.Name = "lblErrorCombien";
+            this.lblErrorCombien.Size = new System.Drawing.Size(234, 21);
+            this.lblErrorCombien.TabIndex = 17;
+            this.lblErrorCombien.Text = "Veuillez inscrire un montant";
+            this.lblErrorCombien.Visible = false;
+            // 
+            // lblErrorPayePar
+            // 
+            this.lblErrorPayePar.AutoSize = true;
+            this.lblErrorPayePar.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorPayePar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblErrorPayePar.Location = new System.Drawing.Point(374, 429);
+            this.lblErrorPayePar.Name = "lblErrorPayePar";
+            this.lblErrorPayePar.Size = new System.Drawing.Size(235, 21);
+            this.lblErrorPayePar.TabIndex = 17;
+            this.lblErrorPayePar.Text = "Sélectionner un contribuant";
+            this.lblErrorPayePar.Visible = false;
             // 
             // formMain
             // 
@@ -324,8 +409,13 @@ namespace projetEvents
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1182, 753);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblErrorPayePar);
+            this.Controls.Add(this.lblErrorCombien);
+            this.Controls.Add(this.lblErrorQuoi);
+            this.Controls.Add(this.lblErrorEvenement);
             this.Controls.Add(this.userControlMenu2);
+            this.Controls.Add(this.pcbLoadingValidate);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.Annuler);
             this.Controls.Add(this.Valider);
             this.Controls.Add(this.txtCombien);
@@ -336,24 +426,26 @@ namespace projetEvents
             this.Controls.Add(this.rtbCommentaire);
             this.Controls.Add(this.clbListeBeneficiaire);
             this.Controls.Add(this.ckbToutLeMonde);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblBeneficiaire);
             this.Controls.Add(this.lblPayePar);
             this.Controls.Add(this.lblCombien);
             this.Controls.Add(this.lblQuoi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblCommentaire);
             this.Controls.Add(this.lblEvents);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelHeader);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ForeColor = System.Drawing.Color.Transparent;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Le Juste Partage";
             this.Load += new System.EventHandler(this.formMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelHeader.ResumeLayout(false);
+            this.panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,7 +456,7 @@ namespace projetEvents
         private System.Windows.Forms.Label lblQuoi;
         private System.Windows.Forms.Label lblCombien;
         private System.Windows.Forms.Label lblPayePar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBeneficiaire;
         private System.Windows.Forms.CheckBox ckbToutLeMonde;
         private System.Windows.Forms.CheckedListBox clbListeBeneficiaire;
         private System.Windows.Forms.Label lblCommentaire;
@@ -378,11 +470,17 @@ namespace projetEvents
         private System.Windows.Forms.Button Valider;
         private System.Windows.Forms.Button Annuler;
         private System.Windows.Forms.ErrorProvider errorProvider;
-        private uControlMenu.userControlMenu userControlMenu2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pcbLoadingValidate;
+        private uControlMenu.userControlMenu userControlMenu2;
+        private System.Windows.Forms.Label lblErrorEvenement;
+        private System.Windows.Forms.Label lblErrorPayePar;
+        private System.Windows.Forms.Label lblErrorCombien;
+        private System.Windows.Forms.Label lblErrorQuoi;
+        private System.Windows.Forms.Button button1;
     }
 }
 

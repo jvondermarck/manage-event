@@ -178,6 +178,7 @@
             this.btnAccueil.UseVisualStyleBackColor = true;
             this.btnAccueil.Click += new System.EventHandler(this.btnAccueil_Click);
             this.btnAccueil.Leave += new System.EventHandler(this.btnAccueil_Leave);
+            this.btnAccueil.MouseHover += new System.EventHandler(this.btnAccueil_MouseHover);
             // 
             // userControlMenu
             // 
