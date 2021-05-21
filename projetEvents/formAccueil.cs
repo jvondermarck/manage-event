@@ -101,9 +101,6 @@ namespace projetEvents
             // Surcharge ComboBox - ComboBox Participants avec deux colonnes
             surchageComboBoxV2(cboPayePar, "Participants", "prenomPart", "nomPart");
 
-            // Affichage de tous les bénéficiaires dans la CheckedListBox
-            affichageBeneficiaire();
-
             // On charge le UserControl
             userControlEvenementClick();
 
@@ -111,12 +108,31 @@ namespace projetEvents
             designAffichage();
         }
 
-        private void affichageBeneficiaire()
+        // Permet d'avoir les gens sur la CheckedListBox qui sont dans la table invités
+        private void cboEvenements_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            for(int i=0; i< ds.Tables["Participants"].Rows.Count; i++)
+            clbListeBeneficiaire.Items.Clear();
+            try
             {
-                clbListeBeneficiaire.Items.Add(ds.Tables["Participants"].Rows[i]["prenomPart"] + " " + ds.Tables["Participants"].Rows[i]["nomPart"]);
+                connec.ConnectionString = chainconnec;
+                connec.Open();
+                string requete = @"SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant IN 
+                                  (SELECT codePart FROM Invites WHERE codeEvent = " + cboEvenements.ValueMember + ")";
+                OleDbCommand cmd = new OleDbCommand(requete, connec);
+                OleDbDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        clbListeBeneficiaire.Items.Add(dr.GetString(0) + " " + dr.GetString(1));
+                    }
+                }
             }
+            catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
+            catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
+            catch (Exception exp) { MessageBox.Show(exp.GetType().ToString()); }
+            finally { connec.Close(); }
         }
 
         // Quand on clique sur ckbToutLeMonde = Tout-Cocher ou Tout-Decocher
@@ -154,7 +170,7 @@ namespace projetEvents
         private Boolean verficationRemplissage()
         {
             Boolean remplissageCorrect;
-            int nombreErreur = 4;
+            int nombreErreur = 5;
 
             // Vérification de la ComboBox Evènements
             if (String.IsNullOrEmpty(cboEvenements.Text))
@@ -212,17 +228,19 @@ namespace projetEvents
                 lblErrorPayePar.Visible = false;
             }
 
-            // Vérification de la CheckedListBox
-            //if (clbListeBeneficiaire.CheckedItems.Count < 1)
-            //{
-            //    errorProvider.SetError(clbListeBeneficiaire, "Veuillez au moins sélectionner un bénéficiaire.");
-            //    nombreErreur++;
-            //}
-            //else
-            //{
-            //    errorProvider.SetError(clbListeBeneficiaire, "");
-            //    nombreErreur--;
-            //}
+            //Vérification de la CheckedListBox
+            if (clbListeBeneficiaire.CheckedItems.Count < 1)
+            {
+                errorProvider.SetError(clbListeBeneficiaire, "Veuillez au moins sélectionner un bénéficiaire.");
+                nombreErreur++;
+                lblErrorBeneficiaire.Visible = true;
+            }
+            else
+            {
+                errorProvider.SetError(clbListeBeneficiaire, "");
+                nombreErreur--;
+                lblErrorBeneficiaire.Visible = false;
+            }
 
             // Vérification de la RichTextBox "Commentaire"
             //if (String.IsNullOrEmpty(rtbCommentaire.Text))
@@ -356,7 +374,7 @@ namespace projetEvents
 
             pcbLoadingValidate.Visible = true;
             Timer Clock = new Timer();
-            Clock.Interval = 3000;
+            Clock.Interval = 2000;
             Clock.Tick += new EventHandler(MyTimer_Tick);
             Clock.Start();
         }
@@ -397,6 +415,7 @@ namespace projetEvents
             lblErrorEvenement.Visible = false;
             lblErrorPayePar.Visible = false;
             lblErrorQuoi.Visible = false;
+            lblErrorBeneficiaire.Visible = false;
 
             foreach (Control a in this.Controls)
             {
@@ -478,12 +497,6 @@ namespace projetEvents
             rtbCommentaire.SelectionLength = 0;
         }
 
-        // Pour le focus de la prochaine saisie a remplir
-        private void cboEvenements_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtQuoi.Focus();
-        }
-
         // Méthodes qui permettent de deplacer le form quand on clique sur la panel header
         bool drag = false;
         Point start_point = new Point(0, 0);
@@ -512,6 +525,12 @@ namespace projetEvents
             Application.Exit();
         }
 
+
+
+
+
+
+
         // Accesseur permettant de transférer un DataSet aux autres formulaires
         //public static DataSet transfertDataSet
         //{
@@ -523,7 +542,12 @@ namespace projetEvents
         //    {
         //        ds = value;
         //    }
-        //}
+        //} 
 
     }
 }
+
+/*
+ * Couleur menu : 24; 30; 54
+ * Couleur arriere plan form : 46; 51; 73
+*/

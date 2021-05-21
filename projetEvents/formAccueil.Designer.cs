@@ -54,11 +54,12 @@ namespace projetEvents
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pcbLoadingValidate = new System.Windows.Forms.PictureBox();
-            this.userControlMenu2 = new uControlMenu.userControlMenu();
             this.lblErrorEvenement = new System.Windows.Forms.Label();
             this.lblErrorQuoi = new System.Windows.Forms.Label();
             this.lblErrorCombien = new System.Windows.Forms.Label();
             this.lblErrorPayePar = new System.Windows.Forms.Label();
+            this.lblErrorBeneficiaire = new System.Windows.Forms.Label();
+            this.userControlMenu1 = new uControlMenu.userControlMenu();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).BeginInit();
@@ -67,66 +68,66 @@ namespace projetEvents
             // lblEvents
             // 
             this.lblEvents.AutoSize = true;
-            this.lblEvents.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEvents.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEvents.ForeColor = System.Drawing.Color.White;
-            this.lblEvents.Location = new System.Drawing.Point(225, 202);
+            this.lblEvents.Location = new System.Drawing.Point(224, 202);
             this.lblEvents.Name = "lblEvents";
-            this.lblEvents.Size = new System.Drawing.Size(140, 23);
+            this.lblEvents.Size = new System.Drawing.Size(143, 27);
             this.lblEvents.TabIndex = 1;
             this.lblEvents.Text = "Evènement : ";
             // 
             // lblQuoi
             // 
             this.lblQuoi.AutoSize = true;
-            this.lblQuoi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuoi.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuoi.ForeColor = System.Drawing.Color.White;
             this.lblQuoi.Location = new System.Drawing.Point(256, 263);
             this.lblQuoi.Name = "lblQuoi";
-            this.lblQuoi.Size = new System.Drawing.Size(72, 23);
+            this.lblQuoi.Size = new System.Drawing.Size(74, 27);
             this.lblQuoi.TabIndex = 1;
             this.lblQuoi.Text = "Quoi : ";
             // 
             // lblCombien
             // 
             this.lblCombien.AutoSize = true;
-            this.lblCombien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCombien.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCombien.ForeColor = System.Drawing.Color.White;
             this.lblCombien.Location = new System.Drawing.Point(240, 328);
             this.lblCombien.Name = "lblCombien";
-            this.lblCombien.Size = new System.Drawing.Size(111, 23);
+            this.lblCombien.Size = new System.Drawing.Size(114, 27);
             this.lblCombien.TabIndex = 1;
             this.lblCombien.Text = "Combien :";
             // 
             // lblPayePar
             // 
             this.lblPayePar.AutoSize = true;
-            this.lblPayePar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayePar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayePar.ForeColor = System.Drawing.Color.White;
             this.lblPayePar.Location = new System.Drawing.Point(240, 394);
             this.lblPayePar.Name = "lblPayePar";
-            this.lblPayePar.Size = new System.Drawing.Size(111, 23);
+            this.lblPayePar.Size = new System.Drawing.Size(109, 27);
             this.lblPayePar.TabIndex = 1;
             this.lblPayePar.Text = "Payé par :";
             // 
             // lblBeneficiaire
             // 
             this.lblBeneficiaire.AutoSize = true;
-            this.lblBeneficiaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeneficiaire.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBeneficiaire.ForeColor = System.Drawing.Color.White;
             this.lblBeneficiaire.Location = new System.Drawing.Point(712, 290);
             this.lblBeneficiaire.Name = "lblBeneficiaire";
-            this.lblBeneficiaire.Size = new System.Drawing.Size(145, 23);
+            this.lblBeneficiaire.Size = new System.Drawing.Size(156, 27);
             this.lblBeneficiaire.TabIndex = 1;
             this.lblBeneficiaire.Text = "Bénéficiaires : ";
             // 
             // ckbToutLeMonde
             // 
             this.ckbToutLeMonde.AutoSize = true;
-            this.ckbToutLeMonde.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbToutLeMonde.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbToutLeMonde.ForeColor = System.Drawing.Color.White;
             this.ckbToutLeMonde.Location = new System.Drawing.Point(719, 554);
             this.ckbToutLeMonde.Name = "ckbToutLeMonde";
-            this.ckbToutLeMonde.Size = new System.Drawing.Size(148, 27);
+            this.ckbToutLeMonde.Size = new System.Drawing.Size(152, 31);
             this.ckbToutLeMonde.TabIndex = 11;
             this.ckbToutLeMonde.Text = "Tout cocher";
             this.ckbToutLeMonde.UseVisualStyleBackColor = true;
@@ -135,7 +136,7 @@ namespace projetEvents
             // clbListeBeneficiaire
             // 
             this.clbListeBeneficiaire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.clbListeBeneficiaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clbListeBeneficiaire.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbListeBeneficiaire.ForeColor = System.Drawing.Color.White;
             this.clbListeBeneficiaire.FormattingEnabled = true;
             this.clbListeBeneficiaire.Location = new System.Drawing.Point(716, 337);
@@ -146,11 +147,11 @@ namespace projetEvents
             // lblCommentaire
             // 
             this.lblCommentaire.AutoSize = true;
-            this.lblCommentaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCommentaire.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCommentaire.ForeColor = System.Drawing.Color.White;
             this.lblCommentaire.Location = new System.Drawing.Point(240, 467);
             this.lblCommentaire.Name = "lblCommentaire";
-            this.lblCommentaire.Size = new System.Drawing.Size(156, 23);
+            this.lblCommentaire.Size = new System.Drawing.Size(161, 27);
             this.lblCommentaire.TabIndex = 1;
             this.lblCommentaire.Text = "Commentaire :";
             // 
@@ -158,7 +159,7 @@ namespace projetEvents
             // 
             this.rtbCommentaire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.rtbCommentaire.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbCommentaire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbCommentaire.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbCommentaire.ForeColor = System.Drawing.Color.White;
             this.rtbCommentaire.Location = new System.Drawing.Point(244, 515);
             this.rtbCommentaire.Name = "rtbCommentaire";
@@ -169,11 +170,11 @@ namespace projetEvents
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(712, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 23);
+            this.label2.Size = new System.Drawing.Size(91, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Quand :";
             // 
@@ -197,7 +198,7 @@ namespace projetEvents
             this.cboEvenements.Name = "cboEvenements";
             this.cboEvenements.Size = new System.Drawing.Size(254, 31);
             this.cboEvenements.TabIndex = 1;
-            this.cboEvenements.SelectedIndexChanged += new System.EventHandler(this.cboEvenements_SelectedIndexChanged);
+            this.cboEvenements.SelectionChangeCommitted += new System.EventHandler(this.cboEvenements_SelectionChangeCommitted);
             // 
             // cboPayePar
             // 
@@ -234,12 +235,12 @@ namespace projetEvents
             // 
             // Valider
             // 
-            this.Valider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(20)))), ((int)(((byte)(100)))));
+            this.Valider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.Valider.FlatAppearance.BorderSize = 0;
             this.Valider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Valider.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Valider.ForeColor = System.Drawing.Color.White;
-            this.Valider.Location = new System.Drawing.Point(883, 689);
+            this.Valider.Location = new System.Drawing.Point(901, 689);
             this.Valider.Name = "Valider";
             this.Valider.Size = new System.Drawing.Size(108, 38);
             this.Valider.TabIndex = 12;
@@ -254,7 +255,7 @@ namespace projetEvents
             this.Annuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Annuler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Annuler.ForeColor = System.Drawing.Color.White;
-            this.Annuler.Location = new System.Drawing.Point(1009, 689);
+            this.Annuler.Location = new System.Drawing.Point(1024, 689);
             this.Annuler.Name = "Annuler";
             this.Annuler.Size = new System.Drawing.Size(108, 38);
             this.Annuler.TabIndex = 13;
@@ -301,11 +302,11 @@ namespace projetEvents
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(531, 40);
+            this.label5.Location = new System.Drawing.Point(512, 40);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(647, 25);
+            this.label5.Size = new System.Drawing.Size(608, 27);
             this.label5.TabIndex = 0;
             this.label5.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
             // 
@@ -314,11 +315,11 @@ namespace projetEvents
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Montserrat", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(234, 28);
+            this.label3.Location = new System.Drawing.Point(233, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(310, 56);
+            this.label3.Size = new System.Drawing.Size(289, 60);
             this.label3.TabIndex = 0;
             this.label3.Text = "Bienvenue ! ";
             // 
@@ -327,12 +328,12 @@ namespace projetEvents
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(253, 124);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(403, 28);
-            this.label4.TabIndex = 0;
+            this.label4.Size = new System.Drawing.Size(406, 33);
+            this.label4.TabIndex = 1;
             this.label4.Text = "Saissisez une nouvelle dépense...";
             // 
             // pcbLoadingValidate
@@ -346,23 +347,14 @@ namespace projetEvents
             this.pcbLoadingValidate.TabStop = false;
             this.pcbLoadingValidate.Visible = false;
             // 
-            // userControlMenu2
-            // 
-            this.userControlMenu2.BarrePanel = 0;
-            this.userControlMenu2.Location = new System.Drawing.Point(-1, 0);
-            this.userControlMenu2.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlMenu2.Name = "userControlMenu2";
-            this.userControlMenu2.Size = new System.Drawing.Size(203, 753);
-            this.userControlMenu2.TabIndex = 15;
-            // 
             // lblErrorEvenement
             // 
             this.lblErrorEvenement.AutoSize = true;
-            this.lblErrorEvenement.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorEvenement.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorEvenement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorEvenement.Location = new System.Drawing.Point(372, 235);
             this.lblErrorEvenement.Name = "lblErrorEvenement";
-            this.lblErrorEvenement.Size = new System.Drawing.Size(255, 21);
+            this.lblErrorEvenement.Size = new System.Drawing.Size(274, 24);
             this.lblErrorEvenement.TabIndex = 17;
             this.lblErrorEvenement.Text = "Sélectionnez un évènement...";
             this.lblErrorEvenement.Visible = false;
@@ -370,11 +362,11 @@ namespace projetEvents
             // lblErrorQuoi
             // 
             this.lblErrorQuoi.AutoSize = true;
-            this.lblErrorQuoi.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorQuoi.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorQuoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorQuoi.Location = new System.Drawing.Point(372, 298);
             this.lblErrorQuoi.Name = "lblErrorQuoi";
-            this.lblErrorQuoi.Size = new System.Drawing.Size(207, 21);
+            this.lblErrorQuoi.Size = new System.Drawing.Size(233, 24);
             this.lblErrorQuoi.TabIndex = 17;
             this.lblErrorQuoi.Text = "Veuillez inscrire un motif";
             this.lblErrorQuoi.Visible = false;
@@ -382,11 +374,11 @@ namespace projetEvents
             // lblErrorCombien
             // 
             this.lblErrorCombien.AutoSize = true;
-            this.lblErrorCombien.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCombien.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorCombien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorCombien.Location = new System.Drawing.Point(374, 363);
             this.lblErrorCombien.Name = "lblErrorCombien";
-            this.lblErrorCombien.Size = new System.Drawing.Size(234, 21);
+            this.lblErrorCombien.Size = new System.Drawing.Size(264, 24);
             this.lblErrorCombien.TabIndex = 17;
             this.lblErrorCombien.Text = "Veuillez inscrire un montant";
             this.lblErrorCombien.Visible = false;
@@ -394,14 +386,35 @@ namespace projetEvents
             // lblErrorPayePar
             // 
             this.lblErrorPayePar.AutoSize = true;
-            this.lblErrorPayePar.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorPayePar.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPayePar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorPayePar.Location = new System.Drawing.Point(374, 429);
             this.lblErrorPayePar.Name = "lblErrorPayePar";
-            this.lblErrorPayePar.Size = new System.Drawing.Size(235, 21);
+            this.lblErrorPayePar.Size = new System.Drawing.Size(264, 24);
             this.lblErrorPayePar.TabIndex = 17;
             this.lblErrorPayePar.Text = "Sélectionner un contribuant";
             this.lblErrorPayePar.Visible = false;
+            // 
+            // lblErrorBeneficiaire
+            // 
+            this.lblErrorBeneficiaire.AutoSize = true;
+            this.lblErrorBeneficiaire.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorBeneficiaire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblErrorBeneficiaire.Location = new System.Drawing.Point(756, 591);
+            this.lblErrorBeneficiaire.Name = "lblErrorBeneficiaire";
+            this.lblErrorBeneficiaire.Size = new System.Drawing.Size(364, 24);
+            this.lblErrorBeneficiaire.TabIndex = 17;
+            this.lblErrorBeneficiaire.Text = "Sélectionner au moins un bénéficiaires";
+            this.lblErrorBeneficiaire.Visible = false;
+            // 
+            // userControlMenu1
+            // 
+            this.userControlMenu1.BarrePanel = 0;
+            this.userControlMenu1.Location = new System.Drawing.Point(0, 2);
+            this.userControlMenu1.Margin = new System.Windows.Forms.Padding(4);
+            this.userControlMenu1.Name = "userControlMenu1";
+            this.userControlMenu1.Size = new System.Drawing.Size(207, 753);
+            this.userControlMenu1.TabIndex = 18;
             // 
             // formMain
             // 
@@ -409,11 +422,12 @@ namespace projetEvents
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.userControlMenu1);
+            this.Controls.Add(this.lblErrorBeneficiaire);
             this.Controls.Add(this.lblErrorPayePar);
             this.Controls.Add(this.lblErrorCombien);
             this.Controls.Add(this.lblErrorQuoi);
             this.Controls.Add(this.lblErrorEvenement);
-            this.Controls.Add(this.userControlMenu2);
             this.Controls.Add(this.pcbLoadingValidate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Annuler);
@@ -475,12 +489,13 @@ namespace projetEvents
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pcbLoadingValidate;
-        private uControlMenu.userControlMenu userControlMenu2;
         private System.Windows.Forms.Label lblErrorEvenement;
         private System.Windows.Forms.Label lblErrorPayePar;
         private System.Windows.Forms.Label lblErrorCombien;
         private System.Windows.Forms.Label lblErrorQuoi;
         private System.Windows.Forms.Button button1;
+        private uControlMenu.userControlMenu userControlMenu1;
+        private System.Windows.Forms.Label lblErrorBeneficiaire;
     }
 }
 

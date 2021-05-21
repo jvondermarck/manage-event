@@ -72,11 +72,11 @@
             // labelTitre
             // 
             this.labelTitre.AutoSize = true;
-            this.labelTitre.Font = new System.Drawing.Font("Trebuchet MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitre.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitre.ForeColor = System.Drawing.Color.White;
-            this.labelTitre.Location = new System.Drawing.Point(29, 154);
+            this.labelTitre.Location = new System.Drawing.Point(25, 154);
             this.labelTitre.Name = "labelTitre";
-            this.labelTitre.Size = new System.Drawing.Size(200, 29);
+            this.labelTitre.Size = new System.Drawing.Size(219, 32);
             this.labelTitre.TabIndex = 3;
             this.labelTitre.Text = "Le Juste Partage";
             // 
@@ -94,7 +94,7 @@
             // 
             this.btnBilan.FlatAppearance.BorderSize = 0;
             this.btnBilan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBilan.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBilan.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBilan.ForeColor = System.Drawing.Color.White;
             this.btnBilan.Image = global::uControlMenu.Properties.Resources.bilan;
             this.btnBilan.Location = new System.Drawing.Point(-2, 486);
@@ -111,7 +111,7 @@
             // 
             this.btnDepense.FlatAppearance.BorderSize = 0;
             this.btnDepense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepense.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepense.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepense.ForeColor = System.Drawing.Color.White;
             this.btnDepense.Image = global::uControlMenu.Properties.Resources.depenses;
             this.btnDepense.Location = new System.Drawing.Point(-2, 421);
@@ -129,7 +129,7 @@
             // 
             this.btnEvenements.FlatAppearance.BorderSize = 0;
             this.btnEvenements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvenements.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvenements.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEvenements.ForeColor = System.Drawing.Color.White;
             this.btnEvenements.Image = global::uControlMenu.Properties.Resources.events;
             this.btnEvenements.Location = new System.Drawing.Point(-2, 291);
@@ -147,10 +147,10 @@
             // 
             this.btnParticipant.FlatAppearance.BorderSize = 0;
             this.btnParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnParticipant.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnParticipant.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParticipant.ForeColor = System.Drawing.Color.White;
             this.btnParticipant.Image = global::uControlMenu.Properties.Resources.participant;
-            this.btnParticipant.Location = new System.Drawing.Point(-1, 356);
+            this.btnParticipant.Location = new System.Drawing.Point(-2, 356);
             this.btnParticipant.Name = "btnParticipant";
             this.btnParticipant.Size = new System.Drawing.Size(222, 59);
             this.btnParticipant.TabIndex = 1;
@@ -165,7 +165,7 @@
             // 
             this.btnAccueil.FlatAppearance.BorderSize = 0;
             this.btnAccueil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccueil.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccueil.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccueil.ForeColor = System.Drawing.Color.White;
             this.btnAccueil.Image = global::uControlMenu.Properties.Resources.accueil;
             this.btnAccueil.Location = new System.Drawing.Point(-2, 226);
