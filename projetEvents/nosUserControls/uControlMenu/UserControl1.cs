@@ -173,5 +173,6 @@ namespace uControlMenu
             //this.btnAccueil.Size = new Size(222,59);
             //this.btnAccueil.Font = new System.Drawing.Font("Century Gothic", 12.2F);
         }
+
     }
 }

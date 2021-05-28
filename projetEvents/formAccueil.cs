@@ -49,10 +49,23 @@ namespace projetEvents
         string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=bdEvents.MDB";
 
         // Création d'un DataSet
-        private DataSet ds = new DataSet();
+        static DataSet ds = new DataSet();
 
         // Déclaration de la connexion active
         OleDbConnection connec = new OleDbConnection();
+
+        //Accesseur permettant de transférer une DataSet d'un form à l'autre (Form Parent)
+        public static DataSet transfertDataSet
+        {
+            get // this makes you to access value in form2
+            {
+                return ds;
+            }
+            set // this makes you to change value in form2
+            {
+                ds = value;
+            }
+        }
 
         // Ramener l'intégralité des tables voyages dans le dataSet .
         public void ChargementDsLocal()
@@ -312,6 +325,8 @@ namespace projetEvents
                 OleDbCommand cmd = new OleDbCommand(requete, connec, transacDepense);
                 int nbLigneInsert = cmd.ExecuteNonQuery();
                 transacDepense.Commit();
+                OleDbDataAdapter da1 = new OleDbDataAdapter(cmd);
+                da1.Update(ds, "Depenses");
 
                 //MessageBox.Show("Ajout d'une dépense : " + nbLigneInsert.ToString() + " ligne inséré.");
             }
@@ -453,6 +468,7 @@ namespace projetEvents
                     a1.evenements = btnEvenements_Click;
                     a1.participant = btnParticipant_Click;
                     a1.depenses = btnDepenses_Click;
+                    a1.bilan = btnBilan_Click;
                 }
             }
         }
@@ -484,8 +500,9 @@ namespace projetEvents
         }
         private void btnBilan_Click(object sender, EventArgs e)
         {
-            formBilan formBilan = new formBilan();
-            formBilan.ShowDialog();
+            formBilan formBilan = new formBilan(this.DesktopLocation);
+            formBilan.Show();
+            this.Visible = false;
             this.Hide();
         }
 
@@ -524,11 +541,6 @@ namespace projetEvents
         {
             Application.Exit();
         }
-
-
-
-
-
 
 
         // Accesseur permettant de transférer un DataSet aux autres formulaires

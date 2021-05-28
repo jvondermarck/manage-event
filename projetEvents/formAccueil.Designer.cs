@@ -53,12 +53,12 @@ namespace projetEvents
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pcbLoadingValidate = new System.Windows.Forms.PictureBox();
             this.lblErrorEvenement = new System.Windows.Forms.Label();
             this.lblErrorQuoi = new System.Windows.Forms.Label();
             this.lblErrorCombien = new System.Windows.Forms.Label();
             this.lblErrorPayePar = new System.Windows.Forms.Label();
             this.lblErrorBeneficiaire = new System.Windows.Forms.Label();
+            this.pcbLoadingValidate = new System.Windows.Forms.PictureBox();
             this.userControlMenu1 = new uControlMenu.userControlMenu();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -70,7 +70,7 @@ namespace projetEvents
             this.lblEvents.AutoSize = true;
             this.lblEvents.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEvents.ForeColor = System.Drawing.Color.White;
-            this.lblEvents.Location = new System.Drawing.Point(224, 202);
+            this.lblEvents.Location = new System.Drawing.Point(238, 202);
             this.lblEvents.Name = "lblEvents";
             this.lblEvents.Size = new System.Drawing.Size(143, 27);
             this.lblEvents.TabIndex = 1;
@@ -81,7 +81,7 @@ namespace projetEvents
             this.lblQuoi.AutoSize = true;
             this.lblQuoi.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuoi.ForeColor = System.Drawing.Color.White;
-            this.lblQuoi.Location = new System.Drawing.Point(256, 263);
+            this.lblQuoi.Location = new System.Drawing.Point(239, 263);
             this.lblQuoi.Name = "lblQuoi";
             this.lblQuoi.Size = new System.Drawing.Size(74, 27);
             this.lblQuoi.TabIndex = 1;
@@ -92,7 +92,7 @@ namespace projetEvents
             this.lblCombien.AutoSize = true;
             this.lblCombien.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCombien.ForeColor = System.Drawing.Color.White;
-            this.lblCombien.Location = new System.Drawing.Point(240, 328);
+            this.lblCombien.Location = new System.Drawing.Point(238, 328);
             this.lblCombien.Name = "lblCombien";
             this.lblCombien.Size = new System.Drawing.Size(114, 27);
             this.lblCombien.TabIndex = 1;
@@ -103,7 +103,7 @@ namespace projetEvents
             this.lblPayePar.AutoSize = true;
             this.lblPayePar.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPayePar.ForeColor = System.Drawing.Color.White;
-            this.lblPayePar.Location = new System.Drawing.Point(240, 394);
+            this.lblPayePar.Location = new System.Drawing.Point(238, 395);
             this.lblPayePar.Name = "lblPayePar";
             this.lblPayePar.Size = new System.Drawing.Size(109, 27);
             this.lblPayePar.TabIndex = 1;
@@ -125,10 +125,10 @@ namespace projetEvents
             this.ckbToutLeMonde.AutoSize = true;
             this.ckbToutLeMonde.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbToutLeMonde.ForeColor = System.Drawing.Color.White;
-            this.ckbToutLeMonde.Location = new System.Drawing.Point(719, 554);
+            this.ckbToutLeMonde.Location = new System.Drawing.Point(717, 536);
             this.ckbToutLeMonde.Name = "ckbToutLeMonde";
             this.ckbToutLeMonde.Size = new System.Drawing.Size(152, 31);
-            this.ckbToutLeMonde.TabIndex = 11;
+            this.ckbToutLeMonde.TabIndex = 8;
             this.ckbToutLeMonde.Text = "Tout cocher";
             this.ckbToutLeMonde.UseVisualStyleBackColor = true;
             this.ckbToutLeMonde.CheckedChanged += new System.EventHandler(this.ckbToutLeMonde_CheckedChanged);
@@ -141,7 +141,7 @@ namespace projetEvents
             this.clbListeBeneficiaire.FormattingEnabled = true;
             this.clbListeBeneficiaire.Location = new System.Drawing.Point(716, 337);
             this.clbListeBeneficiaire.Name = "clbListeBeneficiaire";
-            this.clbListeBeneficiaire.Size = new System.Drawing.Size(428, 220);
+            this.clbListeBeneficiaire.Size = new System.Drawing.Size(428, 193);
             this.clbListeBeneficiaire.TabIndex = 7;
             // 
             // lblCommentaire
@@ -149,7 +149,7 @@ namespace projetEvents
             this.lblCommentaire.AutoSize = true;
             this.lblCommentaire.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCommentaire.ForeColor = System.Drawing.Color.White;
-            this.lblCommentaire.Location = new System.Drawing.Point(240, 467);
+            this.lblCommentaire.Location = new System.Drawing.Point(239, 476);
             this.lblCommentaire.Name = "lblCommentaire";
             this.lblCommentaire.Size = new System.Drawing.Size(161, 27);
             this.lblCommentaire.TabIndex = 1;
@@ -161,9 +161,9 @@ namespace projetEvents
             this.rtbCommentaire.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbCommentaire.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbCommentaire.ForeColor = System.Drawing.Color.White;
-            this.rtbCommentaire.Location = new System.Drawing.Point(244, 515);
+            this.rtbCommentaire.Location = new System.Drawing.Point(243, 515);
             this.rtbCommentaire.Name = "rtbCommentaire";
-            this.rtbCommentaire.Size = new System.Drawing.Size(381, 175);
+            this.rtbCommentaire.Size = new System.Drawing.Size(381, 70);
             this.rtbCommentaire.TabIndex = 5;
             this.rtbCommentaire.Text = "";
             // 
@@ -240,10 +240,10 @@ namespace projetEvents
             this.Valider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Valider.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Valider.ForeColor = System.Drawing.Color.White;
-            this.Valider.Location = new System.Drawing.Point(901, 689);
+            this.Valider.Location = new System.Drawing.Point(1036, 690);
             this.Valider.Name = "Valider";
             this.Valider.Size = new System.Drawing.Size(108, 38);
-            this.Valider.TabIndex = 12;
+            this.Valider.TabIndex = 10;
             this.Valider.Text = "Valider";
             this.Valider.UseVisualStyleBackColor = false;
             this.Valider.Click += new System.EventHandler(this.Valider_Click);
@@ -255,10 +255,10 @@ namespace projetEvents
             this.Annuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Annuler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Annuler.ForeColor = System.Drawing.Color.White;
-            this.Annuler.Location = new System.Drawing.Point(1024, 689);
+            this.Annuler.Location = new System.Drawing.Point(912, 690);
             this.Annuler.Name = "Annuler";
             this.Annuler.Size = new System.Drawing.Size(108, 38);
-            this.Annuler.TabIndex = 13;
+            this.Annuler.TabIndex = 9;
             this.Annuler.Text = "Annuler";
             this.Annuler.UseVisualStyleBackColor = false;
             this.Annuler.Click += new System.EventHandler(this.Annuler_Click);
@@ -292,7 +292,8 @@ namespace projetEvents
             this.button1.Location = new System.Drawing.Point(1093, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 37);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 24;
+            this.button1.TabStop = false;
             this.button1.Text = "Quitter";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -307,7 +308,7 @@ namespace projetEvents
             this.label5.Location = new System.Drawing.Point(512, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(608, 27);
-            this.label5.TabIndex = 0;
+            this.label5.TabIndex = 1;
             this.label5.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
             // 
             // label3
@@ -320,7 +321,7 @@ namespace projetEvents
             this.label3.Location = new System.Drawing.Point(233, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(289, 60);
-            this.label3.TabIndex = 0;
+            this.label3.TabIndex = 1;
             this.label3.Text = "Bienvenue ! ";
             // 
             // label4
@@ -335,17 +336,6 @@ namespace projetEvents
             this.label4.Size = new System.Drawing.Size(406, 33);
             this.label4.TabIndex = 1;
             this.label4.Text = "Saissisez une nouvelle dépense...";
-            // 
-            // pcbLoadingValidate
-            // 
-            this.pcbLoadingValidate.Image = global::projetEvents.Properties.Resources.loading2;
-            this.pcbLoadingValidate.Location = new System.Drawing.Point(810, 674);
-            this.pcbLoadingValidate.Name = "pcbLoadingValidate";
-            this.pcbLoadingValidate.Size = new System.Drawing.Size(69, 64);
-            this.pcbLoadingValidate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbLoadingValidate.TabIndex = 16;
-            this.pcbLoadingValidate.TabStop = false;
-            this.pcbLoadingValidate.Visible = false;
             // 
             // lblErrorEvenement
             // 
@@ -400,21 +390,33 @@ namespace projetEvents
             this.lblErrorBeneficiaire.AutoSize = true;
             this.lblErrorBeneficiaire.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorBeneficiaire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorBeneficiaire.Location = new System.Drawing.Point(756, 591);
+            this.lblErrorBeneficiaire.Location = new System.Drawing.Point(756, 570);
             this.lblErrorBeneficiaire.Name = "lblErrorBeneficiaire";
             this.lblErrorBeneficiaire.Size = new System.Drawing.Size(364, 24);
             this.lblErrorBeneficiaire.TabIndex = 17;
             this.lblErrorBeneficiaire.Text = "Sélectionner au moins un bénéficiaires";
             this.lblErrorBeneficiaire.Visible = false;
             // 
+            // pcbLoadingValidate
+            // 
+            this.pcbLoadingValidate.Image = global::projetEvents.Properties.Resources.loading2;
+            this.pcbLoadingValidate.Location = new System.Drawing.Point(810, 674);
+            this.pcbLoadingValidate.Name = "pcbLoadingValidate";
+            this.pcbLoadingValidate.Size = new System.Drawing.Size(69, 64);
+            this.pcbLoadingValidate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLoadingValidate.TabIndex = 16;
+            this.pcbLoadingValidate.TabStop = false;
+            this.pcbLoadingValidate.Visible = false;
+            // 
             // userControlMenu1
             // 
-            this.userControlMenu1.BarrePanel = 0;
+            this.userControlMenu1.BarrePanel = 1;
             this.userControlMenu1.Location = new System.Drawing.Point(0, 2);
             this.userControlMenu1.Margin = new System.Windows.Forms.Padding(4);
             this.userControlMenu1.Name = "userControlMenu1";
             this.userControlMenu1.Size = new System.Drawing.Size(207, 753);
-            this.userControlMenu1.TabIndex = 18;
+            this.userControlMenu1.TabIndex = 20;
+            this.userControlMenu1.TabStop = false;
             // 
             // formMain
             // 

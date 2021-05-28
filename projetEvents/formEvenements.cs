@@ -61,7 +61,6 @@ namespace projetEvents
 
         private void btnAccueil_Click(object sender, EventArgs e)
         {
-            
             formMain formMain = new formMain(this.DesktopLocation);
             formMain.Show();
             this.Visible = false;
@@ -87,8 +86,9 @@ namespace projetEvents
         }
         private void btnBilan_Click(object sender, EventArgs e)
         {
-            formBilan formBilan = new formBilan();
-            formBilan.ShowDialog();
+            formBilan formBilan = new formBilan(this.DesktopLocation);
+            formBilan.Show();
+            this.Visible = false;
             this.Hide();
         }
 
@@ -104,6 +104,7 @@ namespace projetEvents
                     a1.evenements = btnEvenements_Click;
                     a1.participant = btnParticipant_Click;
                     a1.depenses = btnDepenses_Click;
+                    a1.bilan = btnBilan_Click;
                 }
             }
         }

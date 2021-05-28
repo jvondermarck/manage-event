@@ -84,6 +84,9 @@
     <EmbeddedResource Include="formAccueil.resx">
       <DependentUpon>formAccueil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formBilan.resx">
+      <DependentUpon>formBilan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formEvenements.resx">
       <DependentUpon>formEvenements.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\loading2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\high-five.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
