@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAjoutDepense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAjoutDepense.Designer.cs">
+      <DependentUpon>FormAjoutDepense.cs</DependentUpon>
+    </Compile>
     <Compile Include="formBilan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formAccueil.resx">
       <DependentUpon>formAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAjoutDepense.resx">
+      <DependentUpon>FormAjoutDepense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formBilan.resx">
       <DependentUpon>formBilan.cs</DependentUpon>
@@ -136,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\high-five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\shrink.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
