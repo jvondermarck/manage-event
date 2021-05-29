@@ -43,7 +43,6 @@ namespace projetEvents
             this.txtQuoi = new System.Windows.Forms.TextBox();
             this.cboPayePar = new System.Windows.Forms.ComboBox();
             this.cboEvenements = new System.Windows.Forms.ComboBox();
-            this.dtpDepense = new System.Windows.Forms.DateTimePicker();
             this.rtbCommentaire = new System.Windows.Forms.RichTextBox();
             this.clbListeBeneficiaire = new System.Windows.Forms.CheckedListBox();
             this.ckbToutLeMonde = new System.Windows.Forms.CheckBox();
@@ -56,6 +55,7 @@ namespace projetEvents
             this.lblEvents = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.dtpDepense = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +77,7 @@ namespace projetEvents
             this.lblErrorPayePar.AutoSize = true;
             this.lblErrorPayePar.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPayePar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorPayePar.Location = new System.Drawing.Point(170, 326);
+            this.lblErrorPayePar.Location = new System.Drawing.Point(170, 316);
             this.lblErrorPayePar.Name = "lblErrorPayePar";
             this.lblErrorPayePar.Size = new System.Drawing.Size(264, 24);
             this.lblErrorPayePar.TabIndex = 40;
@@ -89,7 +89,7 @@ namespace projetEvents
             this.lblErrorCombien.AutoSize = true;
             this.lblErrorCombien.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorCombien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorCombien.Location = new System.Drawing.Point(170, 260);
+            this.lblErrorCombien.Location = new System.Drawing.Point(170, 257);
             this.lblErrorCombien.Name = "lblErrorCombien";
             this.lblErrorCombien.Size = new System.Drawing.Size(264, 24);
             this.lblErrorCombien.TabIndex = 39;
@@ -101,7 +101,7 @@ namespace projetEvents
             this.lblErrorQuoi.AutoSize = true;
             this.lblErrorQuoi.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorQuoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorQuoi.Location = new System.Drawing.Point(168, 195);
+            this.lblErrorQuoi.Location = new System.Drawing.Point(176, 185);
             this.lblErrorQuoi.Name = "lblErrorQuoi";
             this.lblErrorQuoi.Size = new System.Drawing.Size(233, 24);
             this.lblErrorQuoi.TabIndex = 38;
@@ -113,7 +113,7 @@ namespace projetEvents
             this.lblErrorEvenement.AutoSize = true;
             this.lblErrorEvenement.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorEvenement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorEvenement.Location = new System.Drawing.Point(168, 132);
+            this.lblErrorEvenement.Location = new System.Drawing.Point(168, 123);
             this.lblErrorEvenement.Name = "lblErrorEvenement";
             this.lblErrorEvenement.Size = new System.Drawing.Size(274, 24);
             this.lblErrorEvenement.TabIndex = 37;
@@ -191,6 +191,7 @@ namespace projetEvents
             this.txtQuoi.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuoi.ForeColor = System.Drawing.Color.White;
             this.txtQuoi.Location = new System.Drawing.Point(167, 160);
+            this.txtQuoi.MaxLength = 100;
             this.txtQuoi.Name = "txtQuoi";
             this.txtQuoi.Size = new System.Drawing.Size(254, 32);
             this.txtQuoi.TabIndex = 27;
@@ -199,6 +200,7 @@ namespace projetEvents
             // cboPayePar
             // 
             this.cboPayePar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cboPayePar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPayePar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPayePar.ForeColor = System.Drawing.Color.White;
             this.cboPayePar.FormattingEnabled = true;
@@ -210,6 +212,7 @@ namespace projetEvents
             // cboEvenements
             // 
             this.cboEvenements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cboEvenements.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEvenements.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEvenements.ForeColor = System.Drawing.Color.White;
             this.cboEvenements.FormattingEnabled = true;
@@ -218,17 +221,6 @@ namespace projetEvents
             this.cboEvenements.Size = new System.Drawing.Size(254, 31);
             this.cboEvenements.TabIndex = 25;
             this.cboEvenements.SelectionChangeCommitted += new System.EventHandler(this.cboEvenements_SelectionChangeCommitted);
-            // 
-            // dtpDepense
-            // 
-            this.dtpDepense.CalendarFont = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDepense.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.dtpDepense.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDepense.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDepense.Location = new System.Drawing.Point(605, 102);
-            this.dtpDepense.Name = "dtpDepense";
-            this.dtpDepense.Size = new System.Drawing.Size(139, 28);
-            this.dtpDepense.TabIndex = 31;
             // 
             // rtbCommentaire
             // 
@@ -254,6 +246,8 @@ namespace projetEvents
             this.clbListeBeneficiaire.Name = "clbListeBeneficiaire";
             this.clbListeBeneficiaire.Size = new System.Drawing.Size(428, 166);
             this.clbListeBeneficiaire.TabIndex = 32;
+            this.clbListeBeneficiaire.SelectedValueChanged += new System.EventHandler(this.clbListeBeneficiaire_SelectedValueChanged);
+            this.clbListeBeneficiaire.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.clbListeBeneficiaire_MouseDoubleClick);
             // 
             // ckbToutLeMonde
             // 
@@ -361,12 +355,24 @@ namespace projetEvents
             this.label1.TabIndex = 26;
             this.label1.Text = "(Facultatif...)";
             // 
+            // dtpDepense
+            // 
+            this.dtpDepense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDepense.CustomFormat = " dd/MM/yyyy";
+            this.dtpDepense.Font = new System.Drawing.Font("JetBrains Mono", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDepense.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDepense.Location = new System.Drawing.Point(601, 99);
+            this.dtpDepense.Name = "dtpDepense";
+            this.dtpDepense.Size = new System.Drawing.Size(141, 31);
+            this.dtpDepense.TabIndex = 42;
+            // 
             // FormAjoutDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(978, 553);
+            this.Controls.Add(this.dtpDepense);
             this.Controls.Add(this.lblErrorBeneficiaire);
             this.Controls.Add(this.lblErrorPayePar);
             this.Controls.Add(this.lblErrorCombien);
@@ -380,7 +386,6 @@ namespace projetEvents
             this.Controls.Add(this.txtQuoi);
             this.Controls.Add(this.cboPayePar);
             this.Controls.Add(this.cboEvenements);
-            this.Controls.Add(this.dtpDepense);
             this.Controls.Add(this.rtbCommentaire);
             this.Controls.Add(this.clbListeBeneficiaire);
             this.Controls.Add(this.ckbToutLeMonde);
@@ -419,7 +424,6 @@ namespace projetEvents
         private System.Windows.Forms.TextBox txtQuoi;
         private System.Windows.Forms.ComboBox cboPayePar;
         private System.Windows.Forms.ComboBox cboEvenements;
-        private System.Windows.Forms.DateTimePicker dtpDepense;
         private System.Windows.Forms.RichTextBox rtbCommentaire;
         private System.Windows.Forms.CheckedListBox clbListeBeneficiaire;
         private System.Windows.Forms.CheckBox ckbToutLeMonde;
@@ -432,5 +436,6 @@ namespace projetEvents
         private System.Windows.Forms.Label lblEvents;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpDepense;
     }
 }

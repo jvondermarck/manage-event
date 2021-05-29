@@ -33,16 +33,16 @@ namespace projetEvents
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.pcbQuitter = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelAllForm = new System.Windows.Forms.Panel();
             this.userControlMenu = new uControlMenu.userControlMenu();
             this.pcbReduceScreen = new System.Windows.Forms.PictureBox();
+            this.pcbQuitter = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbQuitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReduceScreen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbQuitter)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider
@@ -65,18 +65,6 @@ namespace projetEvents
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseMove);
             this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseUp);
-            // 
-            // pcbQuitter
-            // 
-            this.pcbQuitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbQuitter.Image = ((System.Drawing.Image)(resources.GetObject("pcbQuitter.Image")));
-            this.pcbQuitter.Location = new System.Drawing.Point(1141, 12);
-            this.pcbQuitter.Name = "pcbQuitter";
-            this.pcbQuitter.Size = new System.Drawing.Size(29, 24);
-            this.pcbQuitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbQuitter.TabIndex = 25;
-            this.pcbQuitter.TabStop = false;
-            this.pcbQuitter.Click += new System.EventHandler(this.pcbQuitter_Click);
             // 
             // label5
             // 
@@ -134,6 +122,18 @@ namespace projetEvents
             this.pcbReduceScreen.TabStop = false;
             this.pcbReduceScreen.Click += new System.EventHandler(this.pcbReduceScreen_Click);
             // 
+            // pcbQuitter
+            // 
+            this.pcbQuitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbQuitter.Image = ((System.Drawing.Image)(resources.GetObject("pcbQuitter.Image")));
+            this.pcbQuitter.Location = new System.Drawing.Point(1141, 12);
+            this.pcbQuitter.Name = "pcbQuitter";
+            this.pcbQuitter.Size = new System.Drawing.Size(29, 24);
+            this.pcbQuitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbQuitter.TabIndex = 25;
+            this.pcbQuitter.TabStop = false;
+            this.pcbQuitter.Click += new System.EventHandler(this.pcbQuitter_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -146,6 +146,7 @@ namespace projetEvents
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -154,8 +155,8 @@ namespace projetEvents
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbQuitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReduceScreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbQuitter)).EndInit();
             this.ResumeLayout(false);
 
         }

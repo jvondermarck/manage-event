@@ -30,6 +30,7 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelTitre = new System.Windows.Forms.Label();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.btnBilan = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btnEvenements = new System.Windows.Forms.Button();
             this.btnParticipant = new System.Windows.Forms.Button();
             this.btnAccueil = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,18 @@
             this.sidePanel.Tag = "1";
             this.sidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.sidePanel_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(74, 191);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 39);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Partage";
+            // 
             // labelTitre
             // 
             this.labelTitre.AutoSize = true;
@@ -80,7 +92,7 @@
             this.labelTitre.ForeColor = System.Drawing.Color.White;
             this.labelTitre.Location = new System.Drawing.Point(25, 166);
             this.labelTitre.Name = "labelTitre";
-            this.labelTitre.Size = new System.Drawing.Size(135, 37);
+            this.labelTitre.Size = new System.Drawing.Size(139, 39);
             this.labelTitre.TabIndex = 3;
             this.labelTitre.Text = "Le Juste";
             // 
@@ -96,6 +108,7 @@
             // 
             // btnBilan
             // 
+            this.btnBilan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBilan.FlatAppearance.BorderSize = 0;
             this.btnBilan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBilan.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,6 +128,7 @@
             // 
             // btnDepense
             // 
+            this.btnDepense.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDepense.FlatAppearance.BorderSize = 0;
             this.btnDepense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDepense.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,6 +148,7 @@
             // 
             // btnEvenements
             // 
+            this.btnEvenements.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEvenements.FlatAppearance.BorderSize = 0;
             this.btnEvenements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEvenements.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,6 +168,7 @@
             // 
             // btnParticipant
             // 
+            this.btnParticipant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnParticipant.FlatAppearance.BorderSize = 0;
             this.btnParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnParticipant.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,6 +188,7 @@
             // 
             // btnAccueil
             // 
+            this.btnAccueil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAccueil.FlatAppearance.BorderSize = 0;
             this.btnAccueil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccueil.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,18 +206,6 @@
             this.btnAccueil.Click += new System.EventHandler(this.btnAccueil_Click);
             this.btnAccueil.Leave += new System.EventHandler(this.btnAccueil_Leave);
             this.btnAccueil.MouseHover += new System.EventHandler(this.btnAccueil_MouseHover);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(74, 191);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 37);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Partage";
             // 
             // userControlMenu
             // 

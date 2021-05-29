@@ -28,7 +28,7 @@ namespace projetEvents
         OleDbConnection connec = new OleDbConnection();
 
 
-        //Liaison de données - A une colonne
+        //Liaison de données - A une colonne - ComboBox
         private void surchageComboBox(ComboBox cbo, String table, String column, String champCache)
         {
             cbo.DataSource = ds.Tables[table]; // On charge la table dans la cbo
@@ -56,6 +56,9 @@ namespace projetEvents
             surchageComboBoxV2(cboPayePar, "Participants", "prenomPart", "nomPart");
 
             designAffichage();
+
+            // On appelle cette méthode pour directement afficher les bénéficiaires du 1er évenement sélectionner dans la CBO
+            cboEvenements_SelectionChangeCommitted(sender, e); 
         }
 
         // Permet d'avoir les gens sur la CheckedListBox qui sont dans la table invités
@@ -66,16 +69,58 @@ namespace projetEvents
             {
                 connec.ConnectionString = chainconnec;
                 connec.Open();
-                string requete = @"SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant IN 
-                                  (SELECT codePart FROM Invites WHERE codeEvent = " + cboEvenements.ValueMember + ")";
+                string requete = @"SELECT prenomPart, nomPart, codeParticipant FROM Participants WHERE codeParticipant IN 
+                                  (SELECT codePart FROM Invites WHERE codeEvent = " + ds.Tables["Evenements"].Rows[cboEvenements.SelectedIndex]["codeEvent"] + ")";
                 OleDbCommand cmd = new OleDbCommand(requete, connec);
                 OleDbDataReader dr = cmd.ExecuteReader();
 
-                if (dr.HasRows)
+                if (!ds.Tables.Contains("participantsDepense"))
                 {
-                    while (dr.Read())
+                    DataTable dt = new DataTable("participantsDepense");
+                    dt.Columns.Add("nomPrenom");
+                    dt.Columns.Add("codeParticipant");
+                    ds.Tables.Add(dt);
+                }
+                else
+                {
+                    ds.Tables["participantsDepense"].Clear();
+                }
+
+                while (dr.Read())
+                {
+                    DataRow ligne = ds.Tables["participantsDepense"].NewRow();
+                    ligne[0] = dr.GetString(0) + " " + dr.GetString(1);
+                    ligne[1] = dr.GetInt32(2).ToString();
+                    ds.Tables["participantsDepense"].Rows.Add(ligne);
+                }
+
+                for(int i=0; i< ds.Tables["participantsDepense"].Rows.Count; i++)
+                {
+                    clbListeBeneficiaire.Items.Add(ds.Tables["participantsDepense"].Rows[i]["nomPrenom"]);
+                }
+                connec.Close();
+                autoCheckCreateur();
+            }
+            catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
+            catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
+            catch (Exception exp) { MessageBox.Show(exp.GetType().ToString()); }
+        }
+
+        private void autoCheckCreateur()
+        {
+            try
+            {
+                connec.ConnectionString = chainconnec;
+                connec.Open();
+                string requete = @"SELECT codeCreateur FROM Evenements WHERE codeEvent=" + ds.Tables["Evenements"].Rows[cboEvenements.SelectedIndex]["codeEvent"];
+                OleDbCommand cmd = new OleDbCommand(requete, connec);
+                string codeCreateur = cmd.ExecuteScalar().ToString();
+
+                for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
+                {
+                    if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == codeCreateur)
                     {
-                        clbListeBeneficiaire.Items.Add(dr.GetString(0) + " " + dr.GetString(1));
+                        clbListeBeneficiaire.SetItemChecked(i, true);
                     }
                 }
             }
@@ -83,7 +128,6 @@ namespace projetEvents
             catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
             catch (Exception exp) { MessageBox.Show(exp.GetType().ToString()); }
             finally { connec.Close(); }
-            
         }
 
         // Quand on clique sur ckbToutLeMonde = Tout-Cocher ou Tout-Decocher
@@ -111,6 +155,7 @@ namespace projetEvents
                     }
                 }
             }
+            autoCheckCreateur(); // Rendre impossible de désélectionner le code Createur de l'évenement
         }
 
         //
@@ -363,6 +408,7 @@ namespace projetEvents
             ckbToutLeMonde.Checked = false;
             dtpDepense.Value = DateTime.Now;
             errorProvider.Clear();
+            clbListeBeneficiaire.Items.Clear();
 
             // On enlève les messages erreurs
             lblErrorCombien.Visible = false;
@@ -370,29 +416,6 @@ namespace projetEvents
             lblErrorPayePar.Visible = false;
             lblErrorQuoi.Visible = false;
             lblErrorBeneficiaire.Visible = false;
-
-            foreach (Control a in this.Controls)
-            {
-                if (a is CheckedListBox)
-                {
-                    CheckedListBox a1 = (CheckedListBox)a; // On reprend l'élement checkBox 
-
-                    if (a1.GetItemCheckState(0) == CheckState.Checked)
-                    {
-                        for (int i = 0; i < a1.Items.Count; i++)
-                        {
-                            a1.SetItemChecked(i, false);
-                        }
-                    }
-                    else if (a1.GetItemCheckState(0) == CheckState.Unchecked)
-                    {
-                        for (int i = 0; i < a1.Items.Count; i++)
-                        {
-                            a1.SetItemChecked(i, false);
-                        }
-                    }
-                }
-            }
         }
 
         private void designAffichage()
@@ -401,6 +424,18 @@ namespace projetEvents
             rtbCommentaire.SelectionIndent += 15;//play with this values to match yours
             rtbCommentaire.SelectionRightIndent += 15;//this too
             rtbCommentaire.SelectionLength = 0;
+        }
+
+        // Rendre impossible de déselectionner le code Createur de l'évenement
+        private void clbListeBeneficiaire_SelectedValueChanged(object sender, EventArgs e)
+        {
+            autoCheckCreateur();
+        }
+
+        // Rendre impossible de déselectionner le code Createur de l'évenement
+        private void clbListeBeneficiaire_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            autoCheckCreateur();
         }
     }
 }
