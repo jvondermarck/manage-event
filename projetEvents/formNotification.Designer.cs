@@ -43,7 +43,7 @@ namespace projetEvents
             this.lblMessage.AutoSize = true;
             this.lblMessage.BackColor = System.Drawing.Color.Transparent;
             this.lblMessage.ForeColor = System.Drawing.Color.White;
-            this.lblMessage.Location = new System.Drawing.Point(123, 34);
+            this.lblMessage.Location = new System.Drawing.Point(101, 34);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(96, 23);
             this.lblMessage.TabIndex = 0;
@@ -74,6 +74,7 @@ namespace projetEvents
             this.button1.Size = new System.Drawing.Size(53, 41);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // formNotification
             // 

@@ -91,6 +91,12 @@
     <Compile Include="formEvenements.Designer.cs">
       <DependentUpon>formEvenements.cs</DependentUpon>
     </Compile>
+    <Compile Include="formPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPresentation.Designer.cs">
+      <DependentUpon>formPresentation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formAccueil.resx">
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formNotification.resx">
       <DependentUpon>formNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPresentation.resx">
+      <DependentUpon>formPresentation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,6 +181,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\imgPres1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\homeEvents.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

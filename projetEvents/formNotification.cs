@@ -96,6 +96,11 @@ namespace projetEvents
 
         private int x, y;
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             switch (this.action)

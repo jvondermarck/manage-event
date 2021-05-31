@@ -52,13 +52,9 @@ namespace projetEvents
             // Liaison de données - ComboBox Evenement 
             surchageComboBox(cboEvenements, "Evenements", "titreEvent", "codeEvent");
 
-            // Surcharge ComboBox - ComboBox Participants avec deux colonnes
-            surchageComboBoxV2(cboPayePar, "Participants", "prenomPart", "nomPart");
-
             designAffichage();
 
-            // On appelle cette méthode pour directement afficher les bénéficiaires du 1er évenement sélectionner dans la CBO
-            cboEvenements_SelectionChangeCommitted(sender, e); 
+            cboEvenements.SelectedIndex = -1;
         }
 
         // Permet d'avoir les gens sur la CheckedListBox qui sont dans la table invités
@@ -70,7 +66,7 @@ namespace projetEvents
                 connec.ConnectionString = chainconnec;
                 connec.Open();
                 string requete = @"SELECT prenomPart, nomPart, codeParticipant FROM Participants WHERE codeParticipant IN 
-                                  (SELECT codePart FROM Invites WHERE codeEvent = " + ds.Tables["Evenements"].Rows[cboEvenements.SelectedIndex]["codeEvent"] + ")";
+                                  (SELECT codePart FROM Invites WHERE codeEvent = " + cboEvenements.SelectedValue.ToString() + ")";
                 OleDbCommand cmd = new OleDbCommand(requete, connec);
                 OleDbDataReader dr = cmd.ExecuteReader();
 
@@ -99,7 +95,10 @@ namespace projetEvents
                     clbListeBeneficiaire.Items.Add(ds.Tables["participantsDepense"].Rows[i]["nomPrenom"]);
                 }
                 connec.Close();
-                autoCheckCreateur();
+
+                // Liaison de données - ComboBox Evenement 
+                surchageComboBox(cboPayePar, "participantsDepense", "nomPrenom", "codeParticipant");
+                cboPayePar.SelectedIndex = -1;
             }
             catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
             catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
@@ -108,54 +107,48 @@ namespace projetEvents
 
         private void autoCheckCreateur()
         {
-            try
+            for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
             {
-                connec.ConnectionString = chainconnec;
-                connec.Open();
-                string requete = @"SELECT codeCreateur FROM Evenements WHERE codeEvent=" + ds.Tables["Evenements"].Rows[cboEvenements.SelectedIndex]["codeEvent"];
-                OleDbCommand cmd = new OleDbCommand(requete, connec);
-                string codeCreateur = cmd.ExecuteScalar().ToString();
-
-                for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
+                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
                 {
-                    if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == codeCreateur)
-                    {
-                        clbListeBeneficiaire.SetItemChecked(i, true);
-                    }
+                    clbListeBeneficiaire.SetItemChecked(i, true);
                 }
             }
-            catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
-            catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
-            catch (Exception exp) { MessageBox.Show(exp.GetType().ToString()); }
-            finally { connec.Close(); }
         }
 
         // Quand on clique sur ckbToutLeMonde = Tout-Cocher ou Tout-Decocher
         private void ckbToutLeMonde_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (Control a in this.Controls)
+            if(clbListeBeneficiaire.Items.Count >= 1)
             {
-                if (a is CheckedListBox)
+                foreach (Control a in this.Controls)
                 {
-                    CheckedListBox a1 = (CheckedListBox)a; // On reprend l'élement checkBox 
+                    if (a is CheckedListBox)
+                    {
+                        CheckedListBox a1 = (CheckedListBox)a; // On reprend l'élement checkBox 
 
-                    if (a1.GetItemCheckState(0) == CheckState.Checked)
-                    {
-                        for (int i = 0; i < a1.Items.Count; i++)
+                        if (a1.GetItemCheckState(0) == CheckState.Checked)
                         {
-                            a1.SetItemChecked(i, false);
+                            for (int i = 0; i < a1.Items.Count; i++)
+                            {
+                                a1.SetItemChecked(i, false);
+                            }
                         }
-                    }
-                    else if (a1.GetItemCheckState(0) == CheckState.Unchecked)
-                    {
-                        for (int i = 0; i < a1.Items.Count; i++)
+                        else if (a1.GetItemCheckState(0) == CheckState.Unchecked)
                         {
-                            a1.SetItemChecked(i, true);
+                            for (int i = 0; i < a1.Items.Count; i++)
+                            {
+                                a1.SetItemChecked(i, true);
+                            }
                         }
                     }
                 }
+                autoCheckCreateur(); // Rendre impossible de désélectionner le code Createur de l'évenement
+            } else
+            {
+                ckbToutLeMonde.Checked = false;
             }
-            autoCheckCreateur(); // Rendre impossible de désélectionner le code Createur de l'évenement
+            
         }
 
         //
@@ -270,6 +263,9 @@ namespace projetEvents
             if (remplissageComplet)
             {
                 saisieDepense();
+            } else
+            {
+                formNotification.Alert("Une erreur est survenue", formNotification.enmType.Error);
             }
         }
 
@@ -284,9 +280,16 @@ namespace projetEvents
             string montant = txtCombien.Text;
             dtpDepense.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             string dateDepense = dtpDepense.Value.ToString();
-            string commentaire = rtbCommentaire.Text;
+            string commentaire;
+            if(rtbCommentaire.TextLength>0)
+            {
+                commentaire = rtbCommentaire.Text;
+            } else
+            {
+                commentaire = " ";
+            }
             string codeEvents = cboEvenements.SelectedValue.ToString();
-            string codePart = ds.Tables["Participants"].Rows[cboPayePar.SelectedIndex]["codeParticipant"].ToString();
+            string codePart = cboPayePar.SelectedValue.ToString();
 
             //
             // On va insérer la dépense dans la Table Evenements
@@ -357,31 +360,31 @@ namespace projetEvents
                 }
 
                 transacBenef.Commit();
+                pcbLoadingValidate.Visible = true;
+                Timer Clock = new Timer();
+                Clock.Interval = 2000;
+                Clock.Tick += new EventHandler(MyTimer_Tick);
+                Clock.Start();
+                toutEffacerDepense();
             }
-            catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
-            catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
+            catch (OleDbException) { formNotification.Alert("Erreur dans la requete SQL ! ", formNotification.enmType.Error); }
+            catch (InvalidOperationException) { formNotification.Alert("Erreur d'acces à la base de donnée ! ", formNotification.enmType.Error); }
             catch (Exception exp)
             {
                 MessageBox.Show(exp.GetType().ToString());
                 transacBenef.Rollback();
-                MessageBox.Show("Erreur : Transaction annulée");
             }
             finally
             {
                 connec.Close();
             }
-
-            pcbLoadingValidate.Visible = true;
-            Timer Clock = new Timer();
-            Clock.Interval = 2000;
-            Clock.Tick += new EventHandler(MyTimer_Tick);
-            Clock.Start();
         }
 
         // Quand on clique sur validé, un temps de chargement s'active, on veut désactiver le gif de chargemenebt après ca
         private void MyTimer_Tick(object sender, EventArgs e)
         {
             pcbLoadingValidate.Visible = false;
+            formNotification.Alert("Bravo ! Vous avez ajouté une dépense ! ", formNotification.enmType.Success);
         }
 
         // On cherche le numéro de dépense et on l'augmente de +1 pour une nouvelle dépense dans la BDD
@@ -397,8 +400,8 @@ namespace projetEvents
             return numeroDepense;
         }
 
-        // Quand on clique sur annuler, on efface tout
-        private void Annuler_Click(object sender, EventArgs e)
+        // On efface tous les champs de saisie du formulaire ajout d'une dépense
+        private void toutEffacerDepense()
         {
             cboEvenements.SelectedIndex = -1;
             cboPayePar.SelectedIndex = -1;
@@ -418,6 +421,13 @@ namespace projetEvents
             lblErrorBeneficiaire.Visible = false;
         }
 
+        // Quand on clique sur annuler, on efface tout
+        private void Annuler_Click(object sender, EventArgs e)
+        {
+            toutEffacerDepense();
+            formNotification.Alert("Vous avez annulé la saisie de dépense", formNotification.enmType.Warning);
+        }
+
         private void designAffichage()
         {
             rtbCommentaire.SelectAll();
@@ -434,6 +444,11 @@ namespace projetEvents
 
         // Rendre impossible de déselectionner le code Createur de l'évenement
         private void clbListeBeneficiaire_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            autoCheckCreateur();
+        }
+
+        private void cboPayePar_SelectionChangeCommitted(object sender, EventArgs e)
         {
             autoCheckCreateur();
         }

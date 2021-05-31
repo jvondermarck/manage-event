@@ -111,15 +111,10 @@ namespace projetEvents
             // On charge le UserControl
             userControlEvenementClick();
 
-            // On s'occupe d'afficher le formulaire de départ
-            this.panelAllForm.Controls.Clear();
-            FormAjoutDepense formAjoutDepense = new FormAjoutDepense() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formAjoutDepense.FormBorderStyle = FormBorderStyle.None;
-            this.panelAllForm.Controls.Add(formAjoutDepense);
-            formAjoutDepense.Show();
+            // On affiche directement le formulaire de présentation
+            btnAccueil_Click(sender, e);
         }
 
-      
 
         // On va récuperer le UserControlMenu qui se trouve sur la page, pour lui indiquer d'implementer les deleguates.
         public void userControlEvenementClick()
@@ -140,13 +135,13 @@ namespace projetEvents
 
         private void btnAccueil_Click(object sender, EventArgs e)
         {
-            this.panelAllForm.Controls.Clear(); 
+            this.panelAllForm.Controls.Clear();
             userControlMenu1.BarrePanel = 1;
-            FormAjoutDepense formAjoutDepense = new FormAjoutDepense() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formAjoutDepense.FormBorderStyle = FormBorderStyle.None;
-            this.panelAllForm.Controls.Add(formAjoutDepense);
-            formAjoutDepense.Show();
-            formNotification.Alert("Success Alert", formNotification.enmType.Success);
+            formPresentation formPresentation = new formPresentation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formPresentation.FormBorderStyle = FormBorderStyle.None;
+            this.panelAllForm.Controls.Add(formPresentation);
+            formPresentation.Show();
+            lblNomForm.Text = "Bienvenue !";
         }
 
         private void btnEvenements_Click(object sender, EventArgs e)
@@ -180,6 +175,7 @@ namespace projetEvents
             formBilan.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formBilan);
             formBilan.Show();
+            lblNomForm.Text = "Bilan";
         }
 
         // Méthodes qui permettent de deplacer le form quand on clique sur la panel header

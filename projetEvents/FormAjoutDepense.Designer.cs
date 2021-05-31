@@ -136,11 +136,11 @@ namespace projetEvents
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Product Sans", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(49, 21);
+            this.label4.Location = new System.Drawing.Point(33, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(406, 33);
+            this.label4.Size = new System.Drawing.Size(469, 38);
             this.label4.TabIndex = 24;
             this.label4.Text = "Saissisez une nouvelle dépense...";
             // 
@@ -209,6 +209,7 @@ namespace projetEvents
             this.cboPayePar.Name = "cboPayePar";
             this.cboPayePar.Size = new System.Drawing.Size(254, 31);
             this.cboPayePar.TabIndex = 29;
+            this.cboPayePar.SelectionChangeCommitted += new System.EventHandler(this.cboPayePar_SelectionChangeCommitted);
             // 
             // cboEvenements
             // 
@@ -216,7 +217,7 @@ namespace projetEvents
             this.cboEvenements.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboEvenements.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEvenements.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboEvenements.ForeColor = System.Drawing.Color.White;
+            this.cboEvenements.ForeColor = System.Drawing.SystemColors.Window;
             this.cboEvenements.FormattingEnabled = true;
             this.cboEvenements.Location = new System.Drawing.Point(167, 99);
             this.cboEvenements.Name = "cboEvenements";

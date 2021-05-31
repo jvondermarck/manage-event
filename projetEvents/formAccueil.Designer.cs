@@ -33,11 +33,11 @@ namespace projetEvents
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.pcbReduceScreen = new System.Windows.Forms.PictureBox();
+            this.pcbQuitter = new System.Windows.Forms.PictureBox();
             this.lblPresentationForm = new System.Windows.Forms.Label();
             this.lblNomForm = new System.Windows.Forms.Label();
             this.panelAllForm = new System.Windows.Forms.Panel();
-            this.pcbReduceScreen = new System.Windows.Forms.PictureBox();
-            this.pcbQuitter = new System.Windows.Forms.PictureBox();
             this.userControlMenu1 = new uControlMenu.userControlMenu();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -65,6 +65,30 @@ namespace projetEvents
             this.panelHeader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseDown);
             this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseMove);
             this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseUp);
+            // 
+            // pcbReduceScreen
+            // 
+            this.pcbReduceScreen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbReduceScreen.Image = global::projetEvents.Properties.Resources.shrink;
+            this.pcbReduceScreen.Location = new System.Drawing.Point(1106, 12);
+            this.pcbReduceScreen.Name = "pcbReduceScreen";
+            this.pcbReduceScreen.Size = new System.Drawing.Size(29, 24);
+            this.pcbReduceScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbReduceScreen.TabIndex = 25;
+            this.pcbReduceScreen.TabStop = false;
+            this.pcbReduceScreen.Click += new System.EventHandler(this.pcbReduceScreen_Click);
+            // 
+            // pcbQuitter
+            // 
+            this.pcbQuitter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbQuitter.Image = ((System.Drawing.Image)(resources.GetObject("pcbQuitter.Image")));
+            this.pcbQuitter.Location = new System.Drawing.Point(1141, 12);
+            this.pcbQuitter.Name = "pcbQuitter";
+            this.pcbQuitter.Size = new System.Drawing.Size(29, 24);
+            this.pcbQuitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbQuitter.TabIndex = 25;
+            this.pcbQuitter.TabStop = false;
+            this.pcbQuitter.Click += new System.EventHandler(this.pcbQuitter_Click);
             // 
             // lblPresentationForm
             // 
@@ -100,37 +124,13 @@ namespace projetEvents
             this.panelAllForm.Size = new System.Drawing.Size(978, 657);
             this.panelAllForm.TabIndex = 21;
             // 
-            // pcbReduceScreen
-            // 
-            this.pcbReduceScreen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbReduceScreen.Image = global::projetEvents.Properties.Resources.shrink;
-            this.pcbReduceScreen.Location = new System.Drawing.Point(1106, 12);
-            this.pcbReduceScreen.Name = "pcbReduceScreen";
-            this.pcbReduceScreen.Size = new System.Drawing.Size(29, 24);
-            this.pcbReduceScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbReduceScreen.TabIndex = 25;
-            this.pcbReduceScreen.TabStop = false;
-            this.pcbReduceScreen.Click += new System.EventHandler(this.pcbReduceScreen_Click);
-            // 
-            // pcbQuitter
-            // 
-            this.pcbQuitter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbQuitter.Image = ((System.Drawing.Image)(resources.GetObject("pcbQuitter.Image")));
-            this.pcbQuitter.Location = new System.Drawing.Point(1141, 12);
-            this.pcbQuitter.Name = "pcbQuitter";
-            this.pcbQuitter.Size = new System.Drawing.Size(29, 24);
-            this.pcbQuitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbQuitter.TabIndex = 25;
-            this.pcbQuitter.TabStop = false;
-            this.pcbQuitter.Click += new System.EventHandler(this.pcbQuitter_Click);
-            // 
             // userControlMenu1
             // 
-            this.userControlMenu1.BarrePanel = 0;
+            this.userControlMenu1.BarrePanel = 1;
             this.userControlMenu1.Location = new System.Drawing.Point(0, 0);
-            this.userControlMenu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userControlMenu1.Margin = new System.Windows.Forms.Padding(4);
             this.userControlMenu1.Name = "userControlMenu1";
-            this.userControlMenu1.Size = new System.Drawing.Size(199, 753);
+            this.userControlMenu1.Size = new System.Drawing.Size(205, 753);
             this.userControlMenu1.TabIndex = 1;
             // 
             // formMain
@@ -165,10 +165,10 @@ namespace projetEvents
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblNomForm;
         private System.Windows.Forms.Label lblPresentationForm;
-        private System.Windows.Forms.Panel panelAllForm;
         private System.Windows.Forms.PictureBox pcbQuitter;
         private System.Windows.Forms.PictureBox pcbReduceScreen;
         private uControlMenu.userControlMenu userControlMenu1;
+        public System.Windows.Forms.Panel panelAllForm;
     }
 }
 
