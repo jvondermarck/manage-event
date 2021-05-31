@@ -33,12 +33,12 @@ namespace projetEvents
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPresentationForm = new System.Windows.Forms.Label();
+            this.lblNomForm = new System.Windows.Forms.Label();
             this.panelAllForm = new System.Windows.Forms.Panel();
-            this.userControlMenu = new uControlMenu.userControlMenu();
             this.pcbReduceScreen = new System.Windows.Forms.PictureBox();
             this.pcbQuitter = new System.Windows.Forms.PictureBox();
+            this.userControlMenu1 = new uControlMenu.userControlMenu();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReduceScreen)).BeginInit();
@@ -52,11 +52,11 @@ namespace projetEvents
             // 
             // panelHeader
             // 
-            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
             this.panelHeader.Controls.Add(this.pcbReduceScreen);
             this.panelHeader.Controls.Add(this.pcbQuitter);
-            this.panelHeader.Controls.Add(this.label5);
-            this.panelHeader.Controls.Add(this.label3);
+            this.panelHeader.Controls.Add(this.lblPresentationForm);
+            this.panelHeader.Controls.Add(this.lblNomForm);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Name = "panelHeader";
@@ -66,31 +66,31 @@ namespace projetEvents
             this.panelHeader.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseMove);
             this.panelHeader.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelHeader_MouseUp);
             // 
-            // label5
+            // lblPresentationForm
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(512, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(608, 27);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
+            this.lblPresentationForm.AutoSize = true;
+            this.lblPresentationForm.BackColor = System.Drawing.Color.Transparent;
+            this.lblPresentationForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPresentationForm.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresentationForm.ForeColor = System.Drawing.Color.White;
+            this.lblPresentationForm.Location = new System.Drawing.Point(512, 40);
+            this.lblPresentationForm.Name = "lblPresentationForm";
+            this.lblPresentationForm.Size = new System.Drawing.Size(608, 27);
+            this.lblPresentationForm.TabIndex = 1;
+            this.lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
             // 
-            // label3
+            // lblNomForm
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(233, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 60);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Bienvenue ! ";
+            this.lblNomForm.AutoSize = true;
+            this.lblNomForm.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblNomForm.Font = new System.Drawing.Font("Montserrat", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomForm.ForeColor = System.Drawing.Color.White;
+            this.lblNomForm.Location = new System.Drawing.Point(231, 23);
+            this.lblNomForm.Name = "lblNomForm";
+            this.lblNomForm.Size = new System.Drawing.Size(289, 60);
+            this.lblNomForm.TabIndex = 1;
+            this.lblNomForm.Text = "Bienvenue ! ";
             // 
             // panelAllForm
             // 
@@ -99,16 +99,6 @@ namespace projetEvents
             this.panelAllForm.Name = "panelAllForm";
             this.panelAllForm.Size = new System.Drawing.Size(978, 657);
             this.panelAllForm.TabIndex = 21;
-            // 
-            // userControlMenu
-            // 
-            this.userControlMenu.BarrePanel = 1;
-            this.userControlMenu.Location = new System.Drawing.Point(2, 3);
-            this.userControlMenu.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlMenu.Name = "userControlMenu";
-            this.userControlMenu.Size = new System.Drawing.Size(205, 753);
-            this.userControlMenu.TabIndex = 20;
-            this.userControlMenu.TabStop = false;
             // 
             // pcbReduceScreen
             // 
@@ -134,14 +124,23 @@ namespace projetEvents
             this.pcbQuitter.TabStop = false;
             this.pcbQuitter.Click += new System.EventHandler(this.pcbQuitter_Click);
             // 
+            // userControlMenu1
+            // 
+            this.userControlMenu1.BarrePanel = 0;
+            this.userControlMenu1.Location = new System.Drawing.Point(0, 0);
+            this.userControlMenu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userControlMenu1.Name = "userControlMenu1";
+            this.userControlMenu1.Size = new System.Drawing.Size(199, 753);
+            this.userControlMenu1.TabIndex = 1;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1182, 753);
+            this.Controls.Add(this.userControlMenu1);
             this.Controls.Add(this.panelAllForm);
-            this.Controls.Add(this.userControlMenu);
             this.Controls.Add(this.panelHeader);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Transparent;
@@ -164,12 +163,12 @@ namespace projetEvents
         #endregion
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private uControlMenu.userControlMenu userControlMenu;
+        private System.Windows.Forms.Label lblNomForm;
+        private System.Windows.Forms.Label lblPresentationForm;
         private System.Windows.Forms.Panel panelAllForm;
         private System.Windows.Forms.PictureBox pcbQuitter;
         private System.Windows.Forms.PictureBox pcbReduceScreen;
+        private uControlMenu.userControlMenu userControlMenu1;
     }
 }
 

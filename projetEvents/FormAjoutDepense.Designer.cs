@@ -200,6 +200,7 @@ namespace projetEvents
             // cboPayePar
             // 
             this.cboPayePar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cboPayePar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboPayePar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPayePar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPayePar.ForeColor = System.Drawing.Color.White;
@@ -212,6 +213,7 @@ namespace projetEvents
             // cboEvenements
             // 
             this.cboEvenements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cboEvenements.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboEvenements.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEvenements.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEvenements.ForeColor = System.Drawing.Color.White;

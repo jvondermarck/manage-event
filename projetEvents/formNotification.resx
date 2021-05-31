@@ -117,32 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAABGdBTUEAALGPC/xhBQAAAplJREFUaEPt
+        mctq1VAUhk87K9JSbYvWiqCoryBeRtX3KDiwjkSKl4k+g9aBoIOC4tyBIA6cdeD91pHQQZ9BUfGCHL8/
+        WftwekhOVnKSEwL54Kc52Wut/TfsvbOTdFpaWpLpdrtz6By6hG70Sb+X0ZyF1gtGDpmxt+gfGobaFXcd
+        LVmJ8UGnx9Bj9BcV4Q96iI5ayeqgk0mkK/sTlcEPdBVNWBflQuFZ9AxVwVM0Y12VAwUPoi1Vr5BPaNG6
+        HA0KHUDbqjoG1M9+67oYFNAYfqFqY+Q5mjQL+SFZy1MdrJmFfJB4BGl218F3dNis+CHpUZReHxtmxQcJ
+        Wi1+R6n18Qv5JyXB16K0atlBt+1vGlfMUjYEv4pzKkNr/oL1dSI6k8xmZCgLAqdR0T2Fh55hwfHx6Gwy
+        2qPssdB0CDobhVfDoOEFOzeMUxaeDkEX4tjS+YzyGhYrlpIOQdp1lc1rNGtdqI9F9EUNDrJvNATdimMz
+        0WR9Fx8ORVd43sqrvp5wtDnyctNS0yHIc6WfWOwE0rKVRpLhj2rIgetKe8b0uoUH43eis7vR1ew3vA/l
+        NSxcY9qzemhPcsZSgvF1NRhJht+roQCu1cO7Tn9Dg8bvokHDe1FRw751WhDovSPK+GlLC8an7Wcw7Jms
+        afjuiILgtTjHhYbKsqX24Nw80kQchctWLhuC8+7yvqLe2ONYD8Fv1DAC+XZ5goSNKNWPjK+g82iUIRF4
+        YFb8kNS8JxdBYrOeEQXJzXsaFxSYQR9UbQxoPS/nTROFmvWGKUDBZr3LC1BYY1wPvZrdZaA7qm5k1bw1
+        7YdOltB9pL1BEXTjuofKHQ4e6DR8CXiJsv4BtSuuni8BSWBkCp1Eqyh8b5EuIp2fstCWlpZddDr/AacU
+        AKu26rujAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="high_five" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\high-five.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\loading2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="quit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\quit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shrink" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\shrink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="success" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAASZJREFUSEvl
+        lU1KA0EUhGennkCIi2zceA/RvUm8gboTQVBR0FMElxHP4an8R4Xxq5caTCfjkAx0QPygaPq9egWTzHQX
+        /4uyLNfQLjpE5161X7WlPYR00R16QnWoPkJdjywGgyfoDc2DfMcenQ8GbmN0cYaOaAbj2djfmlNH1YNh
+        C32FtT0faNORs9C8D1vKA7pCn7H7QWGXSP1pRo5MoaHX9DksKdfu95GChdae6zdRSXlEK+onUNyJ9iwK
+        7NvTQy9oz/sBmn7Cim15EigejXu1KGhg37rXfdd/40C+BIr6fZvQt9Cxt+N9ExcRPAnFpTzJUv6T/G+X
+        oJH3OxE0deq+h609r2jDkfVgyHt2VWDMewpXMJD3PqlgMO/NOAkh+e74P0RRfAM0mQJBDmtXoAAAAABJ
+        RU5ErkJggg==
+</value>
   </data>
 </root>

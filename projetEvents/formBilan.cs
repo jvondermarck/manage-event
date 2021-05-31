@@ -97,5 +97,15 @@ namespace projetEvents
             formDepense.ShowDialog();
             this.Close();
         }
+
+        private void btnBilanGlobal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboEvent_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+        }
     }
 }

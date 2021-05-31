@@ -111,6 +111,7 @@ namespace projetEvents
             // On charge le UserControl
             userControlEvenementClick();
 
+            // On s'occupe d'afficher le formulaire de départ
             this.panelAllForm.Controls.Clear();
             FormAjoutDepense formAjoutDepense = new FormAjoutDepense() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formAjoutDepense.FormBorderStyle = FormBorderStyle.None;
@@ -140,22 +141,19 @@ namespace projetEvents
         private void btnAccueil_Click(object sender, EventArgs e)
         {
             this.panelAllForm.Controls.Clear(); 
-            userControlMenu.BarrePanel = 3;
+            userControlMenu1.BarrePanel = 1;
             FormAjoutDepense formAjoutDepense = new FormAjoutDepense() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formAjoutDepense.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formAjoutDepense);
             formAjoutDepense.Show();
+            formNotification.Alert("Success Alert", formNotification.enmType.Success);
         }
 
         private void btnEvenements_Click(object sender, EventArgs e)
         {
-            //formEvenements formEvenements = new formEvenements(this.DesktopLocation);
-            //formEvenements.Show();
-            //this.Visible = false;
-            //this.Hide();
-
             this.panelAllForm.Controls.Clear();
-            formEvenements formEvenements = new formEvenements();
+            userControlMenu1.BarrePanel = 2;
+            formEvenements formEvenements = new formEvenements() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
             formEvenements.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formEvenements);
             formEvenements.Show();
@@ -176,33 +174,37 @@ namespace projetEvents
         }
         private void btnBilan_Click(object sender, EventArgs e)
         {
-            formBilan formBilan = new formBilan(this.DesktopLocation);
+            this.panelAllForm.Controls.Clear();
+            userControlMenu1.BarrePanel = 5;
+            formBilan formBilan = new formBilan() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formBilan.FormBorderStyle = FormBorderStyle.None;
+            this.panelAllForm.Controls.Add(formBilan);
             formBilan.Show();
-            this.Visible = false;
-            this.Hide();
         }
 
         // Méthodes qui permettent de deplacer le form quand on clique sur la panel header
         bool drag = false;
         Point start_point = new Point(0, 0);
+
+        // Quand on clique sur le panel, on commence a prendre les coordonnées du formulaire X et Y
         private void panelHeader_MouseDown(object sender, MouseEventArgs e)
         {
-            drag = true; //drag is your variable flag.
-            start_point = new Point(e.X, e.Y);
+            drag = true; // On dit qu'on commence a bouger le form
+            start_point = new Point(e.X, e.Y); // On prend cherche la coordonné X et Y du form
         }
 
         private void panelHeader_MouseMove(object sender, MouseEventArgs e)
         {
-            if (drag)
+            if (drag) // Si on est en train de bouger le formulaire
             {
                 Point p = PointToScreen(e.Location);
-                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y);
+                this.Location = new Point(p.X - start_point.X, p.Y - start_point.Y); // On change la localisation du form
             }
         }
 
         private void panelHeader_MouseUp(object sender, MouseEventArgs e)
         {
-            drag = false;
+            drag = false; // Quand on lache la souris, on arrete de cherche les coordonnées de localisation
         }
 
         private void pcbQuitter_Click(object sender, EventArgs e)

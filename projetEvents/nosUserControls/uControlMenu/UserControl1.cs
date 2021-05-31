@@ -42,6 +42,10 @@ namespace uControlMenu
                 sidePanel.Top = btnAccueil.Top;
                 btnAccueil.BackColor = Color.FromArgb(46, 51, 73);
             }
+            else
+            {
+                btnAccueil.BackColor = Color.FromArgb(48, 121, 194);
+            }
             if (numPanel == 2)
             {
                 sidePanel.Height = btnEvenements.Height;
@@ -66,7 +70,12 @@ namespace uControlMenu
                 sidePanel.Top = btnBilan.Top;
                 btnBilan.BackColor = Color.FromArgb(46, 51, 73);
             }
+            else
+            {
+                btnBilan.BackColor = Color.FromArgb(48, 121, 194);
+            }
         }
+
 
         private void btnAccueil_Click(object sender, EventArgs e)
         {
@@ -77,6 +86,8 @@ namespace uControlMenu
             sidePanel.Height = btnAccueil.Height;
             sidePanel.Top = btnAccueil.Top;
             btnAccueil.BackColor = Color.FromArgb(46, 51, 73);
+            //btnBilan.BackColor = Color.FromArgb(48, 121, 194); // Nouveau couleur
+            userControlMenu_Load(sender, e);
         }
 
         private void btnEvenements_Click(object sender, EventArgs e)
@@ -121,6 +132,7 @@ namespace uControlMenu
             sidePanel.Height = btnBilan.Height;
             sidePanel.Top = btnBilan.Top;
             btnBilan.BackColor = Color.FromArgb(46, 51, 73);
+            userControlMenu_Load(sender, e);
         }
 
         // Parametrage via la fenetre du User Control
@@ -145,7 +157,8 @@ namespace uControlMenu
 
         private void btnAccueil_Leave(object sender, EventArgs e)
         {
-            btnAccueil.BackColor = Color.FromArgb(24, 30, 54);
+            //btnAccueil.BackColor = Color.FromArgb(24, 30, 54);
+            btnAccueil.BackColor = Color.FromArgb(48, 121, 194);
         }
 
         private void btnEvenements_Leave(object sender, EventArgs e)
@@ -165,7 +178,8 @@ namespace uControlMenu
 
         private void btnBilan_Leave(object sender, EventArgs e)
         {
-            btnBilan.BackColor = Color.FromArgb(24, 30, 54);
+            //btnBilan.BackColor = Color.FromArgb(24, 30, 54);
+            btnBilan.BackColor = Color.FromArgb(48, 121, 194);
         }
 
         private void btnAccueil_MouseHover(object sender, EventArgs e)

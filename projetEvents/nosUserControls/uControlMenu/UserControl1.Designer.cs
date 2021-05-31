@@ -45,7 +45,7 @@
             // panelMenu
             // 
             this.panelMenu.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
             this.panelMenu.Controls.Add(this.sidePanel);
             this.panelMenu.Controls.Add(this.label1);
             this.panelMenu.Controls.Add(this.labelTitre);
@@ -65,7 +65,7 @@
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(64)))), ((int)(((byte)(198)))));
-            this.sidePanel.Location = new System.Drawing.Point(-1, 250);
+            this.sidePanel.Location = new System.Drawing.Point(-4, 250);
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(11, 59);
             this.sidePanel.TabIndex = 4;
