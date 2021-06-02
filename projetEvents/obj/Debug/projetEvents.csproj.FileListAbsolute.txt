@@ -16,3 +16,6 @@ C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bas
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.FormAjoutDepense.resources
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formNotification.resources
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formPresentation.resources
+C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formStartup.resources
+C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formDepense.resources
+C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formParticipant.resources

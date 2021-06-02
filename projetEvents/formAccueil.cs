@@ -37,19 +37,11 @@ namespace projetEvents
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        // Quand on switch entre les formulaires, on met la dimension du form parent
-        public formMain(Point formLocation)
-        {
-            InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            this.DesktopLocation = formLocation; // Sur ce formulaire, on dit que la position de ce form est égale au père
-        }
-
         // Déclaration de la chaine de connexion
         string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=bdEvents.MDB";
 
         // Création d'un DataSet
-        static DataSet ds = new DataSet();
+        public static DataSet ds = new DataSet();
 
         // Déclaration de la connexion active
         OleDbConnection connec = new OleDbConnection();
@@ -142,6 +134,7 @@ namespace projetEvents
             this.panelAllForm.Controls.Add(formPresentation);
             formPresentation.Show();
             lblNomForm.Text = "Bienvenue !";
+            lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l'addition";
         }
 
         private void btnEvenements_Click(object sender, EventArgs e)
@@ -157,15 +150,22 @@ namespace projetEvents
 
         private void btnParticipant_Click(object sender, EventArgs e)
         {
-            formParticipant formParticipant = new formParticipant();
-            formParticipant.ShowDialog();
+            this.panelAllForm.Controls.Clear();
+            userControlMenu1.BarrePanel = 3;
+            formParticipant formParticipant = new formParticipant() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
+            formParticipant.FormBorderStyle = FormBorderStyle.None;
+            this.panelAllForm.Controls.Add(formParticipant);
+            formParticipant.Show();
         }
 
         private void btnDepenses_Click(object sender, EventArgs e)
         {
-            formDepense formDepense = new formDepense();
-            formDepense.ShowDialog();
-            this.Close();
+            this.panelAllForm.Controls.Clear();
+            userControlMenu1.BarrePanel = 4;
+            formDepense formDepense = new formDepense() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
+            formDepense.FormBorderStyle = FormBorderStyle.None;
+            this.panelAllForm.Controls.Add(formDepense);
+            formDepense.Show();
         }
         private void btnBilan_Click(object sender, EventArgs e)
         {
@@ -175,7 +175,8 @@ namespace projetEvents
             formBilan.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formBilan);
             formBilan.Show();
-            lblNomForm.Text = "Bilan";
+            lblNomForm.Text = "Bilan - Qui doit quoi";
+            lblPresentationForm.Text = "";
         }
 
         // Méthodes qui permettent de deplacer le form quand on clique sur la panel header

@@ -281,7 +281,6 @@ namespace projetEvents
             this.Name = "formBilan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "formBilan";
-            this.Load += new System.EventHandler(this.formBilan_Load);
             this.tpRefund.ResumeLayout(false);
             this.tpRecap.ResumeLayout(false);
             this.tpRecap.PerformLayout();

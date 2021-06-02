@@ -29,25 +29,14 @@ namespace projetEvents
         /// </summary>
         private void InitializeComponent()
         {
-            this.userControlMenu1 = new uControlMenu.userControlMenu();
             this.SuspendLayout();
-            // 
-            // userControlMenu1
-            // 
-            this.userControlMenu1.BarrePanel = 2;
-            this.userControlMenu1.Location = new System.Drawing.Point(0, 0);
-            this.userControlMenu1.Margin = new System.Windows.Forms.Padding(4);
-            this.userControlMenu1.Name = "userControlMenu1";
-            this.userControlMenu1.Size = new System.Drawing.Size(207, 753);
-            this.userControlMenu1.TabIndex = 0;
             // 
             // formEvenements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1182, 753);
-            this.Controls.Add(this.userControlMenu1);
+            this.ClientSize = new System.Drawing.Size(1071, 604);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -60,7 +49,5 @@ namespace projetEvents
         }
 
         #endregion
-
-        private uControlMenu.userControlMenu userControlMenu1;
     }
 }

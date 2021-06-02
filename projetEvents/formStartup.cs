@@ -4,15 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
-using System.Runtime.InteropServices;
 
 namespace projetEvents
 {
-    public partial class formBilan : Form
+    public partial class formStartup : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         // gdi32.dll contient des fonctions pour Windows GDI (Interface de périphérique graphique)
@@ -29,21 +28,18 @@ namespace projetEvents
             int nHeightEllipse // largeur de l'ellipse
         );
 
-
-        public formBilan()
+        public formStartup()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 40, 40));
         }
 
-
-        private void btnBilanGlobal_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void cboEvent_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
+            this.Hide();
+            formMain formMain = new formMain();
+            formMain.Closed += (s, args) => this.Close();
+            formMain.Show();
         }
     }
 }

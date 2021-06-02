@@ -36,8 +36,8 @@ namespace projetEvents
             string depEnrengistre = chercheDonnee("Depenses");
 
             lblEvenemts.Text = eventEnrengistre;
-            lblParticipant.Text = "Il y a " + partEnrengistre + " participants inscrits."; 
-            lblDepenses.Text = "Il y a " + depEnrengistre + " dépenses enrengistrés.";
+            lblParticipant.Text = partEnrengistre; 
+            lblDepenses.Text = depEnrengistre;
         }
 
         private string chercheDonnee(String table)
