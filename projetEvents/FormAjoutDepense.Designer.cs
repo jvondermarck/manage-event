@@ -185,7 +185,9 @@ namespace projetEvents
             this.txtCombien.Size = new System.Drawing.Size(254, 32);
             this.txtCombien.TabIndex = 28;
             this.txtCombien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCombien.Enter += new System.EventHandler(this.txtCombien_Enter);
             this.txtCombien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCombien_KeyPress);
+            this.txtCombien.Leave += new System.EventHandler(this.txtCombien_Leave);
             // 
             // txtQuoi
             // 

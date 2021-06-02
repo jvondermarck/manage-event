@@ -108,10 +108,22 @@ namespace projetEvents
         {
             for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
             {
-                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
+                foreach (Control a in this.Controls)
                 {
-                    clbListeBeneficiaire.SetItemChecked(i, true);
-                }
+                    if (a is CheckedListBox)
+                    {
+                        CheckedListBox a1 = (CheckedListBox)a; // On reprend l'élement checkBox 
+                        {
+                            if (ds.Tables.Contains("participantsDepense"))
+                            {
+                                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
+                                {
+                                    a1.SetItemChecked(i, true);
+                                }
+                            }
+                        }
+                    }
+                }   
             }
         }
 
@@ -131,10 +143,6 @@ namespace projetEvents
                             for (int i = 0; i < a1.Items.Count; i++)
                             {
                                 a1.SetItemChecked(i, false);
-                                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
-                                {
-                                    a1.SetItemChecked(i, true);
-                                }
                             }
                         }
                         else if (a1.GetItemCheckState(0) == CheckState.Unchecked)
@@ -142,19 +150,13 @@ namespace projetEvents
                             for (int i = 0; i < a1.Items.Count; i++)
                             {
                                 a1.SetItemChecked(i, true);
-                                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
-                                {
-                                    a1.SetItemChecked(i, true);
-                                }
                             }
                         }
                     }
                 }
-                
-            } else
-            {
-                ckbToutLeMonde.Checked = false;
+                autoCheckCreateur();
             }
+    
         }
 
         //
@@ -283,7 +285,7 @@ namespace projetEvents
             // On va récupérer toutes les informations que l'utilisateurs à rentrer
             string numeroDepense = numDepense();
             string description = txtQuoi.Text;
-            string montant = txtCombien.Text;
+            string montant = txtCombien.Text.Substring(0, txtCombien.TextLength-1); // On enleve le € du montant
             dtpDepense.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             string dateDepense = dtpDepense.Value.ToString();
             string commentaire;
@@ -319,8 +321,6 @@ namespace projetEvents
                 transacDepense.Commit();
                 OleDbDataAdapter da1 = new OleDbDataAdapter(cmd);
                 da1.Update(ds, "Depenses");
-
-                //MessageBox.Show("Ajout d'une dépense : " + nbLigneInsert.ToString() + " ligne inséré.");
             }
             catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
             catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
@@ -358,17 +358,14 @@ namespace projetEvents
                     @"Insert into Beneficiaires (numDepense, codePart) Values('"
                      + numeroDepense + "', '" + codeBenef + "')";
 
-                    //MessageBox.Show(requete);
                     OleDbCommand cmd = new OleDbCommand(requete, connec, transacBenef);
                     int nbLigneInsert = cmd.ExecuteNonQuery();
-
-                    //MessageBox.Show("Ajout d'un participant de la dépense : " + nbLigneInsert.ToString() + " ligne inséré.");
                 }
 
                 transacBenef.Commit();
                 pcbLoadingValidate.Visible = true;
                 Timer Clock = new Timer();
-                Clock.Interval = 2000;
+                Clock.Interval = 1000;
                 Clock.Tick += new EventHandler(MyTimer_Tick);
                 Clock.Start();
                 toutEffacerDepense();
@@ -478,6 +475,32 @@ namespace projetEvents
             {
                 e.Handled = false;
             }
+            if (e.KeyChar == '.')
+            {
+                if(!txtCombien.Text.Contains(','))
+                {
+                    e.Handled = false;
+                    e.KeyChar = ',';
+                }     
+            }
+            if(txtCombien.Text.Contains(','))
+            {
+                formNotification.Alert("Entrez seulement une virgule.", formNotification.enmType.Warning);
+            }
+            if (char.IsSymbol(e.KeyChar))
+            {
+                formNotification.Alert("Ne pas saisir de symbole.", formNotification.enmType.Warning);
+            }
+        }
+
+        private void txtCombien_Leave(object sender, EventArgs e)
+        {
+            txtCombien.Text += "€";
+        }
+
+        private void txtCombien_Enter(object sender, EventArgs e)
+        {
+            txtCombien.Text = "";
         }
     }
 }

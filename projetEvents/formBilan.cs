@@ -40,6 +40,8 @@ namespace projetEvents
             // Liaison de données - ComboBox Evenement 
             surchageComboBox(cboEvent, "Evenements", "titreEvent", "codeEvent");
             cboEvent.SelectedIndex = -1;
+            lblMessageBilan.Visible = true;
+            lblMessageBilan.Text = "Veuillez d'abord sélectionner un évènement.";
         }
 
         // Des qu'on change l'évènement dans la cbo, on change les participants de la combobocParticipants
@@ -48,6 +50,7 @@ namespace projetEvents
             btnGenerate.Visible = false;
             lblPart.Visible = true;
             dgvBilanEvent.Visible = true;
+            lblMessageBilan.Visible = false;
 
             connec.ConnectionString = chainconnec;
             connec.Open();
@@ -838,6 +841,7 @@ namespace projetEvents
 
             var pdfBytes = new NReco.PdfGenerator.HtmlToPdfConverter().GeneratePdf(htmlContent.ToString());
             File.WriteAllBytes(Path.GetFullPath(path), pdfBytes);
+            formNotification.Alert("Bravo ! Votre PDF à été généré ! ", formNotification.enmType.Success);
         }
 
         
