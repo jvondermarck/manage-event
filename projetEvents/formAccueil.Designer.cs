@@ -29,9 +29,7 @@ namespace projetEvents
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelHeader = new System.Windows.Forms.Panel();
             this.pcbReduceScreen = new System.Windows.Forms.PictureBox();
             this.pcbQuitter = new System.Windows.Forms.PictureBox();
@@ -39,16 +37,10 @@ namespace projetEvents
             this.lblNomForm = new System.Windows.Forms.Label();
             this.panelAllForm = new System.Windows.Forms.Panel();
             this.userControlMenu1 = new uControlMenu.userControlMenu();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReduceScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuitter)).BeginInit();
             this.SuspendLayout();
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider.ContainerControl = this;
             // 
             // panelHeader
             // 
@@ -151,7 +143,6 @@ namespace projetEvents
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Le Juste Partage";
             this.Load += new System.EventHandler(this.formMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbReduceScreen)).EndInit();
@@ -161,7 +152,6 @@ namespace projetEvents
         }
 
         #endregion
-        private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblNomForm;
         private System.Windows.Forms.Label lblPresentationForm;

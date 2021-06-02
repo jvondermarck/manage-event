@@ -40,7 +40,7 @@ namespace uControlMenu
             {
                 sidePanel.Height = btnAccueil.Height;
                 sidePanel.Top = btnAccueil.Top;
-                btnAccueil.BackColor = Color.FromArgb(46, 51, 73);
+                btnAccueil.BackColor = Color.FromArgb(0, 77, 153);
             }
             else
             {
@@ -50,29 +50,41 @@ namespace uControlMenu
             {
                 sidePanel.Height = btnEvenements.Height;
                 sidePanel.Top = btnEvenements.Top;
-                btnEvenements.BackColor = Color.FromArgb(46, 51, 73);
+                btnEvenements.BackColor = Color.FromArgb(0, 77, 153);
+            }
+            else
+            {
+                btnEvenements.BackColor = Color.FromArgb(48, 121, 194);
             }
             if (numPanel == 3)
             {
                 sidePanel.Height = btnParticipant.Height;
                 sidePanel.Top = btnParticipant.Top;
-                btnParticipant.BackColor = Color.FromArgb(46, 51, 73);
+                btnParticipant.BackColor = Color.FromArgb(0, 77, 153);
+            }
+            else
+            {
+                btnParticipant.BackColor = Color.FromArgb(48, 121, 194);
             }
             if (numPanel == 4)
             {
                 sidePanel.Height = btnDepense.Height;
                 sidePanel.Top = btnDepense.Top;
-                btnDepense.BackColor = Color.FromArgb(46, 51, 73);
+                btnDepense.BackColor = Color.FromArgb(0, 77, 153);
+            }
+            else
+            {
+                btnDepense.BackColor = Color.FromArgb(48, 121, 194);
             }
             if (numPanel == 5)
             {
                 sidePanel.Height = btnBilan.Height;
                 sidePanel.Top = btnBilan.Top;
-                btnBilan.BackColor = Color.FromArgb(46, 51, 73);
+                btnBilan.BackColor = Color.FromArgb(0, 77, 153);
             }
             else
             {
-                btnBilan.BackColor = Color.FromArgb(48, 121, 194);
+                 btnBilan.BackColor = Color.FromArgb(48, 121, 194);
             }
         }
 
@@ -86,7 +98,6 @@ namespace uControlMenu
             sidePanel.Height = btnAccueil.Height;
             sidePanel.Top = btnAccueil.Top;
             btnAccueil.BackColor = Color.FromArgb(46, 51, 73);
-            //btnBilan.BackColor = Color.FromArgb(48, 121, 194); // Nouveau couleur
             userControlMenu_Load(sender, e);
         }
 
@@ -154,39 +165,5 @@ namespace uControlMenu
         {
 
         }
-
-        private void btnAccueil_Leave(object sender, EventArgs e)
-        {
-            //btnAccueil.BackColor = Color.FromArgb(24, 30, 54);
-            btnAccueil.BackColor = Color.FromArgb(48, 121, 194);
-        }
-
-        private void btnEvenements_Leave(object sender, EventArgs e)
-        {
-            btnEvenements.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnParticipant_Leave(object sender, EventArgs e)
-        {
-            btnParticipant.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnDepense_Leave(object sender, EventArgs e)
-        {
-            btnParticipant.BackColor = Color.FromArgb(24, 30, 54);
-        }
-
-        private void btnBilan_Leave(object sender, EventArgs e)
-        {
-            //btnBilan.BackColor = Color.FromArgb(24, 30, 54);
-            btnBilan.BackColor = Color.FromArgb(48, 121, 194);
-        }
-
-        private void btnAccueil_MouseHover(object sender, EventArgs e)
-        {
-            //this.btnAccueil.Size = new Size(222,59);
-            //this.btnAccueil.Font = new System.Drawing.Font("Century Gothic", 12.2F);
-        }
-
     }
 }

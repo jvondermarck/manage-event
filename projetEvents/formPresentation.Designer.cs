@@ -33,13 +33,14 @@ namespace projetEvents
             this.lblEvenemts = new System.Windows.Forms.Label();
             this.lblParticipant = new System.Windows.Forms.Label();
             this.lblDepenses = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbAddDepense = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbAddDepense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -80,16 +81,6 @@ namespace projetEvents
             this.lblDepenses.TabIndex = 0;
             this.lblDepenses.Text = "label1";
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(558, 426);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(244, 41);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Ajouter une dépense";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::projetEvents.Properties.Resources.homePart;
@@ -100,21 +91,23 @@ namespace projetEvents
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox1
+            // pcbAddDepense
             // 
-            this.pictureBox1.Image = global::projetEvents.Properties.Resources.imgPres1;
-            this.pictureBox1.Location = new System.Drawing.Point(611, 184);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 142);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pcbAddDepense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbAddDepense.Image = global::projetEvents.Properties.Resources.Group_9;
+            this.pcbAddDepense.Location = new System.Drawing.Point(433, 224);
+            this.pcbAddDepense.Name = "pcbAddDepense";
+            this.pcbAddDepense.Size = new System.Drawing.Size(440, 257);
+            this.pcbAddDepense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbAddDepense.TabIndex = 2;
+            this.pcbAddDepense.TabStop = false;
+            this.pcbAddDepense.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 46);
+            this.pictureBox2.Location = new System.Drawing.Point(27, 40);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(315, 155);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -131,16 +124,39 @@ namespace projetEvents
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(408, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(604, 37);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Besoin d\'ajouter une nouvelle dépense ?";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(506, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(367, 37);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Cliquez juste en-dessous";
+            // 
             // formPresentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(960, 610);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblParticipant);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.pcbAddDepense);
             this.Controls.Add(this.lblDepenses);
             this.Controls.Add(this.lblEvenemts);
             this.Controls.Add(this.pictureBox2);
@@ -153,7 +169,7 @@ namespace projetEvents
             this.Text = "formPresentation";
             this.Load += new System.EventHandler(this.formPresentation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbAddDepense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
@@ -166,10 +182,11 @@ namespace projetEvents
         private System.Windows.Forms.Label lblEvenemts;
         private System.Windows.Forms.Label lblParticipant;
         private System.Windows.Forms.Label lblDepenses;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbAddDepense;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
