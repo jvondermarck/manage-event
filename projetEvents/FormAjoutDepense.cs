@@ -131,6 +131,10 @@ namespace projetEvents
                             for (int i = 0; i < a1.Items.Count; i++)
                             {
                                 a1.SetItemChecked(i, false);
+                                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
+                                {
+                                    a1.SetItemChecked(i, true);
+                                }
                             }
                         }
                         else if (a1.GetItemCheckState(0) == CheckState.Unchecked)
@@ -138,16 +142,19 @@ namespace projetEvents
                             for (int i = 0; i < a1.Items.Count; i++)
                             {
                                 a1.SetItemChecked(i, true);
+                                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
+                                {
+                                    a1.SetItemChecked(i, true);
+                                }
                             }
                         }
                     }
                 }
-                autoCheckCreateur(); // Rendre impossible de désélectionner le code Createur de l'évenement
+                
             } else
             {
                 ckbToutLeMonde.Checked = false;
             }
-            
         }
 
         //
@@ -450,6 +457,27 @@ namespace projetEvents
         private void cboPayePar_SelectionChangeCommitted(object sender, EventArgs e)
         {
             autoCheckCreateur();
+        }
+
+        private void txtCombien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true; // On autorise tout, SAUF : (voir indo d’en bas)
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            if(char.IsLetter(e.KeyChar))
+            {
+                formNotification.Alert("Entrez seulement des chiffres", formNotification.enmType.Warning);
+            }
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+            if (e.KeyChar == ',' && !txtCombien.Text.Contains(','))
+            {
+                e.Handled = false;
+            }
         }
     }
 }

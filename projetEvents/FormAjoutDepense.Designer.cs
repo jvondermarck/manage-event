@@ -180,10 +180,12 @@ namespace projetEvents
             this.txtCombien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCombien.ForeColor = System.Drawing.Color.White;
             this.txtCombien.Location = new System.Drawing.Point(167, 225);
+            this.txtCombien.MaxLength = 10;
             this.txtCombien.Name = "txtCombien";
             this.txtCombien.Size = new System.Drawing.Size(254, 32);
             this.txtCombien.TabIndex = 28;
             this.txtCombien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCombien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCombien_KeyPress);
             // 
             // txtQuoi
             // 

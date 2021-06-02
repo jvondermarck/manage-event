@@ -39,11 +39,16 @@ namespace projetEvents
         {
             // Liaison de données - ComboBox Evenement 
             surchageComboBox(cboEvent, "Evenements", "titreEvent", "codeEvent");
+            cboEvent.SelectedIndex = -1;
         }
 
         // Des qu'on change l'évènement dans la cbo, on change les participants de la combobocParticipants
         private void cboEvent_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            btnGenerate.Visible = false;
+            lblPart.Visible = true;
+            dgvBilanEvent.Visible = true;
+
             connec.ConnectionString = chainconnec;
             connec.Open();
 
@@ -75,15 +80,28 @@ namespace projetEvents
                 ligne[2] = dr.GetInt32(3).ToString();
                 formMain.ds.Tables["participantsOnEvent"].Rows.Add(ligne);
             }
+            connec.Close();
 
             surchageComboBox(cboParticipant, "participantsOnEvent", "nomPrenom", "codeParticipant"); // On s'occupe de la liaison de données
-            connec.Close();
+            cboParticipant.Visible = true;
+            cboParticipant.SelectedIndex = -1;
+
             creationTableBilan(); // On dresse la table Bilan qui sert a s'occuper du Bilan avec le solde de chaque personne
+            if (totalSoldeNull() == 0)
+            {
+                recapitulatifRTB();
+                rtbRecap.Visible = true;
+            } else
+            {
+                btnQuiDoitQuoiQui.Visible = true;
+                rtbRecap.Visible = false;
+            }
         }
 
         // Pour dresser le bilan de ce qu'un participant à dépensé et ce qu'il doit remboruser
         private void cboParticipant_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            btnGenerate.Visible = true;
             // On récupere les données des deux ComboBox
             string numEvent = cboEvent.SelectedValue.ToString();
             string codeParticipant = formMain.ds.Tables["Participants"].Rows[cboParticipant.SelectedIndex]["codeParticipant"].ToString();
@@ -434,6 +452,7 @@ namespace projetEvents
             }
 
             // On affiche dans une rich text box, le récapitulatif du bilan Qui Doit Quoi à Qui
+            rtbRecap.Visible = true;
             recapitulatifRTB();
         }
 
@@ -616,8 +635,6 @@ namespace projetEvents
 
         private void btnGeneratePDF_Click(object sender, EventArgs e)
         {
-            //if(cboPartPDF.SelectedItem.ToString() != "")
-            //{
             // Demander à l'utilisateur de choisir l'endroit où il veut créer son document
             //SaveFileDialog dialog = new SaveFileDialog();
             //dialog.Title = "Save file as...";
@@ -821,8 +838,6 @@ namespace projetEvents
 
             var pdfBytes = new NReco.PdfGenerator.HtmlToPdfConverter().GeneratePdf(htmlContent.ToString());
             File.WriteAllBytes(Path.GetFullPath(path), pdfBytes);
-
-            //}
         }
 
         
