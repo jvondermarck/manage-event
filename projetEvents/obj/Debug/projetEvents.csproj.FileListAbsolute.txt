@@ -19,3 +19,4 @@ C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bas
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formStartup.resources
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formDepense.resources
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.formParticipant.resources
+C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\bin\Debug\NReco.PdfGenerator.dll

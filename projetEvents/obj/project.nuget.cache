@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tddAp8VE5QGfz4LuLbqSXGEatmYcb0vOReoMC6DjLWhMJ/5E9Vn5Foi6DT1wqcsT0FoV007mpizdjBDtH/9F2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Julien\\Documents\\DUT Info\\D21 - Programmation et administration des bases de données\\ProjetGit\\projetEvents\\projetEvents.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Julien\\.nuget\\packages\\nreco.pdfgenerator\\1.2.0\\nreco.pdfgenerator.1.2.0.nupkg.sha512"
+  ],
+  "logs": []
+}

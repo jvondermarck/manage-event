@@ -46,7 +46,6 @@ namespace projetEvents
             }
         }
 
-
         private void FormAjoutDepense_Load(object sender, EventArgs e)
         {
             // Liaison de données - ComboBox Evenement 
@@ -377,6 +376,7 @@ namespace projetEvents
             finally
             {
                 connec.Close();
+                formNotification.Alert("Bravo ! Vous avez ajouté une dépense ! ", formNotification.enmType.Success);
             }
         }
 
@@ -384,7 +384,6 @@ namespace projetEvents
         private void MyTimer_Tick(object sender, EventArgs e)
         {
             pcbLoadingValidate.Visible = false;
-            formNotification.Alert("Bravo ! Vous avez ajouté une dépense ! ", formNotification.enmType.Success);
         }
 
         // On cherche le numéro de dépense et on l'augmente de +1 pour une nouvelle dépense dans la BDD

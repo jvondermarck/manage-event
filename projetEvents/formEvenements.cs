@@ -14,7 +14,6 @@ namespace projetEvents
 {
     public partial class formEvenements : Form
     {
-        private DataSet ds;
 
         public formEvenements()
         {
