@@ -54,12 +54,15 @@ namespace projetEvents
             designAffichage();
 
             cboEvenements.SelectedIndex = -1;
+
+            txtCombien.ShortcutsEnabled = false;
         }
 
         // Permet d'avoir les gens sur la CheckedListBox qui sont dans la table invités
         private void cboEvenements_SelectionChangeCommitted(object sender, EventArgs e)
         {
             clbListeBeneficiaire.Items.Clear();
+            ckbToutLeMonde.Checked = false;
             try
             {
                 connec.ConnectionString = chainconnec;
@@ -106,31 +109,22 @@ namespace projetEvents
 
         private void autoCheckCreateur()
         {
-            for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
+            if (clbListeBeneficiaire.Items.Count >= 1 && cboPayePar.SelectedIndex != -1)
             {
-                foreach (Control a in this.Controls)
+                for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
                 {
-                    if (a is CheckedListBox)
+                    if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
                     {
-                        CheckedListBox a1 = (CheckedListBox)a; // On reprend l'élement checkBox 
-                        {
-                            if (ds.Tables.Contains("participantsDepense"))
-                            {
-                                if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
-                                {
-                                    a1.SetItemChecked(i, true);
-                                }
-                            }
-                        }
+                        clbListeBeneficiaire.SetItemChecked(i, true);
                     }
-                }   
+                }
             }
         }
 
         // Quand on clique sur ckbToutLeMonde = Tout-Cocher ou Tout-Decocher
         private void ckbToutLeMonde_CheckedChanged(object sender, EventArgs e)
         {
-            if(clbListeBeneficiaire.Items.Count >= 1)
+            if(clbListeBeneficiaire.Items.Count > 0)
             {
                 foreach (Control a in this.Controls)
                 {
@@ -155,6 +149,9 @@ namespace projetEvents
                     }
                 }
                 autoCheckCreateur();
+            } else
+            {
+                ckbToutLeMonde.Checked = false;
             }
     
         }
@@ -238,18 +235,6 @@ namespace projetEvents
                 nombreErreur--;
                 lblErrorBeneficiaire.Visible = false;
             }
-
-            // Vérification de la RichTextBox "Commentaire"
-            //if (String.IsNullOrEmpty(rtbCommentaire.Text))
-            //{
-            //    errorProvider.SetError(rtbCommentaire, "Veuillez écrire un commentaire concernant la dépense.");
-            //    nombreErreur++;
-            //}
-            //else
-            //{
-            //    errorProvider.SetError(rtbCommentaire, "");
-            //    nombreErreur--;
-            //}
 
             if (nombreErreur <= 0)
             {
@@ -456,6 +441,7 @@ namespace projetEvents
             autoCheckCreateur();
         }
 
+        // Bloquer l'utilisateur sur la possibilité de mettre des lettres ou des symbols dans une zone de texte réservé qu'a des chiffres
         private void txtCombien_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true; // On autorise tout, SAUF : (voir indo d’en bas)
@@ -483,7 +469,7 @@ namespace projetEvents
                     e.KeyChar = ',';
                 }     
             }
-            if(txtCombien.Text.Contains(','))
+            if(e.KeyChar == ',' && txtCombien.Text.Contains(','))
             {
                 formNotification.Alert("Entrez seulement une virgule.", formNotification.enmType.Warning);
             }
@@ -495,7 +481,10 @@ namespace projetEvents
 
         private void txtCombien_Leave(object sender, EventArgs e)
         {
-            txtCombien.Text += "€";
+            if(!String.IsNullOrEmpty(txtCombien.Text)) // Si on va dans la txt et on resort sans rien mettre, on ne ve pas afficher le symbol euro tout seul
+            {
+                txtCombien.Text += "€";
+            }
         }
 
         private void txtCombien_Enter(object sender, EventArgs e)
