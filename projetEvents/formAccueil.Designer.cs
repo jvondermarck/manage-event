@@ -153,12 +153,12 @@ namespace projetEvents
 
         #endregion
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label lblNomForm;
-        private System.Windows.Forms.Label lblPresentationForm;
         private System.Windows.Forms.PictureBox pcbQuitter;
         private System.Windows.Forms.PictureBox pcbReduceScreen;
         private uControlMenu.userControlMenu userControlMenu1;
         public System.Windows.Forms.Panel panelAllForm;
+        public System.Windows.Forms.Label lblNomForm;
+        public System.Windows.Forms.Label lblPresentationForm;
     }
 }
 

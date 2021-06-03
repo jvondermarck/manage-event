@@ -56,6 +56,7 @@ namespace projetEvents
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDepense = new System.Windows.Forms.DateTimePicker();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -188,6 +189,8 @@ namespace projetEvents
             this.txtCombien.Enter += new System.EventHandler(this.txtCombien_Enter);
             this.txtCombien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCombien_KeyPress);
             this.txtCombien.Leave += new System.EventHandler(this.txtCombien_Leave);
+            this.txtCombien.MouseEnter += new System.EventHandler(this.txtCombien_MouseEnter);
+            this.txtCombien.MouseLeave += new System.EventHandler(this.txtCombien_MouseLeave);
             // 
             // txtQuoi
             // 
@@ -444,5 +447,6 @@ namespace projetEvents
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDepense;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

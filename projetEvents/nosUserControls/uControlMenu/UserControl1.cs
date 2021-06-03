@@ -110,6 +110,7 @@ namespace uControlMenu
             sidePanel.Height = btnEvenements.Height;
             sidePanel.Top = btnEvenements.Top;
             btnEvenements.BackColor = Color.FromArgb(46,51,73);
+            userControlMenu_Load(sender, e);
         }
 
         private void btnParticipant_Click(object sender, EventArgs e)
@@ -121,6 +122,7 @@ namespace uControlMenu
             sidePanel.Height = btnParticipant.Height;
             sidePanel.Top = btnParticipant.Top;
             btnParticipant.BackColor = Color.FromArgb(46, 51, 73);
+            userControlMenu_Load(sender, e);
         }
 
         private void btnDepense_Click(object sender, EventArgs e)
@@ -132,6 +134,7 @@ namespace uControlMenu
             sidePanel.Height = btnDepense.Height;
             sidePanel.Top = btnDepense.Top;
             btnDepense.BackColor = Color.FromArgb(46, 51, 73);
+            userControlMenu_Load(sender, e);
         }
 
         private void btnBilan_Click(object sender, EventArgs e)

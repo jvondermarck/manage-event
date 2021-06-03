@@ -64,6 +64,18 @@ namespace projetEvents
             formAjoutDepense.FormBorderStyle = FormBorderStyle.None;
             form.panelAllForm.Controls.Add(formAjoutDepense);
             formAjoutDepense.Show();
+            form.lblNomForm.Text = "Ajouter une nouvelle dépense !";
+            form.lblPresentationForm.Text = "";
+        }
+
+        private void pcbAddDepense_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip.Show("Cliquez sur l'image", pcbAddDepense);
+        }
+
+        private void pcbAddDepense_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip.Hide(pcbAddDepense);
         }
     }
 }

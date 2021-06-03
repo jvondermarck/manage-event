@@ -29,16 +29,18 @@ namespace projetEvents
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPresentation));
             this.lblEvenemts = new System.Windows.Forms.Label();
             this.lblParticipant = new System.Windows.Forms.Label();
             this.lblDepenses = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pcbAddDepense = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAddDepense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -81,49 +83,6 @@ namespace projetEvents
             this.lblDepenses.TabIndex = 0;
             this.lblDepenses.Text = "label1";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::projetEvents.Properties.Resources.homePart;
-            this.pictureBox4.Location = new System.Drawing.Point(27, 229);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(315, 155);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pcbAddDepense
-            // 
-            this.pcbAddDepense.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbAddDepense.Image = global::projetEvents.Properties.Resources.Group_9;
-            this.pcbAddDepense.Location = new System.Drawing.Point(433, 224);
-            this.pcbAddDepense.Name = "pcbAddDepense";
-            this.pcbAddDepense.Size = new System.Drawing.Size(440, 257);
-            this.pcbAddDepense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbAddDepense.TabIndex = 2;
-            this.pcbAddDepense.TabStop = false;
-            this.pcbAddDepense.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 40);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(315, 155);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::projetEvents.Properties.Resources.homeDep;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 416);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(315, 155);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -145,6 +104,51 @@ namespace projetEvents
             this.label2.Size = new System.Drawing.Size(367, 37);
             this.label2.TabIndex = 4;
             this.label2.Text = "Cliquez juste en-dessous";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::projetEvents.Properties.Resources.homePart;
+            this.pictureBox4.Location = new System.Drawing.Point(27, 229);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(315, 155);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pcbAddDepense
+            // 
+            this.pcbAddDepense.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbAddDepense.Image = global::projetEvents.Properties.Resources.Group_9;
+            this.pcbAddDepense.Location = new System.Drawing.Point(433, 224);
+            this.pcbAddDepense.Name = "pcbAddDepense";
+            this.pcbAddDepense.Size = new System.Drawing.Size(440, 257);
+            this.pcbAddDepense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbAddDepense.TabIndex = 2;
+            this.pcbAddDepense.TabStop = false;
+            this.pcbAddDepense.Click += new System.EventHandler(this.btnAdd_Click);
+            this.pcbAddDepense.MouseEnter += new System.EventHandler(this.pcbAddDepense_MouseEnter);
+            this.pcbAddDepense.MouseLeave += new System.EventHandler(this.pcbAddDepense_MouseLeave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(27, 40);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(315, 155);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::projetEvents.Properties.Resources.homeDep;
+            this.pictureBox3.Location = new System.Drawing.Point(27, 416);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(315, 155);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
             // formPresentation
             // 
@@ -188,5 +192,6 @@ namespace projetEvents
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

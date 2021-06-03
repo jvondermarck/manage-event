@@ -77,24 +77,6 @@ namespace projetEvents
             connec.Close();
         }
 
-        //Liaison de données - A une colonne
-        private void surchageComboBox(ComboBox cbo, String table, String column, String champCache)
-        {
-            cbo.DataSource = ds.Tables[table]; // On charge la table dans la cbo
-            cbo.DisplayMember = column; // On dit quel colonne afficher de la table dans la cbo
-            cbo.ValueMember = champCache; // Pour avoir le code de la destination (utile pour l'exo 4.a)
-            cbo.Text = ""; // Pour ne pas afficher le 1er element de la cbo au demarage
-        }
-
-        //Surcharge - A deux colonnes
-        public void surchageComboBoxV2(ComboBox cbo, String table, String column, String column2)
-        {
-            for (int i = 0; i < ds.Tables[table].Rows.Count; i++)
-            {
-                cbo.Items.Add(ds.Tables[table].Rows[i][column] + " " + ds.Tables[table].Rows[i][column2]);
-            }
-        }
-
         private void formMain_Load(object sender, EventArgs e)
         {
             // On charge toutes les tables de la base

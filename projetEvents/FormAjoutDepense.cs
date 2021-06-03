@@ -491,5 +491,16 @@ namespace projetEvents
         {
             txtCombien.Text = "";
         }
+
+        // Quand on passe la souris sur le txt combien on affiche un message d'aide
+        private void txtCombien_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip1.Show("Entrez uniquement des chiffres", txtCombien);
+        }
+
+        private void txtCombien_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip1.Hide(txtCombien);
+        }
     }
 }

@@ -49,10 +49,11 @@ namespace projetEvents
         {
             dgvDepenseConcerme.DataSource = "";
             dgvMesDepenses.DataSource = "";
-            btnGenerate.Visible = false;
+            pcbGenerate.Visible = false;
             lblPart.Visible = true;
             dgvBilanEvent.Visible = true;
             lblMessageBilan.Visible = false;
+            lblPDF.Visible = false;
             lblTotalDepense.Text = "Total =";
             lblDepenseConcerne.Text = "Total =";
 
@@ -108,7 +109,8 @@ namespace projetEvents
         // Pour dresser le bilan de ce qu'un participant à dépensé et ce qu'il doit remboruser
         private void cboParticipant_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            btnGenerate.Visible = true;
+            pcbGenerate.Visible = true;
+            lblPDF.Visible = true;
             // On récupere les données des deux ComboBox
             string numEvent = cboEvent.SelectedValue.ToString();
             string codeParticipant = formMain.ds.Tables["Participants"].Rows[cboParticipant.SelectedIndex]["codeParticipant"].ToString();
@@ -610,12 +612,8 @@ namespace projetEvents
                        codeEvent + ", " + codeDonneur + ", " + codeReceveur + ", '" + montant + "')";
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     int nbLigneInsert = cd1.ExecuteNonQuery();
-                    OleDbDataAdapter da = new OleDbDataAdapter(cd1);
 
-                    da.Update(formMain.ds, "BilanPart");
-
-                    MessageBox.Show("Ligne inséré : " + nbLigneInsert.ToString());
-
+                    //da.Update(formMain.ds, "BilanPart");
                 }
                 catch (OleDbException ex) { MessageBox.Show("Erreur dans la requete SQL" + ex); }
                 catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
@@ -643,19 +641,18 @@ namespace projetEvents
         private void btnGeneratePDF_Click(object sender, EventArgs e)
         {
             // Demander à l'utilisateur de choisir l'endroit où il veut créer son document
-            //SaveFileDialog dialog = new SaveFileDialog();
-            //dialog.Title = "Save file as...";
-            //dialog.Filter = "PDF files (*.pdf)|*.pdf";
-            //dialog.RestoreDirectory = true;
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Title = "Save file as...";
+            dialog.Filter = "PDF files (*.pdf)|*.pdf";
+            dialog.FileName = "Bilan_" + formMain.ds.Tables["Evenements"].Rows[cboEvent.SelectedIndex]["titreEvent"].ToString() + "_" + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"].ToString();
+            dialog.RestoreDirectory = true;
             string path = "";
 
-            //if (dialog.ShowDialog() == DialogResult.OK)
-            //{
-            //    path = Path.GetFullPath(dialog.FileName);
-            //}
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                path = Path.GetFullPath(dialog.FileName);
+            }
 
-
-            path = "C:\\Users\\Julien\\Downloads\\test.pdf";
             var htmlContent = new StringBuilder();
 
             htmlContent.Append(
@@ -846,8 +843,17 @@ namespace projetEvents
             var pdfBytes = new NReco.PdfGenerator.HtmlToPdfConverter().GeneratePdf(htmlContent.ToString());
             File.WriteAllBytes(Path.GetFullPath(path), pdfBytes);
             formNotification.Alert("Bravo ! Votre PDF à été généré ! ", formNotification.enmType.Success);
+            System.Diagnostics.Process.Start(path); // Ouvrir le PDF quand on la crée.
         }
 
-        
+        private void pcbGenerate_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip.Show("Cliquer sur l'image", pcbGenerate);
+        }
+
+        private void pcbGenerate_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip.Hide(pcbGenerate);
+        }
     }
 }
