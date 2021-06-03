@@ -38,7 +38,7 @@ namespace projetEvents
         }
 
         // Déclaration de la chaine de connexion
-        string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=bdEvents.MDB";
+        string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=bdEvents.mdb";
 
         // Création d'un DataSet
         public static DataSet ds = new DataSet();

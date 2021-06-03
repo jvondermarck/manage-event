@@ -47,10 +47,14 @@ namespace projetEvents
         // Des qu'on change l'évènement dans la cbo, on change les participants de la combobocParticipants
         private void cboEvent_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            dgvDepenseConcerme.DataSource = "";
+            dgvMesDepenses.DataSource = "";
             btnGenerate.Visible = false;
             lblPart.Visible = true;
             dgvBilanEvent.Visible = true;
             lblMessageBilan.Visible = false;
+            lblTotalDepense.Text = "Total =";
+            lblDepenseConcerne.Text = "Total =";
 
             connec.ConnectionString = chainconnec;
             connec.Open();
