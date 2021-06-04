@@ -258,12 +258,9 @@ namespace projetEvents
                 saisieDepense();
             } else
             {
-                formNotification.Alert("Une erreur est survenue", formNotification.enmType.Error);
+                formNotification.Alert("Veuillez saisir tous les champs.", formNotification.enmType.Error);
             }
         }
-
-        private OleDbTransaction transacDepense;
-        private OleDbTransaction transacBenef;
 
         private void saisieDepense()
         {
@@ -292,29 +289,24 @@ namespace projetEvents
             {
                 connec.ConnectionString = chainconnec;
                 connec.Open();
-                // Démarrage d'une transaction
-                transacDepense = connec.BeginTransaction();
 
                 string requete =
                     @"Insert into Depenses (numDepense, description, montant, dateDepense, commentaire, codeEvent, codePart) Values('"
                      + numeroDepense + "', '" + description + "', '" + montant + "', '" + dateDepense + "', '"
                      + commentaire + "', '" + codeEvents + "', '" + codePart + "')";
 
-                //MessageBox.Show(requete);
-                OleDbCommand cmd = new OleDbCommand(requete, connec, transacDepense);
+                OleDbCommand cmd = new OleDbCommand(requete, connec);
                 int nbLigneInsert = cmd.ExecuteNonQuery();
-                transacDepense.Commit();
-                OleDbDataAdapter da1 = new OleDbDataAdapter(cmd);
-                da1.Update(ds, "Depenses");
+
+                // On Update le DataSet
+                requete = "SELECT * FROM Depenses";
+                OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+                formMain.ds.Tables["Depenses"].Clear();
+                da.Update(formMain.ds, "Depenses");
             }
             catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
             catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
-            catch (Exception exp)
-            {
-                MessageBox.Show(exp.GetType().ToString());
-                transacDepense.Rollback();
-                MessageBox.Show("Erreur : Transaction annulée");
-            }
+            catch (Exception exp) { MessageBox.Show(exp.GetType().ToString());}
             finally { connec.Close(); }
 
             //
@@ -335,7 +327,6 @@ namespace projetEvents
             {
                 connec.ConnectionString = chainconnec;
                 connec.Open();
-                transacBenef = connec.BeginTransaction();
 
                 foreach (string codeBenef in codePartBenefciaire)
                 {
@@ -343,30 +334,28 @@ namespace projetEvents
                     @"Insert into Beneficiaires (numDepense, codePart) Values('"
                      + numeroDepense + "', '" + codeBenef + "')";
 
-                    OleDbCommand cmd = new OleDbCommand(requete, connec, transacBenef);
+                    OleDbCommand cmd = new OleDbCommand(requete, connec);
                     int nbLigneInsert = cmd.ExecuteNonQuery();
+
+                    // On Update le DataSet
+                    requete = "SELECT * FROM Beneficiaires";
+                    OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+                    formMain.ds.Tables["Beneficiaires"].Clear();
+                    da.Update(formMain.ds, "Beneficiaires");
                 }
 
-                transacBenef.Commit();
                 pcbLoadingValidate.Visible = true;
                 Timer Clock = new Timer();
                 Clock.Interval = 1000;
                 Clock.Tick += new EventHandler(MyTimer_Tick);
                 Clock.Start();
                 toutEffacerDepense();
+                formNotification.Alert("Bravo ! Vous avez ajouté une dépense ! ", formNotification.enmType.Success);
             }
             catch (OleDbException) { formNotification.Alert("Erreur dans la requete SQL ! ", formNotification.enmType.Error); }
             catch (InvalidOperationException) { formNotification.Alert("Erreur d'acces à la base de donnée ! ", formNotification.enmType.Error); }
-            catch (Exception exp)
-            {
-                MessageBox.Show(exp.GetType().ToString());
-                transacBenef.Rollback();
-            }
-            finally
-            {
-                connec.Close();
-                formNotification.Alert("Bravo ! Vous avez ajouté une dépense ! ", formNotification.enmType.Success);
-            }
+            catch (Exception exp) { MessageBox.Show(exp.GetType().ToString());}
+            finally { connec.Close();}
         }
 
         // Quand on clique sur validé, un temps de chargement s'active, on veut désactiver le gif de chargemenebt après ca

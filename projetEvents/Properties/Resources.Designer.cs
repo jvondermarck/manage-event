@@ -113,6 +113,16 @@ namespace projetEvents.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap friendfun {
+            get {
+                object obj = ResourceManager.GetObject("friendfun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap generatepng {
             get {
                 object obj = ResourceManager.GetObject("generatepng", resourceCulture);

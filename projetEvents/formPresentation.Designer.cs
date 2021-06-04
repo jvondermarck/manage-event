@@ -36,11 +36,13 @@ namespace projetEvents
             this.lblDepenses = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pcbAddDepense = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAddDepense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -86,9 +88,9 @@ namespace projetEvents
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(408, 109);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(411, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(604, 37);
             this.label1.TabIndex = 4;
@@ -97,13 +99,23 @@ namespace projetEvents
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(506, 158);
+            this.label2.Location = new System.Drawing.Point(530, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(367, 37);
+            this.label2.Size = new System.Drawing.Size(298, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Cliquez juste en-dessous";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::projetEvents.Properties.Resources.friendfun;
+            this.pictureBox1.Location = new System.Drawing.Point(581, 379);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(467, 264);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -119,9 +131,9 @@ namespace projetEvents
             // 
             this.pcbAddDepense.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbAddDepense.Image = global::projetEvents.Properties.Resources.Group_9;
-            this.pcbAddDepense.Location = new System.Drawing.Point(433, 224);
+            this.pcbAddDepense.Location = new System.Drawing.Point(477, 154);
             this.pcbAddDepense.Name = "pcbAddDepense";
-            this.pcbAddDepense.Size = new System.Drawing.Size(440, 257);
+            this.pcbAddDepense.Size = new System.Drawing.Size(374, 203);
             this.pcbAddDepense.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbAddDepense.TabIndex = 2;
             this.pcbAddDepense.TabStop = false;
@@ -156,6 +168,7 @@ namespace projetEvents
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(960, 610);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblParticipant);
@@ -172,6 +185,7 @@ namespace projetEvents
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "formPresentation";
             this.Load += new System.EventHandler(this.formPresentation_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbAddDepense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -193,5 +207,6 @@ namespace projetEvents
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

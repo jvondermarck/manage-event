@@ -162,7 +162,7 @@ namespace projetEvents
                 totalDepense += double.Parse(formMain.ds.Tables["mesDepenses"].Rows[i]["montant"].ToString());
             }
 
-            lblTotalDepense.Text += totalDepense.ToString() + "€";
+            lblTotalDepense.Text += String.Format("{0:0.00}", totalDepense) + "€";
 
 
             // Ce que je dois rembourser - Procédures stockés DepensesQuiMeConcernent
@@ -226,7 +226,7 @@ namespace projetEvents
                 calculRefund += (montant / somme) * nbPart;
             }
 
-            lblDepenseConcerne.Text += calculRefund.ToString() + "€";
+            lblDepenseConcerne.Text += String.Format("{0:0.00}", calculRefund)  + "€";
         }
 
         // On crée la table Bilan de l'évènement avec tous les participants qui y figurent
@@ -613,7 +613,10 @@ namespace projetEvents
                     OleDbCommand cd1 = new OleDbCommand(requete, connec);
                     int nbLigneInsert = cd1.ExecuteNonQuery();
 
-                    //da.Update(formMain.ds, "BilanPart");
+                    requete = "SELECT * FROM BilanPart";
+                    OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+                    formMain.ds.Tables["BilanPart"].Clear();
+                    da.Fill(formMain.ds, "BilanPart");
                 }
                 catch (OleDbException ex) { MessageBox.Show("Erreur dans la requete SQL" + ex); }
                 catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
@@ -665,16 +668,19 @@ namespace projetEvents
                         padding: 10px;
                         border: 1px solid black;
                         border-collapse: collapse;
+                        margin: auto;
                         }
                      *{
                        font-family: Montserrat, sans-serif;
                      .tableCenter {
-                          margin-left: auto;
-                          margin-right: auto;
+                          margin: auto;
                         }
                     td {
                       text-align: center;
                       vertical-align: middle;
+                    }
+                    table {
+                      margin: auto;
                     }
                    </style>
                 </head>
