@@ -114,7 +114,7 @@
             this.btnBilan.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBilan.ForeColor = System.Drawing.Color.White;
             this.btnBilan.Image = global::uControlMenu.Properties.Resources.bilan2;
-            this.btnBilan.Location = new System.Drawing.Point(2, 509);
+            this.btnBilan.Location = new System.Drawing.Point(2, 501);
             this.btnBilan.Name = "btnBilan";
             this.btnBilan.Size = new System.Drawing.Size(222, 59);
             this.btnBilan.TabIndex = 1;
@@ -133,7 +133,7 @@
             this.btnDepense.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDepense.ForeColor = System.Drawing.Color.White;
             this.btnDepense.Image = global::uControlMenu.Properties.Resources.depenses2;
-            this.btnDepense.Location = new System.Drawing.Point(2, 444);
+            this.btnDepense.Location = new System.Drawing.Point(2, 437);
             this.btnDepense.Name = "btnDepense";
             this.btnDepense.Size = new System.Drawing.Size(222, 59);
             this.btnDepense.TabIndex = 1;
@@ -152,7 +152,7 @@
             this.btnEvenements.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEvenements.ForeColor = System.Drawing.Color.White;
             this.btnEvenements.Image = global::uControlMenu.Properties.Resources.events2;
-            this.btnEvenements.Location = new System.Drawing.Point(2, 314);
+            this.btnEvenements.Location = new System.Drawing.Point(2, 309);
             this.btnEvenements.Name = "btnEvenements";
             this.btnEvenements.Size = new System.Drawing.Size(222, 59);
             this.btnEvenements.TabIndex = 1;
@@ -171,7 +171,7 @@
             this.btnParticipant.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnParticipant.ForeColor = System.Drawing.Color.White;
             this.btnParticipant.Image = global::uControlMenu.Properties.Resources.participant2;
-            this.btnParticipant.Location = new System.Drawing.Point(2, 379);
+            this.btnParticipant.Location = new System.Drawing.Point(2, 372);
             this.btnParticipant.Name = "btnParticipant";
             this.btnParticipant.Size = new System.Drawing.Size(222, 59);
             this.btnParticipant.TabIndex = 1;

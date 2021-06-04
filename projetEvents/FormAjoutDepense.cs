@@ -126,26 +126,15 @@ namespace projetEvents
         {
             if(clbListeBeneficiaire.Items.Count > 0)
             {
-                foreach (Control a in this.Controls)
+                for(int i=0; i<clbListeBeneficiaire.Items.Count; i++)
                 {
-                    if (a is CheckedListBox)
+                    if(clbListeBeneficiaire.GetItemCheckState(i) == CheckState.Checked)
                     {
-                        CheckedListBox a1 = (CheckedListBox)a; // On reprend l'élement checkBox 
-
-                        if (a1.GetItemCheckState(0) == CheckState.Checked)
-                        {
-                            for (int i = 0; i < a1.Items.Count; i++)
-                            {
-                                a1.SetItemChecked(i, false);
-                            }
-                        }
-                        else if (a1.GetItemCheckState(0) == CheckState.Unchecked)
-                        {
-                            for (int i = 0; i < a1.Items.Count; i++)
-                            {
-                                a1.SetItemChecked(i, true);
-                            }
-                        }
+                        clbListeBeneficiaire.SetItemChecked(i, false);
+                    }
+                    else
+                    {
+                        clbListeBeneficiaire.SetItemChecked(i, true);
                     }
                 }
                 autoCheckCreateur();
@@ -427,7 +416,7 @@ namespace projetEvents
 
         private void cboPayePar_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            autoCheckCreateur();
+            ckbToutLeMonde_CheckedChanged(sender, e);
         }
 
         // Bloquer l'utilisateur sur la possibilité de mettre des lettres ou des symbols dans une zone de texte réservé qu'a des chiffres

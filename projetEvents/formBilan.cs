@@ -99,10 +99,13 @@ namespace projetEvents
             {
                 recapitulatifRTB();
                 rtbRecap.Visible = true;
+                lblSolderEvent.Visible = false;
+                btnQuiDoitQuoiQui.Visible = false;
             } else
             {
                 btnQuiDoitQuoiQui.Visible = true;
                 rtbRecap.Visible = false;
+                lblSolderEvent.Visible = true;
             }
         }
 
@@ -462,6 +465,8 @@ namespace projetEvents
 
             // On affiche dans une rich text box, le récapitulatif du bilan Qui Doit Quoi à Qui
             rtbRecap.Visible = true;
+            lblSolderEvent.Visible = false;
+            btnQuiDoitQuoiQui.Visible = false;
             recapitulatifRTB();
         }
 

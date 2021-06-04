@@ -30,16 +30,18 @@ namespace projetEvents
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tpRefund = new System.Windows.Forms.TabControl();
             this.tpRecap = new System.Windows.Forms.TabPage();
+            this.pcbGenerate = new System.Windows.Forms.PictureBox();
             this.lblDepenseConcerne = new System.Windows.Forms.Label();
             this.cboParticipant = new System.Windows.Forms.ComboBox();
+            this.lblPDF = new System.Windows.Forms.Label();
             this.lblPart = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboEvent = new System.Windows.Forms.ComboBox();
@@ -54,16 +56,15 @@ namespace projetEvents
             this.btnQuiDoitQuoiQui = new System.Windows.Forms.Button();
             this.dgvBilanEvent = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblPDF = new System.Windows.Forms.Label();
-            this.pcbGenerate = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.lblSolderEvent = new System.Windows.Forms.Label();
             this.tpRefund.SuspendLayout();
             this.tpRecap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGenerate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepenseConcerme)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMesDepenses)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilanEvent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGenerate)).BeginInit();
             this.SuspendLayout();
             // 
             // tpRefund
@@ -104,6 +105,21 @@ namespace projetEvents
             this.tpRecap.TabIndex = 0;
             this.tpRecap.Text = "   Recap     ";
             // 
+            // pcbGenerate
+            // 
+            this.pcbGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbGenerate.Image = global::projetEvents.Properties.Resources.generatepng;
+            this.pcbGenerate.Location = new System.Drawing.Point(784, 353);
+            this.pcbGenerate.Name = "pcbGenerate";
+            this.pcbGenerate.Size = new System.Drawing.Size(131, 130);
+            this.pcbGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbGenerate.TabIndex = 5;
+            this.pcbGenerate.TabStop = false;
+            this.pcbGenerate.Visible = false;
+            this.pcbGenerate.Click += new System.EventHandler(this.btnGeneratePDF_Click);
+            this.pcbGenerate.MouseEnter += new System.EventHandler(this.pcbGenerate_MouseEnter);
+            this.pcbGenerate.MouseLeave += new System.EventHandler(this.pcbGenerate_MouseLeave);
+            // 
             // lblDepenseConcerne
             // 
             this.lblDepenseConcerne.AutoSize = true;
@@ -129,6 +145,18 @@ namespace projetEvents
             this.cboParticipant.TabIndex = 1;
             this.cboParticipant.Visible = false;
             this.cboParticipant.SelectionChangeCommitted += new System.EventHandler(this.cboParticipant_SelectionChangeCommitted);
+            // 
+            // lblPDF
+            // 
+            this.lblPDF.AutoSize = true;
+            this.lblPDF.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPDF.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblPDF.Location = new System.Drawing.Point(749, 306);
+            this.lblPDF.Name = "lblPDF";
+            this.lblPDF.Size = new System.Drawing.Size(272, 33);
+            this.lblPDF.TabIndex = 0;
+            this.lblPDF.Text = "Générer votre bilan !";
+            this.lblPDF.Visible = false;
             // 
             // lblPart
             // 
@@ -183,23 +211,23 @@ namespace projetEvents
             this.dgvDepenseConcerme.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDepenseConcerme.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvDepenseConcerme.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDepenseConcerme.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDepenseConcerme.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDepenseConcerme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDepenseConcerme.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDepenseConcerme.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvDepenseConcerme.Location = new System.Drawing.Point(24, 385);
             this.dgvDepenseConcerme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDepenseConcerme.Name = "dgvDepenseConcerme";
@@ -214,23 +242,23 @@ namespace projetEvents
             this.dgvMesDepenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMesDepenses.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMesDepenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMesDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMesDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvMesDepenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMesDepenses.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMesDepenses.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvMesDepenses.Location = new System.Drawing.Point(24, 157);
             this.dgvMesDepenses.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvMesDepenses.Name = "dgvMesDepenses";
@@ -263,9 +291,10 @@ namespace projetEvents
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage2.Controls.Add(this.btnQuiDoitQuoiQui);
+            this.tabPage2.Controls.Add(this.lblSolderEvent);
             this.tabPage2.Controls.Add(this.lblMessageBilan);
             this.tabPage2.Controls.Add(this.rtbRecap);
-            this.tabPage2.Controls.Add(this.btnQuiDoitQuoiQui);
             this.tabPage2.Controls.Add(this.dgvBilanEvent);
             this.tabPage2.ForeColor = System.Drawing.Color.White;
             this.tabPage2.Location = new System.Drawing.Point(4, 36);
@@ -280,7 +309,7 @@ namespace projetEvents
             // 
             this.lblMessageBilan.AutoSize = true;
             this.lblMessageBilan.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessageBilan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.lblMessageBilan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
             this.lblMessageBilan.Location = new System.Drawing.Point(175, 108);
             this.lblMessageBilan.Name = "lblMessageBilan";
             this.lblMessageBilan.Size = new System.Drawing.Size(0, 46);
@@ -293,22 +322,26 @@ namespace projetEvents
             this.rtbRecap.BackColor = System.Drawing.SystemColors.ControlDark;
             this.rtbRecap.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.rtbRecap.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbRecap.Location = new System.Drawing.Point(289, 285);
+            this.rtbRecap.Location = new System.Drawing.Point(142, 280);
             this.rtbRecap.Name = "rtbRecap";
             this.rtbRecap.ReadOnly = true;
-            this.rtbRecap.Size = new System.Drawing.Size(635, 279);
+            this.rtbRecap.Size = new System.Drawing.Size(676, 279);
             this.rtbRecap.TabIndex = 3;
             this.rtbRecap.Text = "";
             this.rtbRecap.Visible = false;
             // 
             // btnQuiDoitQuoiQui
             // 
-            this.btnQuiDoitQuoiQui.Location = new System.Drawing.Point(46, 393);
+            this.btnQuiDoitQuoiQui.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnQuiDoitQuoiQui.FlatAppearance.BorderSize = 0;
+            this.btnQuiDoitQuoiQui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuiDoitQuoiQui.ForeColor = System.Drawing.Color.Black;
+            this.btnQuiDoitQuoiQui.Location = new System.Drawing.Point(339, 370);
             this.btnQuiDoitQuoiQui.Name = "btnQuiDoitQuoiQui";
-            this.btnQuiDoitQuoiQui.Size = new System.Drawing.Size(183, 40);
+            this.btnQuiDoitQuoiQui.Size = new System.Drawing.Size(210, 46);
             this.btnQuiDoitQuoiQui.TabIndex = 2;
             this.btnQuiDoitQuoiQui.Text = "Qui doit quoi à qui";
-            this.btnQuiDoitQuoiQui.UseVisualStyleBackColor = true;
+            this.btnQuiDoitQuoiQui.UseVisualStyleBackColor = false;
             this.btnQuiDoitQuoiQui.Visible = false;
             this.btnQuiDoitQuoiQui.Click += new System.EventHandler(this.btnQuiDoitQuoiQui_Click);
             // 
@@ -316,23 +349,23 @@ namespace projetEvents
             // 
             this.dgvBilanEvent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBilanEvent.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBilanEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBilanEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBilanEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBilanEvent.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBilanEvent.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBilanEvent.Location = new System.Drawing.Point(37, 32);
             this.dgvBilanEvent.Name = "dgvBilanEvent";
             this.dgvBilanEvent.ReadOnly = true;
@@ -350,32 +383,16 @@ namespace projetEvents
             this.panel1.Size = new System.Drawing.Size(818, 51);
             this.panel1.TabIndex = 5;
             // 
-            // lblPDF
+            // lblSolderEvent
             // 
-            this.lblPDF.AutoSize = true;
-            this.lblPDF.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPDF.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblPDF.Location = new System.Drawing.Point(749, 306);
-            this.lblPDF.Name = "lblPDF";
-            this.lblPDF.Size = new System.Drawing.Size(272, 33);
-            this.lblPDF.TabIndex = 0;
-            this.lblPDF.Text = "Générer votre bilan !";
-            this.lblPDF.Visible = false;
-            // 
-            // pcbGenerate
-            // 
-            this.pcbGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbGenerate.Image = global::projetEvents.Properties.Resources.generatepng;
-            this.pcbGenerate.Location = new System.Drawing.Point(784, 353);
-            this.pcbGenerate.Name = "pcbGenerate";
-            this.pcbGenerate.Size = new System.Drawing.Size(131, 130);
-            this.pcbGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbGenerate.TabIndex = 5;
-            this.pcbGenerate.TabStop = false;
-            this.pcbGenerate.Visible = false;
-            this.pcbGenerate.Click += new System.EventHandler(this.btnGeneratePDF_Click);
-            this.pcbGenerate.MouseEnter += new System.EventHandler(this.pcbGenerate_MouseEnter);
-            this.pcbGenerate.MouseLeave += new System.EventHandler(this.pcbGenerate_MouseLeave);
+            this.lblSolderEvent.AutoSize = true;
+            this.lblSolderEvent.Font = new System.Drawing.Font("Montserrat", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolderEvent.Location = new System.Drawing.Point(280, 306);
+            this.lblSolderEvent.Name = "lblSolderEvent";
+            this.lblSolderEvent.Size = new System.Drawing.Size(409, 51);
+            this.lblSolderEvent.TabIndex = 5;
+            this.lblSolderEvent.Text = "Solder l\'évènement ?";
+            this.lblSolderEvent.Visible = false;
             // 
             // formBilan
             // 
@@ -396,12 +413,12 @@ namespace projetEvents
             this.tpRefund.ResumeLayout(false);
             this.tpRecap.ResumeLayout(false);
             this.tpRecap.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGenerate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepenseConcerme)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMesDepenses)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilanEvent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGenerate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,5 +446,6 @@ namespace projetEvents
         private System.Windows.Forms.PictureBox pcbGenerate;
         private System.Windows.Forms.Label lblPDF;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Label lblSolderEvent;
     }
 }

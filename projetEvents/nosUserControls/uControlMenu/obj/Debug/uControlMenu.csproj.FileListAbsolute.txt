@@ -6,3 +6,4 @@ C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bas
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\nosUserControls\uControlMenu\obj\Debug\uControlMenu.dll
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\nosUserControls\uControlMenu\obj\Debug\uControlMenu.pdb
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\nosUserControls\uControlMenu\obj\Debug\uControlMenu.userControlMenu.resources
+C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\nosUserControls\uControlMenu\obj\Debug\uControlMenu.csprojAssemblyReference.cache
