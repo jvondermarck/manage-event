@@ -308,7 +308,7 @@ namespace projetEvents
             {
                 if (clbListeBeneficiaire.GetItemCheckState(i) == CheckState.Checked) // On regarde chaque element cochés
                 {
-                    codePartBenefciaire.Add(ds.Tables["Participants"].Rows[i]["codeParticipant"].ToString()); // On prend son codeParticipant
+                    codePartBenefciaire.Add(ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString()); // On prend son codeParticipant
                 }
             }
 
@@ -325,13 +325,13 @@ namespace projetEvents
 
                     OleDbCommand cmd = new OleDbCommand(requete, connec);
                     int nbLigneInsert = cmd.ExecuteNonQuery();
-
-                    // On Update le DataSet
-                    requete = "SELECT * FROM Beneficiaires";
-                    OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
-                    formMain.ds.Tables["Beneficiaires"].Clear();
-                    da.Update(formMain.ds, "Beneficiaires");
                 }
+
+                // On Update le DataSet
+                string requete2 = "SELECT * FROM Beneficiaires";
+                OleDbDataAdapter da = new OleDbDataAdapter(requete2, connec);
+                formMain.ds.Tables["Beneficiaires"].Clear();
+                da.Update(formMain.ds, "Beneficiaires");
 
                 pcbLoadingValidate.Visible = true;
                 Timer Clock = new Timer();

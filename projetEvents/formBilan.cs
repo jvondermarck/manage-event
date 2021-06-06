@@ -116,7 +116,7 @@ namespace projetEvents
             lblPDF.Visible = true;
             // On récupere les données des deux ComboBox
             string numEvent = cboEvent.SelectedValue.ToString();
-            string codeParticipant = formMain.ds.Tables["Participants"].Rows[cboParticipant.SelectedIndex]["codeParticipant"].ToString();
+            string codeParticipant = cboParticipant.SelectedValue.ToString();
 
             // Ce que j'ai dépensé - Procédures stockés MesDepenses
             dgvMesDepenses.DataSource = "";
@@ -457,16 +457,21 @@ namespace projetEvents
                     string requete = @"UPDATE Evenements SET soldeON = true WHERE codeEvent=" + codeEvent.ToString();
                     OleDbCommand cd = new OleDbCommand(requete, connec);
                     int res = (int)cd.ExecuteNonQuery();
-                    OleDbDataAdapter da = new OleDbDataAdapter(cd);
+                    
+                    // On Update le DataSet
+                    requete = "SELECT * FROM Evenements";
+                    OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+                    formMain.ds.Tables["Evenements"].Clear();
                     da.Update(formMain.ds, "Evenements");
+
                     connec.Close();
+                    lblSolderEvent.Visible = false;
+                    btnQuiDoitQuoiQui.Visible = false;
                 }
             }
 
             // On affiche dans une rich text box, le récapitulatif du bilan Qui Doit Quoi à Qui
             rtbRecap.Visible = true;
-            lblSolderEvent.Visible = false;
-            btnQuiDoitQuoiQui.Visible = false;
             recapitulatifRTB();
         }
 

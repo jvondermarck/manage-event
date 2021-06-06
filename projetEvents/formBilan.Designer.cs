@@ -51,13 +51,13 @@ namespace projetEvents
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnQuiDoitQuoiQui = new System.Windows.Forms.Button();
+            this.lblSolderEvent = new System.Windows.Forms.Label();
             this.lblMessageBilan = new System.Windows.Forms.Label();
             this.rtbRecap = new System.Windows.Forms.RichTextBox();
-            this.btnQuiDoitQuoiQui = new System.Windows.Forms.Button();
             this.dgvBilanEvent = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.lblSolderEvent = new System.Windows.Forms.Label();
             this.tpRefund.SuspendLayout();
             this.tpRecap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGenerate)).BeginInit();
@@ -305,6 +305,32 @@ namespace projetEvents
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "     Bilan     ";
             // 
+            // btnQuiDoitQuoiQui
+            // 
+            this.btnQuiDoitQuoiQui.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnQuiDoitQuoiQui.FlatAppearance.BorderSize = 0;
+            this.btnQuiDoitQuoiQui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuiDoitQuoiQui.ForeColor = System.Drawing.Color.Black;
+            this.btnQuiDoitQuoiQui.Location = new System.Drawing.Point(356, 370);
+            this.btnQuiDoitQuoiQui.Name = "btnQuiDoitQuoiQui";
+            this.btnQuiDoitQuoiQui.Size = new System.Drawing.Size(210, 46);
+            this.btnQuiDoitQuoiQui.TabIndex = 2;
+            this.btnQuiDoitQuoiQui.Text = "Qui doit quoi à qui";
+            this.btnQuiDoitQuoiQui.UseVisualStyleBackColor = false;
+            this.btnQuiDoitQuoiQui.Visible = false;
+            this.btnQuiDoitQuoiQui.Click += new System.EventHandler(this.btnQuiDoitQuoiQui_Click);
+            // 
+            // lblSolderEvent
+            // 
+            this.lblSolderEvent.AutoSize = true;
+            this.lblSolderEvent.Font = new System.Drawing.Font("Montserrat", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolderEvent.Location = new System.Drawing.Point(304, 306);
+            this.lblSolderEvent.Name = "lblSolderEvent";
+            this.lblSolderEvent.Size = new System.Drawing.Size(423, 52);
+            this.lblSolderEvent.TabIndex = 5;
+            this.lblSolderEvent.Text = "Solder l\'évènement ?";
+            this.lblSolderEvent.Visible = false;
+            // 
             // lblMessageBilan
             // 
             this.lblMessageBilan.AutoSize = true;
@@ -329,21 +355,6 @@ namespace projetEvents
             this.rtbRecap.TabIndex = 3;
             this.rtbRecap.Text = "";
             this.rtbRecap.Visible = false;
-            // 
-            // btnQuiDoitQuoiQui
-            // 
-            this.btnQuiDoitQuoiQui.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
-            this.btnQuiDoitQuoiQui.FlatAppearance.BorderSize = 0;
-            this.btnQuiDoitQuoiQui.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuiDoitQuoiQui.ForeColor = System.Drawing.Color.Black;
-            this.btnQuiDoitQuoiQui.Location = new System.Drawing.Point(339, 370);
-            this.btnQuiDoitQuoiQui.Name = "btnQuiDoitQuoiQui";
-            this.btnQuiDoitQuoiQui.Size = new System.Drawing.Size(210, 46);
-            this.btnQuiDoitQuoiQui.TabIndex = 2;
-            this.btnQuiDoitQuoiQui.Text = "Qui doit quoi à qui";
-            this.btnQuiDoitQuoiQui.UseVisualStyleBackColor = false;
-            this.btnQuiDoitQuoiQui.Visible = false;
-            this.btnQuiDoitQuoiQui.Click += new System.EventHandler(this.btnQuiDoitQuoiQui_Click);
             // 
             // dgvBilanEvent
             // 
@@ -382,17 +393,6 @@ namespace projetEvents
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 51);
             this.panel1.TabIndex = 5;
-            // 
-            // lblSolderEvent
-            // 
-            this.lblSolderEvent.AutoSize = true;
-            this.lblSolderEvent.Font = new System.Drawing.Font("Montserrat", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolderEvent.Location = new System.Drawing.Point(280, 306);
-            this.lblSolderEvent.Name = "lblSolderEvent";
-            this.lblSolderEvent.Size = new System.Drawing.Size(409, 51);
-            this.lblSolderEvent.TabIndex = 5;
-            this.lblSolderEvent.Text = "Solder l\'évènement ?";
-            this.lblSolderEvent.Visible = false;
             // 
             // formBilan
             // 
