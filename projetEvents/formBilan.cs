@@ -687,6 +687,7 @@ namespace projetEvents
                     }
                     table {
                       margin: auto;
+                      width: 90%;
                     }
                    </style>
                 </head>

@@ -416,7 +416,7 @@ namespace projetEvents
 
         private void cboPayePar_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            ckbToutLeMonde_CheckedChanged(sender, e);
+            autoCheckCreateur();
         }
 
         // Bloquer l'utilisateur sur la possibilité de mettre des lettres ou des symbols dans une zone de texte réservé qu'a des chiffres

@@ -110,7 +110,7 @@ namespace projetEvents
         private void btnAccueil_Click(object sender, EventArgs e)
         {
             this.panelAllForm.Controls.Clear();
-            userControlMenu1.BarrePanel = 1;
+            userControlMenu1.BarrePanel = 1; // Cela équivaut à avoir une couleur différente sur le menu où on se trouve
             formPresentation formPresentation = new formPresentation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formPresentation.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formPresentation);
