@@ -47,13 +47,9 @@ namespace projetEvents
         // Des qu'on change l'évènement dans la cbo, on change les participants de la combobocParticipants
         private void cboEvent_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            dgvDepenseConcerme.DataSource = "";
-            dgvMesDepenses.DataSource = "";
-            pcbGenerate.Visible = false;
-            lblPart.Visible = true;
+            pnlRecapPart.Visible = false;
             dgvBilanEvent.Visible = true;
             lblMessageBilan.Visible = false;
-            lblPDF.Visible = false;
             lblTotalDepense.Text = "Total =";
             lblDepenseConcerne.Text = "Total =";
 
@@ -92,6 +88,7 @@ namespace projetEvents
 
             surchageComboBox(cboParticipant, "participantsOnEvent", "nomPrenom", "codeParticipant"); // On s'occupe de la liaison de données
             cboParticipant.Visible = true;
+            lblPart.Visible = true;
             cboParticipant.SelectedIndex = -1;
 
             creationTableBilan(); // On dresse la table Bilan qui sert a s'occuper du Bilan avec le solde de chaque personne
@@ -112,8 +109,7 @@ namespace projetEvents
         // Pour dresser le bilan de ce qu'un participant à dépensé et ce qu'il doit remboruser
         private void cboParticipant_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            pcbGenerate.Visible = true;
-            lblPDF.Visible = true;
+            pnlRecapPart.Visible = true;
             // On récupere les données des deux ComboBox
             string numEvent = cboEvent.SelectedValue.ToString();
             string codeParticipant = cboParticipant.SelectedValue.ToString();

@@ -157,7 +157,7 @@ namespace projetEvents
             formBilan.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formBilan);
             formBilan.Show();
-            lblNomForm.Text = "Bilan - Qui doit quoi";
+            lblNomForm.Text = "Bilan - Qui doit quoi ?";
             lblPresentationForm.Text = "";
         }
 
