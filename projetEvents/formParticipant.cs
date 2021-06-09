@@ -51,7 +51,6 @@ namespace projetEvents
             RTBcontenu.Visible = false;
             lblparticipant.Visible = false;
             dgvparticipant.Visible = false;
-            btnmail.Visible = false;
 
             Chargeevent();
         }
@@ -304,8 +303,11 @@ namespace projetEvents
         //fait apparaitre les boutons de création du mail et d'invitation
         private void Cboajoutparticipant_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            btnmail.Visible = true;
+            lblChooseModeInvit.Visible = true;
+            rdbMailAuto.Visible = true;
+            rdbMailPersonnalise.Visible = true;
             btninviter.Visible = true;
+            rdbMailAuto.Checked = true;
         }
 
         //nouvelle invitation
@@ -398,17 +400,25 @@ namespace projetEvents
         //verification de si il reste une personne qui serait invitable
         private void Btninv_Click(object sender, EventArgs e)
         {
-            if (lblobj.Visible == true)
-            {
-                sObj = ChxObj(RTBobj);
-                sCont = ChxCont(RTBcontenu);
-                sMail = Mail();
-                CreateTestMessage(sObj, sCont, sMail);
-            }
+            sObj = ChxObj(RTBobj);
+            sCont = ChxCont(RTBcontenu);
+            sMail = Mail();
+            CreateTestMessage(sObj, sCont, sMail);
+  
             //insertion dans la base du nouvel invité
             Insert();
             //verification de si il reste une personne qui serait invitable
             plusdinvit();
+
+            cboajoutparticipant.SelectedIndex = -1;
+            btninviter.Visible = false;
+            lblChooseModeInvit.Visible = false;
+            rdbMailAuto.Visible = false;
+            rdbMailPersonnalise.Visible = false;
+            lblobj.Visible = false;
+            RTBobj.Visible = false;
+            lblcontenu.Visible = false;
+            RTBcontenu.Visible = false;
         }
 
         //insertion du nouvel invité à la base
@@ -464,7 +474,7 @@ namespace projetEvents
                 btnadd.Visible = false;
                 lblajoutparticipant.Visible = false;
                 cboajoutparticipant.Visible = false;
-                btnmail.Visible = false;
+                lblChooseModeInvit.Visible = false;
                 btninviter.Visible = false;
             }
         }
@@ -472,6 +482,33 @@ namespace projetEvents
         private void dgvparticipant_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvparticipant.SelectAll();
+        }
+
+        private void rdbMailPersonnalise_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdbMailPersonnalise.Checked == true)
+            {
+                lblobj.Visible = true;
+                RTBobj.Visible = true;
+                lblcontenu.Visible = true;
+                RTBcontenu.Visible = true;
+            }
+        }
+
+        private void rdbMailAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdbMailAuto.Checked == true)
+            {
+                lblobj.Visible = false;
+                RTBobj.Visible = false;
+                lblcontenu.Visible = false;
+                RTBcontenu.Visible = false;
+            }
+        }
+
+        private void rdbMailAuto_Click(object sender, EventArgs e)
+        {
+
         }
     }    //--------------------------------------------------------------------------------------------------------------------------
 }
