@@ -127,6 +127,8 @@ namespace projetEvents
             formEvenements.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formEvenements);
             formEvenements.Show();
+            lblNomForm.Text = "Créer de nouveaux évènements !";
+            lblPresentationForm.Text = "";
 
         }
 
@@ -138,6 +140,8 @@ namespace projetEvents
             formParticipant.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formParticipant);
             formParticipant.Show();
+            lblNomForm.Text = "Visionner et inviter des participants !";
+            lblPresentationForm.Text = "";
         }
 
         private void btnDepenses_Click(object sender, EventArgs e)
@@ -147,6 +151,8 @@ namespace projetEvents
             formDepense formDepense = new formDepense() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
             formDepense.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formDepense);
+            lblNomForm.Text = "Gérer vos dépenses !";
+            lblPresentationForm.Text = "";
             formDepense.Show();
         }
         private void btnBilan_Click(object sender, EventArgs e)
@@ -157,7 +163,7 @@ namespace projetEvents
             formBilan.FormBorderStyle = FormBorderStyle.None;
             this.panelAllForm.Controls.Add(formBilan);
             formBilan.Show();
-            lblNomForm.Text = "Bilan - Qui doit quoi ?";
+            lblNomForm.Text = "Bilan - Qui doit Quoi, à Qui ?";
             lblPresentationForm.Text = "";
         }
 

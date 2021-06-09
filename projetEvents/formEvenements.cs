@@ -25,5 +25,17 @@ namespace projetEvents
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            formMain form = (formMain)ActiveForm;
+            form.panelAllForm.Controls.Clear();
+            inviteNewEvents inviteNewEvents = new inviteNewEvents() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            inviteNewEvents.FormBorderStyle = FormBorderStyle.None;
+            form.panelAllForm.Controls.Add(inviteNewEvents);
+            inviteNewEvents.Show();
+            form.lblNomForm.Text = "Inviter des participants à l'évènement";
+            form.lblPresentationForm.Text = "";
+        }
     }
 }

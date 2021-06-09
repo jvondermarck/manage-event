@@ -868,5 +868,10 @@ namespace projetEvents
         {
             toolTip.Hide(pcbGenerate);
         }
+
+        private void tpRecap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
