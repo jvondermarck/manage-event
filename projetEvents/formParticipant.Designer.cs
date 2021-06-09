@@ -29,11 +29,12 @@ namespace projetEvents
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formParticipant));
             this.btnadd = new System.Windows.Forms.Button();
-            this.btninviter = new System.Windows.Forms.Button();
             this.RTBobj = new System.Windows.Forms.RichTextBox();
             this.RTBcontenu = new System.Windows.Forms.RichTextBox();
             this.lblparticipant = new System.Windows.Forms.Label();
@@ -47,7 +48,11 @@ namespace projetEvents
             this.lblChooseModeInvit = new System.Windows.Forms.Label();
             this.rdbMailAuto = new System.Windows.Forms.RadioButton();
             this.rdbMailPersonnalise = new System.Windows.Forms.RadioButton();
+            this.lblInviter = new System.Windows.Forms.Label();
+            this.btninviter = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvparticipant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btninviter)).BeginInit();
             this.SuspendLayout();
             // 
             // btnadd
@@ -57,31 +62,15 @@ namespace projetEvents
             this.btnadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnadd.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnadd.ForeColor = System.Drawing.Color.White;
-            this.btnadd.Location = new System.Drawing.Point(444, 8);
+            this.btnadd.Location = new System.Drawing.Point(436, 8);
             this.btnadd.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(90, 55);
+            this.btnadd.Size = new System.Drawing.Size(98, 55);
             this.btnadd.TabIndex = 50;
             this.btnadd.Text = "Ajouter invité";
             this.btnadd.UseVisualStyleBackColor = false;
             this.btnadd.Visible = false;
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
-            // 
-            // btninviter
-            // 
-            this.btninviter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btninviter.FlatAppearance.BorderSize = 0;
-            this.btninviter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btninviter.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninviter.ForeColor = System.Drawing.Color.White;
-            this.btninviter.Location = new System.Drawing.Point(731, 87);
-            this.btninviter.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.btninviter.Name = "btninviter";
-            this.btninviter.Size = new System.Drawing.Size(214, 63);
-            this.btninviter.TabIndex = 49;
-            this.btninviter.Text = "Envoyer l\'invitation";
-            this.btninviter.UseVisualStyleBackColor = false;
-            this.btninviter.Click += new System.EventHandler(this.Btninv_Click);
             // 
             // RTBobj
             // 
@@ -117,7 +106,7 @@ namespace projetEvents
             this.lblparticipant.Location = new System.Drawing.Point(19, 179);
             this.lblparticipant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblparticipant.Name = "lblparticipant";
-            this.lblparticipant.Size = new System.Drawing.Size(540, 32);
+            this.lblparticipant.Size = new System.Drawing.Size(555, 33);
             this.lblparticipant.TabIndex = 46;
             this.lblparticipant.Text = "Liste des participants à cette évènements :";
             // 
@@ -171,9 +160,11 @@ namespace projetEvents
             // 
             // cboajoutparticipant
             // 
+            this.cboajoutparticipant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cboajoutparticipant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboajoutparticipant.ForeColor = System.Drawing.Color.White;
             this.cboajoutparticipant.FormattingEnabled = true;
-            this.cboajoutparticipant.Location = new System.Drawing.Point(700, 18);
+            this.cboajoutparticipant.Location = new System.Drawing.Point(692, 18);
             this.cboajoutparticipant.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.cboajoutparticipant.Name = "cboajoutparticipant";
             this.cboajoutparticipant.Size = new System.Drawing.Size(265, 35);
@@ -182,9 +173,11 @@ namespace projetEvents
             // 
             // cboevent
             // 
+            this.cboevent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cboevent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboevent.ForeColor = System.Drawing.Color.White;
             this.cboevent.FormattingEnabled = true;
-            this.cboevent.Location = new System.Drawing.Point(168, 16);
+            this.cboevent.Location = new System.Drawing.Point(161, 16);
             this.cboevent.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.cboevent.Name = "cboevent";
             this.cboevent.Size = new System.Drawing.Size(250, 35);
@@ -196,10 +189,10 @@ namespace projetEvents
             this.dgvparticipant.AllowUserToAddRows = false;
             this.dgvparticipant.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(68)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(68)))), ((int)(((byte)(173)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvparticipant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvparticipant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -207,19 +200,19 @@ namespace projetEvents
             this.dgvparticipant.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.dgvparticipant.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(54)))), ((int)(((byte)(22)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(54)))), ((int)(((byte)(22)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvparticipant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvparticipant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvparticipant.DefaultCellStyle = dataGridViewCellStyle3;
@@ -252,7 +245,7 @@ namespace projetEvents
             // 
             this.rdbMailAuto.AutoSize = true;
             this.rdbMailAuto.ForeColor = System.Drawing.Color.White;
-            this.rdbMailAuto.Location = new System.Drawing.Point(361, 82);
+            this.rdbMailAuto.Location = new System.Drawing.Point(321, 86);
             this.rdbMailAuto.Name = "rdbMailAuto";
             this.rdbMailAuto.Size = new System.Drawing.Size(331, 31);
             this.rdbMailAuto.TabIndex = 54;
@@ -266,7 +259,7 @@ namespace projetEvents
             // 
             this.rdbMailPersonnalise.AutoSize = true;
             this.rdbMailPersonnalise.ForeColor = System.Drawing.Color.White;
-            this.rdbMailPersonnalise.Location = new System.Drawing.Point(361, 119);
+            this.rdbMailPersonnalise.Location = new System.Drawing.Point(321, 123);
             this.rdbMailPersonnalise.Name = "rdbMailPersonnalise";
             this.rdbMailPersonnalise.Size = new System.Drawing.Size(208, 31);
             this.rdbMailPersonnalise.TabIndex = 55;
@@ -276,17 +269,42 @@ namespace projetEvents
             this.rdbMailPersonnalise.Visible = false;
             this.rdbMailPersonnalise.CheckedChanged += new System.EventHandler(this.rdbMailPersonnalise_CheckedChanged);
             // 
+            // lblInviter
+            // 
+            this.lblInviter.AutoSize = true;
+            this.lblInviter.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInviter.ForeColor = System.Drawing.Color.White;
+            this.lblInviter.Location = new System.Drawing.Point(738, 71);
+            this.lblInviter.Name = "lblInviter";
+            this.lblInviter.Size = new System.Drawing.Size(205, 27);
+            this.lblInviter.TabIndex = 57;
+            this.lblInviter.Text = "Envoyer l\'invitation";
+            // 
+            // btninviter
+            // 
+            this.btninviter.Image = ((System.Drawing.Image)(resources.GetObject("btninviter.Image")));
+            this.btninviter.Location = new System.Drawing.Point(753, 89);
+            this.btninviter.Name = "btninviter";
+            this.btninviter.Size = new System.Drawing.Size(144, 93);
+            this.btninviter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btninviter.TabIndex = 56;
+            this.btninviter.TabStop = false;
+            this.btninviter.Click += new System.EventHandler(this.Btninv_Click);
+            this.btninviter.MouseEnter += new System.EventHandler(this.btninviter_MouseEnter);
+            this.btninviter.MouseLeave += new System.EventHandler(this.btninviter_MouseLeave);
+            // 
             // formParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(980, 674);
+            this.Controls.Add(this.lblInviter);
+            this.Controls.Add(this.btninviter);
             this.Controls.Add(this.rdbMailPersonnalise);
             this.Controls.Add(this.rdbMailAuto);
             this.Controls.Add(this.lblChooseModeInvit);
             this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.btninviter);
             this.Controls.Add(this.RTBobj);
             this.Controls.Add(this.RTBcontenu);
             this.Controls.Add(this.lblparticipant);
@@ -304,6 +322,7 @@ namespace projetEvents
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GdP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvparticipant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btninviter)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,7 +330,6 @@ namespace projetEvents
 
         #endregion
         private System.Windows.Forms.Button btnadd;
-        private System.Windows.Forms.Button btninviter;
         private System.Windows.Forms.RichTextBox RTBobj;
         private System.Windows.Forms.RichTextBox RTBcontenu;
         private System.Windows.Forms.Label lblparticipant;
@@ -325,5 +343,8 @@ namespace projetEvents
         private System.Windows.Forms.Label lblChooseModeInvit;
         private System.Windows.Forms.RadioButton rdbMailAuto;
         private System.Windows.Forms.RadioButton rdbMailPersonnalise;
+        private System.Windows.Forms.PictureBox btninviter;
+        private System.Windows.Forms.Label lblInviter;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

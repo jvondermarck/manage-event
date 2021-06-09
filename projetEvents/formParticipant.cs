@@ -51,6 +51,7 @@ namespace projetEvents
             RTBcontenu.Visible = false;
             lblparticipant.Visible = false;
             dgvparticipant.Visible = false;
+            lblInviter.Visible = false;
 
             Chargeevent();
         }
@@ -80,6 +81,7 @@ namespace projetEvents
             RameneDataDGV();
             //remplissage de la combobox des non invités
             RameneDatacbo();
+            plusdinvit();
         }
 
         //récupération des données de la base de données dans un data table puis affichage dans un data grid view
@@ -308,6 +310,7 @@ namespace projetEvents
             rdbMailPersonnalise.Visible = true;
             btninviter.Visible = true;
             rdbMailAuto.Checked = true;
+            lblInviter.Visible = true;
         }
 
         //nouvelle invitation
@@ -419,6 +422,7 @@ namespace projetEvents
             RTBobj.Visible = false;
             lblcontenu.Visible = false;
             RTBcontenu.Visible = false;
+            lblInviter.Visible = false;
         }
 
         //insertion du nouvel invité à la base
@@ -476,6 +480,7 @@ namespace projetEvents
                 cboajoutparticipant.Visible = false;
                 lblChooseModeInvit.Visible = false;
                 btninviter.Visible = false;
+                lblInviter.Visible = false;
             }
         }
 
@@ -509,6 +514,16 @@ namespace projetEvents
         private void rdbMailAuto_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btninviter_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip.Show("Cliquez pour inviter le participant", btninviter);
+        }
+
+        private void btninviter_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip.Hide(btninviter);
         }
     }    //--------------------------------------------------------------------------------------------------------------------------
 }
