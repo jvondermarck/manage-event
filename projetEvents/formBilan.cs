@@ -571,6 +571,7 @@ namespace projetEvents
             connec.Open();
             for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
             {
+                // On affiche seulement les résultats dans la RTB qui doit quoi à qui de l'évenement en question
                 if(formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
                 {
                     // On prend le Prénom et Nom du donneur
