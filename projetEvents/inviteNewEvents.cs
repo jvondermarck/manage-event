@@ -24,6 +24,7 @@ namespace projetEvents
             formEvenements formEvenements = new formEvenements() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formEvenements.FormBorderStyle = FormBorderStyle.None;
             form.panelAllForm.Controls.Add(formEvenements);
+            formEvenements.tabControl1.SelectedIndex = 1; // On re-dirige la personne sur la tabPage numéro 2
             formEvenements.Show();
             form.lblNomForm.Text = "Créer de nouveaux évènements !";
             form.lblPresentationForm.Text = "";

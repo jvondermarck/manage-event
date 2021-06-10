@@ -38,16 +38,10 @@ namespace projetEvents
             this.btnPagePrecedente = new System.Windows.Forms.Button();
             this.btnPageDebut = new System.Windows.Forms.Button();
             this.bn = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,13 +59,10 @@ namespace projetEvents
             this.lblCreateur = new System.Windows.Forms.Label();
             this.lblNumEvenement = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBoxSolde = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
             this.dtpDateDebut = new System.Windows.Forms.DateTimePicker();
-            this.btnLancerInvit = new System.Windows.Forms.Button();
-            this.btnEnregistrer = new System.Windows.Forms.Button();
             this.cbCreateur = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.rtbDescPage2 = new System.Windows.Forms.RichTextBox();
@@ -81,11 +72,24 @@ namespace projetEvents
             this.tbTitreEvenement = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.btnEnregistrer = new System.Windows.Forms.PictureBox();
+            this.btnLancerInvit = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnregistrer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLancerInvit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,48 +202,12 @@ namespace projetEvents
             this.bn.Text = " ";
             this.bn.Visible = false;
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Ajouter nouveau";
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Nombre total d\'éléments";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Supprimer";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Placer en premier";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Déplacer vers le haut";
             // 
             // bindingNavigatorSeparator
             // 
@@ -250,7 +218,6 @@ namespace projetEvents
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -261,24 +228,6 @@ namespace projetEvents
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Déplacer vers le bas";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Placer en dernier";
-            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
@@ -287,26 +236,29 @@ namespace projetEvents
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(250, 405);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(242, 23);
+            this.label7.Size = new System.Drawing.Size(240, 23);
             this.label7.TabIndex = 20;
             this.label7.Text = "L\'évènement est soldé :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(446, 346);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 23);
+            this.label6.Size = new System.Drawing.Size(35, 23);
             this.label6.TabIndex = 19;
             this.label6.Text = "au";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(250, 346);
             this.label5.Name = "label5";
@@ -317,30 +269,33 @@ namespace projetEvents
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(250, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 23);
+            this.label4.Size = new System.Drawing.Size(87, 23);
             this.label4.TabIndex = 17;
             this.label4.Text = "Intitulé :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(250, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 23);
+            this.label3.Size = new System.Drawing.Size(108, 23);
             this.label3.TabIndex = 16;
             this.label3.Text = "Créé par :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(250, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 23);
+            this.label2.Size = new System.Drawing.Size(163, 23);
             this.label2.TabIndex = 15;
             this.label2.Text = "Evènement n° : ";
             // 
@@ -358,10 +313,11 @@ namespace projetEvents
             // lblNumEnregistrement
             // 
             this.lblNumEnregistrement.AutoSize = true;
+            this.lblNumEnregistrement.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumEnregistrement.ForeColor = System.Drawing.Color.White;
             this.lblNumEnregistrement.Location = new System.Drawing.Point(447, 492);
             this.lblNumEnregistrement.Name = "lblNumEnregistrement";
-            this.lblNumEnregistrement.Size = new System.Drawing.Size(170, 23);
+            this.lblNumEnregistrement.Size = new System.Drawing.Size(171, 23);
             this.lblNumEnregistrement.TabIndex = 8;
             this.lblNumEnregistrement.Text = "Enregistrement : ";
             // 
@@ -398,10 +354,11 @@ namespace projetEvents
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.White;
             this.lblDescription.Location = new System.Drawing.Point(250, 214);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(134, 23);
+            this.lblDescription.Size = new System.Drawing.Size(137, 23);
             this.lblDescription.TabIndex = 3;
             this.lblDescription.Text = "Description : ";
             // 
@@ -438,13 +395,15 @@ namespace projetEvents
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage2.Controls.Add(this.label14);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.btnEnregistrer);
+            this.tabPage2.Controls.Add(this.btnLancerInvit);
             this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.checkBoxSolde);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.dtpDateFin);
             this.tabPage2.Controls.Add(this.dtpDateDebut);
-            this.tabPage2.Controls.Add(this.btnLancerInvit);
-            this.tabPage2.Controls.Add(this.btnEnregistrer);
             this.tabPage2.Controls.Add(this.cbCreateur);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.rtbDescPage2);
@@ -460,87 +419,63 @@ namespace projetEvents
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nouvel évènement";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(734, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(275, 143);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
             // checkBoxSolde
             // 
             this.checkBoxSolde.AutoSize = true;
-            this.checkBoxSolde.Location = new System.Drawing.Point(316, 378);
+            this.checkBoxSolde.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxSolde.ForeColor = System.Drawing.Color.White;
+            this.checkBoxSolde.Location = new System.Drawing.Point(378, 396);
             this.checkBoxSolde.Name = "checkBoxSolde";
-            this.checkBoxSolde.Size = new System.Drawing.Size(18, 17);
+            this.checkBoxSolde.Size = new System.Drawing.Size(162, 27);
             this.checkBoxSolde.TabIndex = 13;
+            this.checkBoxSolde.Text = "(coché = oui)";
             this.checkBoxSolde.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(221, 371);
+            this.label1.Location = new System.Drawing.Point(258, 392);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 27);
+            this.label1.Size = new System.Drawing.Size(96, 30);
             this.label1.TabIndex = 12;
             this.label1.Text = "Soldé ?";
             // 
             // dtpDateFin
             // 
-            this.dtpDateFin.Location = new System.Drawing.Point(316, 143);
+            this.dtpDateFin.Location = new System.Drawing.Point(361, 185);
             this.dtpDateFin.Name = "dtpDateFin";
-            this.dtpDateFin.Size = new System.Drawing.Size(294, 32);
+            this.dtpDateFin.Size = new System.Drawing.Size(346, 32);
             this.dtpDateFin.TabIndex = 11;
             // 
             // dtpDateDebut
             // 
-            this.dtpDateDebut.Location = new System.Drawing.Point(316, 95);
+            this.dtpDateDebut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpDateDebut.Location = new System.Drawing.Point(361, 137);
             this.dtpDateDebut.Name = "dtpDateDebut";
-            this.dtpDateDebut.Size = new System.Drawing.Size(294, 32);
+            this.dtpDateDebut.Size = new System.Drawing.Size(346, 32);
             this.dtpDateDebut.TabIndex = 10;
-            // 
-            // btnLancerInvit
-            // 
-            this.btnLancerInvit.Location = new System.Drawing.Point(316, 521);
-            this.btnLancerInvit.Name = "btnLancerInvit";
-            this.btnLancerInvit.Size = new System.Drawing.Size(239, 38);
-            this.btnLancerInvit.TabIndex = 9;
-            this.btnLancerInvit.Text = "Lancer les invitations";
-            this.btnLancerInvit.UseVisualStyleBackColor = true;
-            this.btnLancerInvit.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btnEnregistrer
-            // 
-            this.btnEnregistrer.BackColor = System.Drawing.Color.Transparent;
-            this.btnEnregistrer.Location = new System.Drawing.Point(575, 521);
-            this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(186, 38);
-            this.btnEnregistrer.TabIndex = 8;
-            this.btnEnregistrer.Text = "Enrengistrer";
-            this.btnEnregistrer.UseVisualStyleBackColor = false;
             // 
             // cbCreateur
             // 
             this.cbCreateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cbCreateur.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCreateur.ForeColor = System.Drawing.Color.White;
             this.cbCreateur.FormattingEnabled = true;
-            this.cbCreateur.Location = new System.Drawing.Point(316, 428);
+            this.cbCreateur.Location = new System.Drawing.Point(377, 452);
             this.cbCreateur.Name = "cbCreateur";
-            this.cbCreateur.Size = new System.Drawing.Size(294, 31);
+            this.cbCreateur.Size = new System.Drawing.Size(330, 31);
             this.cbCreateur.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(205, 428);
+            this.label13.Location = new System.Drawing.Point(250, 452);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 27);
+            this.label13.Size = new System.Drawing.Size(122, 30);
             this.label13.TabIndex = 6;
             this.label13.Text = "Créé par :";
             // 
@@ -548,42 +483,42 @@ namespace projetEvents
             // 
             this.rtbDescPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.rtbDescPage2.ForeColor = System.Drawing.Color.White;
-            this.rtbDescPage2.Location = new System.Drawing.Point(316, 215);
+            this.rtbDescPage2.Location = new System.Drawing.Point(361, 257);
             this.rtbDescPage2.Name = "rtbDescPage2";
-            this.rtbDescPage2.Size = new System.Drawing.Size(472, 135);
+            this.rtbDescPage2.Size = new System.Drawing.Size(346, 100);
             this.rtbDescPage2.TabIndex = 5;
             this.rtbDescPage2.Text = "";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(183, 215);
+            this.label12.Location = new System.Drawing.Point(219, 257);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(138, 27);
+            this.label12.Size = new System.Drawing.Size(159, 30);
             this.label12.TabIndex = 4;
             this.label12.Text = "Description :";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(202, 148);
+            this.label11.Location = new System.Drawing.Point(248, 190);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 27);
+            this.label11.Size = new System.Drawing.Size(119, 30);
             this.label11.TabIndex = 3;
             this.label11.Text = "Date fin :";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(180, 99);
+            this.label10.Location = new System.Drawing.Point(222, 141);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(136, 27);
+            this.label10.Size = new System.Drawing.Size(156, 30);
             this.label10.TabIndex = 2;
             this.label10.Text = "Date début :";
             // 
@@ -591,19 +526,20 @@ namespace projetEvents
             // 
             this.tbTitreEvenement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.tbTitreEvenement.ForeColor = System.Drawing.Color.White;
-            this.tbTitreEvenement.Location = new System.Drawing.Point(316, 43);
+            this.tbTitreEvenement.Location = new System.Drawing.Point(361, 85);
             this.tbTitreEvenement.Name = "tbTitreEvenement";
-            this.tbTitreEvenement.Size = new System.Drawing.Size(294, 32);
+            this.tbTitreEvenement.Size = new System.Drawing.Size(346, 32);
             this.tbTitreEvenement.TabIndex = 1;
             // 
             // label9
             // 
+            this.label9.AllowDrop = true;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(109, 46);
+            this.label9.Location = new System.Drawing.Point(140, 85);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(226, 27);
+            this.label9.Size = new System.Drawing.Size(264, 30);
             this.label9.TabIndex = 0;
             this.label9.Text = "Titre de l\'évènement :";
             // 
@@ -614,6 +550,116 @@ namespace projetEvents
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(818, 51);
             this.panel1.TabIndex = 14;
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Text = "Ajouter nouveau";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Supprimer";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Placer en premier";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Déplacer vers le haut";
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Déplacer vers le bas";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Placer en dernier";
+            // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnregistrer.Image = global::projetEvents.Properties.Resources.save1;
+            this.btnEnregistrer.Location = new System.Drawing.Point(848, 293);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(133, 102);
+            this.btnEnregistrer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEnregistrer.TabIndex = 15;
+            this.btnEnregistrer.TabStop = false;
+            this.btnEnregistrer.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnLancerInvit
+            // 
+            this.btnLancerInvit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLancerInvit.Image = global::projetEvents.Properties.Resources.invite_friendpng;
+            this.btnLancerInvit.Location = new System.Drawing.Point(836, 137);
+            this.btnLancerInvit.Name = "btnLancerInvit";
+            this.btnLancerInvit.Size = new System.Drawing.Size(143, 102);
+            this.btnLancerInvit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnLancerInvit.TabIndex = 15;
+            this.btnLancerInvit.TabStop = false;
+            this.btnLancerInvit.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(730, 452);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(312, 187);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(811, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(227, 27);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Lancer les invitations";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(856, 263);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(143, 27);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Enrengistrer ";
             // 
             // formEvenements
             // 
@@ -638,14 +684,14 @@ namespace projetEvents
             this.bn.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEnregistrer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnLancerInvit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnPageFin;
         private System.Windows.Forms.Button btnPageSuivante;
@@ -683,8 +729,6 @@ namespace projetEvents
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDateFin;
         private System.Windows.Forms.DateTimePicker dtpDateDebut;
-        private System.Windows.Forms.Button btnLancerInvit;
-        private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.ComboBox cbCreateur;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox rtbDescPage2;
@@ -695,5 +739,10 @@ namespace projetEvents
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnLancerInvit;
+        private System.Windows.Forms.PictureBox btnEnregistrer;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TabControl tabControl1;
     }
 }

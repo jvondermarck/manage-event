@@ -58,15 +58,15 @@ namespace projetEvents
             this.gbDepense.Controls.Add(this.lblMontant);
             this.gbDepense.Controls.Add(this.lblDescription);
             this.gbDepense.Controls.Add(this.lbBeneficiaires);
-            this.gbDepense.Location = new System.Drawing.Point(396, 23);
+            this.gbDepense.Location = new System.Drawing.Point(410, 9);
             this.gbDepense.Name = "gbDepense";
-            this.gbDepense.Size = new System.Drawing.Size(562, 611);
+            this.gbDepense.Size = new System.Drawing.Size(550, 625);
             this.gbDepense.TabIndex = 7;
             this.gbDepense.TabStop = false;
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(434, 535);
+            this.btnAnnuler.Location = new System.Drawing.Point(434, 565);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(113, 31);
             this.btnAnnuler.TabIndex = 9;
@@ -76,7 +76,7 @@ namespace projetEvents
             // 
             // btnValider
             // 
-            this.btnValider.Location = new System.Drawing.Point(312, 536);
+            this.btnValider.Location = new System.Drawing.Point(312, 565);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(116, 31);
             this.btnValider.TabIndex = 8;
@@ -86,9 +86,11 @@ namespace projetEvents
             // 
             // cbBeneficiaires
             // 
+            this.cbBeneficiaires.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cbBeneficiaires.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBeneficiaires.ForeColor = System.Drawing.Color.White;
             this.cbBeneficiaires.FormattingEnabled = true;
-            this.cbBeneficiaires.Location = new System.Drawing.Point(28, 535);
+            this.cbBeneficiaires.Location = new System.Drawing.Point(28, 565);
             this.cbBeneficiaires.Name = "cbBeneficiaires";
             this.cbBeneficiaires.Size = new System.Drawing.Size(272, 32);
             this.cbBeneficiaires.TabIndex = 7;
@@ -117,7 +119,7 @@ namespace projetEvents
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(23, 197);
+            this.label4.Location = new System.Drawing.Point(23, 231);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(151, 27);
             this.label4.TabIndex = 4;
@@ -128,7 +130,7 @@ namespace projetEvents
             this.lblAcheteur.AutoSize = true;
             this.lblAcheteur.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAcheteur.ForeColor = System.Drawing.Color.White;
-            this.lblAcheteur.Location = new System.Drawing.Point(24, 154);
+            this.lblAcheteur.Location = new System.Drawing.Point(23, 189);
             this.lblAcheteur.Name = "lblAcheteur";
             this.lblAcheteur.Size = new System.Drawing.Size(156, 27);
             this.lblAcheteur.TabIndex = 3;
@@ -139,7 +141,7 @@ namespace projetEvents
             this.lblMontant.AutoSize = true;
             this.lblMontant.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMontant.ForeColor = System.Drawing.Color.White;
-            this.lblMontant.Location = new System.Drawing.Point(24, 115);
+            this.lblMontant.Location = new System.Drawing.Point(23, 145);
             this.lblMontant.Name = "lblMontant";
             this.lblMontant.Size = new System.Drawing.Size(114, 27);
             this.lblMontant.TabIndex = 2;
@@ -150,7 +152,7 @@ namespace projetEvents
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.White;
-            this.lblDescription.Location = new System.Drawing.Point(24, 83);
+            this.lblDescription.Location = new System.Drawing.Point(23, 97);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(143, 27);
             this.lblDescription.TabIndex = 1;
@@ -158,19 +160,19 @@ namespace projetEvents
             // 
             // lbBeneficiaires
             // 
-            this.lbBeneficiaires.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.lbBeneficiaires.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.lbBeneficiaires.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbBeneficiaires.ForeColor = System.Drawing.Color.White;
             this.lbBeneficiaires.FormattingEnabled = true;
             this.lbBeneficiaires.ItemHeight = 24;
-            this.lbBeneficiaires.Location = new System.Drawing.Point(28, 252);
+            this.lbBeneficiaires.Location = new System.Drawing.Point(29, 286);
             this.lbBeneficiaires.Name = "lbBeneficiaires";
-            this.lbBeneficiaires.Size = new System.Drawing.Size(529, 240);
+            this.lbBeneficiaires.Size = new System.Drawing.Size(519, 240);
             this.lbBeneficiaires.TabIndex = 0;
             // 
             // lbDepenses
             // 
-            this.lbDepenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.lbDepenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.lbDepenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbDepenses.ForeColor = System.Drawing.Color.White;
             this.lbDepenses.FormattingEnabled = true;
@@ -182,7 +184,9 @@ namespace projetEvents
             // 
             // cbEvenement
             // 
+            this.cbEvenement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cbEvenement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEvenement.ForeColor = System.Drawing.Color.White;
             this.cbEvenement.FormattingEnabled = true;
             this.cbEvenement.Location = new System.Drawing.Point(8, 49);
             this.cbEvenement.Name = "cbEvenement";

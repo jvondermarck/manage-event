@@ -150,7 +150,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\Resources2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -261,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\event-managementpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\invite-friendpng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
