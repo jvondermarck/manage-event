@@ -21,9 +21,6 @@ namespace projetEvents
         // Déclaration de la chaine de connexion
         string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\Debug\bdd\bdEvents.mdb";
 
-        // Création d'un DataSet
-        DataSet ds = formMain.transfertDataSet;
-
         // Déclaration de la connexion active
         OleDbConnection connec = new OleDbConnection();
 
@@ -31,31 +28,37 @@ namespace projetEvents
         //Liaison de données - A une colonne - ComboBox
         private void surchageComboBox(ComboBox cbo, String table, String column, String champCache)
         {
-            cbo.DataSource = ds.Tables[table]; // On charge la table dans la cbo
+            cbo.DataSource = formMain.ds.Tables[table]; // On charge la table dans la cbo
             cbo.DisplayMember = column; // On dit quel colonne afficher de la table dans la cbo
             cbo.ValueMember = champCache; // Pour avoir le code de la destination (utile pour l'exo 4.a)
             cbo.Text = ""; // Pour ne pas afficher le 1er element de la cbo au demarage
         }
 
-        //Surcharge - A deux colonnes
-        public void surchageComboBoxV2(ComboBox cbo, String table, String column, String column2)
-        {
-            for (int i = 0; i < ds.Tables[table].Rows.Count; i++)
-            {
-                cbo.Items.Add(ds.Tables[table].Rows[i][column] + " " + ds.Tables[table].Rows[i][column2]);
-            }
-        }
-
         private void FormAjoutDepense_Load(object sender, EventArgs e)
         {
-            // Liaison de données - ComboBox Evenement 
-            surchageComboBox(cboEvenements, "Evenements", "titreEvent", "codeEvent");
+            // On supprime tous les évènements déja solé de la cbo
+            cboSolde();
 
             designAffichage();
 
             cboEvenements.SelectedIndex = -1;
-
             txtCombien.ShortcutsEnabled = false;
+        }
+
+        // On supprime tous les évènements déja soldé dans la cbo
+        public void cboSolde()
+        {
+            connec.ConnectionString = chainconnec;
+            connec.Open();
+            DataTable eventNonSolde = new DataTable();
+            string requete = "SELECT * FROM Evenements WHERE soldeON=false";
+            OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+            da.Fill(eventNonSolde);
+            connec.Close();
+
+            cboEvenements.DataSource = eventNonSolde;
+            cboEvenements.DisplayMember = "titreEvent";
+            cboEvenements.ValueMember = "codeEvent";
         }
 
         // Permet d'avoir les gens sur la CheckedListBox qui sont dans la table invités
@@ -72,29 +75,29 @@ namespace projetEvents
                 OleDbCommand cmd = new OleDbCommand(requete, connec);
                 OleDbDataReader dr = cmd.ExecuteReader();
 
-                if (!ds.Tables.Contains("participantsDepense"))
+                if (!formMain.ds.Tables.Contains("participantsDepense"))
                 {
                     DataTable dt = new DataTable("participantsDepense");
                     dt.Columns.Add("nomPrenom");
                     dt.Columns.Add("codeParticipant");
-                    ds.Tables.Add(dt);
+                    formMain.ds.Tables.Add(dt);
                 }
                 else
                 {
-                    ds.Tables["participantsDepense"].Clear();
+                    formMain.ds.Tables["participantsDepense"].Clear();
                 }
 
                 while (dr.Read())
                 {
-                    DataRow ligne = ds.Tables["participantsDepense"].NewRow();
+                    DataRow ligne = formMain.ds.Tables["participantsDepense"].NewRow();
                     ligne[0] = dr.GetString(0) + " " + dr.GetString(1);
                     ligne[1] = dr.GetInt32(2).ToString();
-                    ds.Tables["participantsDepense"].Rows.Add(ligne);
+                    formMain.ds.Tables["participantsDepense"].Rows.Add(ligne);
                 }
 
-                for(int i=0; i< ds.Tables["participantsDepense"].Rows.Count; i++)
+                for(int i=0; i< formMain.ds.Tables["participantsDepense"].Rows.Count; i++)
                 {
-                    clbListeBeneficiaire.Items.Add(ds.Tables["participantsDepense"].Rows[i]["nomPrenom"]);
+                    clbListeBeneficiaire.Items.Add(formMain.ds.Tables["participantsDepense"].Rows[i]["nomPrenom"]);
                 }
                 connec.Close();
 
@@ -113,7 +116,7 @@ namespace projetEvents
             {
                 for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
                 {
-                    if (ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
+                    if (formMain.ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString() == cboPayePar.SelectedValue.ToString())
                     {
                         clbListeBeneficiaire.SetItemChecked(i, true);
                     }
@@ -308,7 +311,7 @@ namespace projetEvents
             {
                 if (clbListeBeneficiaire.GetItemCheckState(i) == CheckState.Checked) // On regarde chaque element cochés
                 {
-                    codePartBenefciaire.Add(ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString()); // On prend son codeParticipant
+                    codePartBenefciaire.Add(formMain.ds.Tables["participantsDepense"].Rows[i]["codeParticipant"].ToString()); // On prend son codeParticipant
                 }
             }
 

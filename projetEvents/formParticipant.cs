@@ -62,7 +62,16 @@ namespace projetEvents
         //chargement de la combobox event alias cboevent par liaison de données
         public void Chargeevent()
         {
-            cboevent.DataSource = formMain.ds.Tables["Evenements"];
+            // On supprime tous les évènements déja soldé dans la cbo
+            connec.ConnectionString = chainconnec;
+            connec.Open();
+            DataTable eventNonSolde = new DataTable();
+            string requete = "SELECT * FROM Evenements WHERE soldeON=false";
+            OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+            da.Fill(eventNonSolde);
+            connec.Close();
+
+            cboevent.DataSource = eventNonSolde;
             cboevent.DisplayMember = "titreEvent";
             cboevent.ValueMember = "codeEvent";
             cboevent.SelectedIndex = -1;

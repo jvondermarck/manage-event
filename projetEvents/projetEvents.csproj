@@ -49,6 +49,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomDateTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormAjoutDepense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +294,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_money_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undraw_events.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

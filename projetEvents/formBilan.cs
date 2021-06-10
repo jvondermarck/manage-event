@@ -369,8 +369,6 @@ namespace projetEvents
             string requete = @"SELECT soldeON FROM Evenements WHERE codeEvent=" + cboEvent.SelectedValue;
             OleDbCommand cd = new OleDbCommand(requete, connec);
             bool res = (bool)cd.ExecuteScalar();
-            OleDbDataAdapter da = new OleDbDataAdapter(cd);
-            da.Update(formMain.ds, "Evenements");
             connec.Close();
             return res;
         }
