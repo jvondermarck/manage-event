@@ -23,7 +23,7 @@ namespace projetEvents
 
         private void formEvenements_Load(object sender, EventArgs e)
         {
-
+            //dtpDateDebut.DefaultMonthBackColor = Color.FromArgb(37, 42, 64);
         }
 
         private void button6_Click(object sender, EventArgs e)

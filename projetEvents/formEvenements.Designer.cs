@@ -33,10 +33,6 @@ namespace projetEvents
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formEvenements));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnPageFin = new System.Windows.Forms.Button();
-            this.btnPageSuivante = new System.Windows.Forms.Button();
-            this.btnPagePrecedente = new System.Windows.Forms.Button();
-            this.btnPageDebut = new System.Windows.Forms.Button();
             this.bn = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -59,6 +55,8 @@ namespace projetEvents
             this.lblCreateur = new System.Windows.Forms.Label();
             this.lblNumEvenement = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.checkBoxSolde = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
@@ -72,6 +70,10 @@ namespace projetEvents
             this.tbTitreEvenement = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPageDebut = new System.Windows.Forms.PictureBox();
+            this.btnPageFin = new System.Windows.Forms.PictureBox();
+            this.btnPageSuivante = new System.Windows.Forms.PictureBox();
+            this.btnPagePrecedente = new System.Windows.Forms.PictureBox();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -81,13 +83,15 @@ namespace projetEvents
             this.btnEnregistrer = new System.Windows.Forms.PictureBox();
             this.btnLancerInvit = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bn)).BeginInit();
             this.bn.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPageDebut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPageFin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPageSuivante)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPagePrecedente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnregistrer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLancerInvit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,10 +112,10 @@ namespace projetEvents
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage1.Controls.Add(this.btnPageDebut);
             this.tabPage1.Controls.Add(this.btnPageFin);
             this.tabPage1.Controls.Add(this.btnPageSuivante);
             this.tabPage1.Controls.Add(this.btnPagePrecedente);
-            this.tabPage1.Controls.Add(this.btnPageDebut);
             this.tabPage1.Controls.Add(this.bn);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
@@ -134,42 +138,6 @@ namespace projetEvents
             this.tabPage1.Size = new System.Drawing.Size(1077, 657);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "          Parcours 1 à 1";
-            // 
-            // btnPageFin
-            // 
-            this.btnPageFin.Location = new System.Drawing.Point(652, 545);
-            this.btnPageFin.Name = "btnPageFin";
-            this.btnPageFin.Size = new System.Drawing.Size(75, 37);
-            this.btnPageFin.TabIndex = 24;
-            this.btnPageFin.Text = ">>";
-            this.btnPageFin.UseVisualStyleBackColor = true;
-            // 
-            // btnPageSuivante
-            // 
-            this.btnPageSuivante.Location = new System.Drawing.Point(542, 545);
-            this.btnPageSuivante.Name = "btnPageSuivante";
-            this.btnPageSuivante.Size = new System.Drawing.Size(75, 36);
-            this.btnPageSuivante.TabIndex = 23;
-            this.btnPageSuivante.Text = ">";
-            this.btnPageSuivante.UseVisualStyleBackColor = true;
-            // 
-            // btnPagePrecedente
-            // 
-            this.btnPagePrecedente.Location = new System.Drawing.Point(438, 545);
-            this.btnPagePrecedente.Name = "btnPagePrecedente";
-            this.btnPagePrecedente.Size = new System.Drawing.Size(75, 36);
-            this.btnPagePrecedente.TabIndex = 22;
-            this.btnPagePrecedente.Text = "<";
-            this.btnPagePrecedente.UseVisualStyleBackColor = true;
-            // 
-            // btnPageDebut
-            // 
-            this.btnPageDebut.Location = new System.Drawing.Point(328, 545);
-            this.btnPageDebut.Name = "btnPageDebut";
-            this.btnPageDebut.Size = new System.Drawing.Size(75, 36);
-            this.btnPageDebut.TabIndex = 21;
-            this.btnPageDebut.Text = "<<";
-            this.btnPageDebut.UseVisualStyleBackColor = true;
             // 
             // bn
             // 
@@ -218,6 +186,7 @@ namespace projetEvents
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -397,9 +366,6 @@ namespace projetEvents
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.btnEnregistrer);
-            this.tabPage2.Controls.Add(this.btnLancerInvit);
-            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.checkBoxSolde);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.dtpDateFin);
@@ -412,12 +378,37 @@ namespace projetEvents
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.tbTitreEvenement);
             this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.btnEnregistrer);
+            this.tabPage2.Controls.Add(this.btnLancerInvit);
+            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1077, 657);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nouvel évènement";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(856, 263);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(143, 27);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Enrengistrer ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(811, 115);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(227, 27);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Lancer les invitations";
             // 
             // checkBoxSolde
             // 
@@ -551,6 +542,54 @@ namespace projetEvents
             this.panel1.Size = new System.Drawing.Size(818, 51);
             this.panel1.TabIndex = 14;
             // 
+            // btnPageDebut
+            // 
+            this.btnPageDebut.BackColor = System.Drawing.Color.Transparent;
+            this.btnPageDebut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPageDebut.Image = global::projetEvents.Properties.Resources.icons8_double_left_48px;
+            this.btnPageDebut.Location = new System.Drawing.Point(353, 531);
+            this.btnPageDebut.Name = "btnPageDebut";
+            this.btnPageDebut.Size = new System.Drawing.Size(70, 65);
+            this.btnPageDebut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPageDebut.TabIndex = 25;
+            this.btnPageDebut.TabStop = false;
+            // 
+            // btnPageFin
+            // 
+            this.btnPageFin.BackColor = System.Drawing.Color.Transparent;
+            this.btnPageFin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPageFin.Image = global::projetEvents.Properties.Resources.icons8_double_right_48px;
+            this.btnPageFin.Location = new System.Drawing.Point(643, 531);
+            this.btnPageFin.Name = "btnPageFin";
+            this.btnPageFin.Size = new System.Drawing.Size(75, 65);
+            this.btnPageFin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPageFin.TabIndex = 25;
+            this.btnPageFin.TabStop = false;
+            // 
+            // btnPageSuivante
+            // 
+            this.btnPageSuivante.BackColor = System.Drawing.Color.Transparent;
+            this.btnPageSuivante.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPageSuivante.Image = global::projetEvents.Properties.Resources.icons8_forward_48px;
+            this.btnPageSuivante.Location = new System.Drawing.Point(530, 531);
+            this.btnPageSuivante.Name = "btnPageSuivante";
+            this.btnPageSuivante.Size = new System.Drawing.Size(76, 65);
+            this.btnPageSuivante.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPageSuivante.TabIndex = 25;
+            this.btnPageSuivante.TabStop = false;
+            // 
+            // btnPagePrecedente
+            // 
+            this.btnPagePrecedente.BackColor = System.Drawing.Color.Transparent;
+            this.btnPagePrecedente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPagePrecedente.Image = global::projetEvents.Properties.Resources.icons8_back_48px;
+            this.btnPagePrecedente.Location = new System.Drawing.Point(450, 531);
+            this.btnPagePrecedente.Name = "btnPagePrecedente";
+            this.btnPagePrecedente.Size = new System.Drawing.Size(74, 65);
+            this.btnPagePrecedente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPagePrecedente.TabIndex = 25;
+            this.btnPagePrecedente.TabStop = false;
+            // 
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -639,28 +678,6 @@ namespace projetEvents
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(811, 115);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(227, 27);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Lancer les invitations";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(856, 263);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(143, 27);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Enrengistrer ";
-            // 
             // formEvenements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -684,6 +701,10 @@ namespace projetEvents
             this.bn.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPageDebut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPageFin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPageSuivante)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPagePrecedente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEnregistrer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnLancerInvit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -693,10 +714,6 @@ namespace projetEvents
 
         #endregion
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnPageFin;
-        private System.Windows.Forms.Button btnPageSuivante;
-        private System.Windows.Forms.Button btnPagePrecedente;
-        private System.Windows.Forms.Button btnPageDebut;
         private System.Windows.Forms.BindingNavigator bn;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -744,5 +761,9 @@ namespace projetEvents
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.PictureBox btnPageDebut;
+        private System.Windows.Forms.PictureBox btnPageFin;
+        private System.Windows.Forms.PictureBox btnPageSuivante;
+        private System.Windows.Forms.PictureBox btnPagePrecedente;
     }
 }

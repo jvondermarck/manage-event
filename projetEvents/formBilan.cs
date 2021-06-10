@@ -21,7 +21,7 @@ namespace projetEvents
         }
 
         // Déclaration de la chaine de connexion
-        private string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=bdEvents.mdb";
+        private string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\Debug\bdd\bdEvents.mdb";
 
         // Déclaration de la connexion active
         OleDbConnection connec = new OleDbConnection();
@@ -565,39 +565,43 @@ namespace projetEvents
             string donneurName;
             string receveurName;
 
-            rtbRecap.Text = "------------- Remboursements à prévoir ----------------------";
+            rtbRecap.Text = "\n-------------------------- QUI DOIT QUOI - À QUI --------------------------\n";
 
             connec.ConnectionString = chainconnec;
             connec.Open();
             for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
             {
-                // On prend le Prénom et Nom du donneur
-                donneurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString();
-                donneurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + donneurCode;
-
-                OleDbCommand cd1 = new OleDbCommand(donneurName, connec);
-                OleDbDataReader dr1 = cd1.ExecuteReader();
-                while (dr1.Read())
+                if(formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
                 {
-                    donneurName = dr1.GetString(0) + " " + dr1.GetString(1);
+                    // On prend le Prénom et Nom du donneur
+                    donneurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString();
+                    donneurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + donneurCode;
+
+                    OleDbCommand cd1 = new OleDbCommand(donneurName, connec);
+                    OleDbDataReader dr1 = cd1.ExecuteReader();
+                    while (dr1.Read())
+                    {
+                        donneurName = dr1.GetString(0) + " " + dr1.GetString(1);
+                    }
+
+                    // On prend le Prénom et Nom du receveur
+                    receveurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString();
+                    receveurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + receveurCode;
+
+                    OleDbCommand cd2 = new OleDbCommand(receveurName, connec);
+                    OleDbDataReader dr2 = cd2.ExecuteReader();
+                    while (dr2.Read())
+                    {
+                        receveurName = dr2.GetString(0) + " " + dr2.GetString(1);
+                    }
+
+                    // On prend le montant que le donneur doit au receveur
+                    montant = formMain.ds.Tables["BilanPart"].Rows[i]["Montant"].ToString();
+
+                    rtbRecap.Text += "\n" + donneurName + " doit " + montant + "€ à " + receveurName;
                 }
-
-                // On prend le Prénom et Nom du receveur
-                receveurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString();
-                receveurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + receveurCode;
-
-                OleDbCommand cd2 = new OleDbCommand(receveurName, connec);
-                OleDbDataReader dr2 = cd2.ExecuteReader();
-                while (dr2.Read())
-                {
-                    receveurName = dr2.GetString(0) + " " + dr2.GetString(1);
-                }
-
-                // On prend le montant que le donneur doit au receveur
-                montant = formMain.ds.Tables["BilanPart"].Rows[i]["Montant"].ToString();
-
-                rtbRecap.Text += "\n" + donneurName + " doit " + montant + "€ à " + receveurName;
             }
+            rtbRecap.Text += "\n\n-----------------------------------------------------------------------------------\n";
             connec.Close();
 
             // On aligne tout au milieu

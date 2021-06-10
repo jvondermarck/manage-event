@@ -25,7 +25,7 @@ namespace projetEvents
         private OleDbConnection connec = new OleDbConnection();
 
         //déclaration de la chaine de connection
-        private string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=bdEvents.mdb";
+        private string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\Debug\bdd\bdEvents.mdb";
 
         //déclaration des variables objets, mail et contenu du mail
         string sMail;
@@ -381,7 +381,7 @@ namespace projetEvents
                 msg.To.Add(sMail);
 
                 client.Send(msg);
-                MessageBox.Show("Le mail à bien été envoyé");
+                //MessageBox.Show("Le mail à bien été envoyé");
             }
             catch (Exception ex)
             {
@@ -413,6 +413,9 @@ namespace projetEvents
             //verification de si il reste une personne qui serait invitable
             plusdinvit();
 
+            // On affiche un message en bas à droite de l'écram
+            formNotification.Alert("L'invitation a été envoyé !", formNotification.enmType.Success);
+
             cboajoutparticipant.SelectedIndex = -1;
             btninviter.Visible = false;
             lblChooseModeInvit.Visible = false;
@@ -441,7 +444,7 @@ namespace projetEvents
                 OleDbCommand cd2 = new OleDbCommand(rqt, connec);
 
                 int nbLigneInsert = cd2.ExecuteNonQuery();
-                MessageBox.Show("L'invité à bien été ajouté");
+                //MessageBox.Show("L'invité à bien été ajouté");
             }
 
             catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
