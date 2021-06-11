@@ -181,7 +181,7 @@ namespace projetEvents
             this.txtCombien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCombien.ForeColor = System.Drawing.Color.White;
             this.txtCombien.Location = new System.Drawing.Point(167, 225);
-            this.txtCombien.MaxLength = 10;
+            this.txtCombien.MaxLength = 7;
             this.txtCombien.Name = "txtCombien";
             this.txtCombien.Size = new System.Drawing.Size(254, 32);
             this.txtCombien.TabIndex = 28;
@@ -247,6 +247,7 @@ namespace projetEvents
             // clbListeBeneficiaire
             // 
             this.clbListeBeneficiaire.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.clbListeBeneficiaire.CheckOnClick = true;
             this.clbListeBeneficiaire.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clbListeBeneficiaire.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbListeBeneficiaire.ForeColor = System.Drawing.Color.White;
@@ -359,7 +360,7 @@ namespace projetEvents
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(164, 375);
+            this.label1.Location = new System.Drawing.Point(166, 374);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 24);
             this.label1.TabIndex = 26;

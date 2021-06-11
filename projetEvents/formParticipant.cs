@@ -38,6 +38,15 @@ namespace projetEvents
             Initialisation();
         }
 
+        //Liaison de données - A une colonne
+        private void surchageComboBox(ComboBox cbo, String table, String column, String champCache)
+        {
+            cbo.DataSource = formMain.ds.Tables[table]; // On charge la table dans la cbo
+            cbo.DisplayMember = column; // On dit quel colonne afficher de la table dans la cbo
+            cbo.ValueMember = champCache; // Pour avoir le code de la destination (utile pour l'exo 4.a)
+            cbo.Text = ""; // Pour ne pas afficher le 1er element de la cbo au demarage  
+        }
+
         //initialisation du formulaire : gestion de l'affichage des composants, chargement du dataset local formMain.ds,
         //remplissage de la combo box evenement
         public void Initialisation()
@@ -52,28 +61,7 @@ namespace projetEvents
             lblparticipant.Visible = false;
             dgvparticipant.Visible = false;
             lblInviter.Visible = false;
-
-            Chargeevent();
-        }
-
-        //---------------------------------------------------------------------------
-        //Consultation des participants à un évènement
-
-        //chargement de la combobox event alias cboevent par liaison de données
-        public void Chargeevent()
-        {
-            // On supprime tous les évènements déja soldé dans la cbo
-            connec.ConnectionString = chainconnec;
-            connec.Open();
-            DataTable eventNonSolde = new DataTable();
-            string requete = "SELECT * FROM Evenements WHERE soldeON=false";
-            OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
-            da.Fill(eventNonSolde);
-            connec.Close();
-
-            cboevent.DataSource = eventNonSolde;
-            cboevent.DisplayMember = "titreEvent";
-            cboevent.ValueMember = "codeEvent";
+            surchageComboBox(cboevent, "Evenements", "titreEvent", "codeEvent");
             cboevent.SelectedIndex = -1;
         }
 
@@ -82,15 +70,37 @@ namespace projetEvents
         //remplissage de la combobox des personnes non invités
         private void Cboevent_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //apparition du label et de la datagridview des participant à l'évenement
-            lblparticipant.Visible = true;
+            // Si l'event n'est pas soldé, on peut alors ajouter des invités
+            if(!rechercheDejaSolde())
+            {
+                //apparition du label des participant à l'évenement
+                lblparticipant.Visible = true;
+                btnadd.Visible = true;
+                //remplissage de la combobox des non invités
+                RameneDatacbo();
+                plusdinvit();
+            } else
+            {
+                lblparticipant.Visible = false;
+                btnadd.Visible = false;
+            }
+
+            //apparition de la datagridview des participant à l'évenement
             dgvparticipant.Visible = true;
-            btnadd.Visible = true;
             //remplissage de la data grid view
             RameneDataDGV();
-            //remplissage de la combobox des non invités
-            RameneDatacbo();
-            plusdinvit();
+        }
+
+        // On regarde si l'évenement est déja soldé
+        private bool rechercheDejaSolde()
+        {
+            connec.ConnectionString = chainconnec;
+            connec.Open();
+            string requete = @"SELECT soldeON FROM Evenements WHERE codeEvent=" + cboevent.SelectedValue;
+            OleDbCommand cd = new OleDbCommand(requete, connec);
+            bool res = (bool)cd.ExecuteScalar();
+            connec.Close();
+            return res;
         }
 
         //récupération des données de la base de données dans un data table puis affichage dans un data grid view
@@ -226,20 +236,6 @@ namespace projetEvents
             catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
 
             return totalDepense;
-        }
-
-        // On regarde si l'évenement est déja soldé
-        private bool rechercheDejaSolde()
-        {
-            connec.ConnectionString = chainconnec;
-            connec.Open();
-            string requete = @"SELECT soldeON FROM Evenements WHERE codeEvent=" + cboevent.SelectedValue;
-            OleDbCommand cd = new OleDbCommand(requete, connec);
-            bool res = (bool)cd.ExecuteScalar();
-            OleDbDataAdapter da = new OleDbDataAdapter(cd);
-            da.Update(formMain.ds, "Evenements");
-            connec.Close();
-            return res;
         }
 
         //----------------------------------------------------------------------------------------------------------------------------------------

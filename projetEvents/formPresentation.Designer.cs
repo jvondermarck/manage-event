@@ -55,7 +55,7 @@ namespace projetEvents
             this.lblEvenemts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(59)))), ((int)(((byte)(191)))));
             this.lblEvenemts.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEvenemts.ForeColor = System.Drawing.Color.White;
-            this.lblEvenemts.Location = new System.Drawing.Point(134, 63);
+            this.lblEvenemts.Location = new System.Drawing.Point(133, 68);
             this.lblEvenemts.Name = "lblEvenemts";
             this.lblEvenemts.Size = new System.Drawing.Size(111, 46);
             this.lblEvenemts.TabIndex = 0;
@@ -67,7 +67,7 @@ namespace projetEvents
             this.lblParticipant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(119)))), ((int)(((byte)(41)))));
             this.lblParticipant.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParticipant.ForeColor = System.Drawing.Color.White;
-            this.lblParticipant.Location = new System.Drawing.Point(134, 248);
+            this.lblParticipant.Location = new System.Drawing.Point(126, 261);
             this.lblParticipant.Name = "lblParticipant";
             this.lblParticipant.Size = new System.Drawing.Size(111, 46);
             this.lblParticipant.TabIndex = 0;
@@ -79,7 +79,7 @@ namespace projetEvents
             this.lblDepenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(40)))), ((int)(((byte)(71)))));
             this.lblDepenses.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepenses.ForeColor = System.Drawing.Color.White;
-            this.lblDepenses.Location = new System.Drawing.Point(131, 441);
+            this.lblDepenses.Location = new System.Drawing.Point(127, 450);
             this.lblDepenses.Name = "lblDepenses";
             this.lblDepenses.Size = new System.Drawing.Size(114, 40);
             this.lblDepenses.TabIndex = 0;

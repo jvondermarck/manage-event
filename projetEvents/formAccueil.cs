@@ -121,15 +121,14 @@ namespace projetEvents
 
         private void btnEvenements_Click(object sender, EventArgs e)
         {
-            this.panelAllForm.Controls.Clear();
             userControlMenu1.BarrePanel = 2;
             formEvenements formEvenements = new formEvenements() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
             formEvenements.FormBorderStyle = FormBorderStyle.None;
+            this.panelAllForm.Controls.Clear();
             this.panelAllForm.Controls.Add(formEvenements);
             formEvenements.Show();
             lblNomForm.Text = "Créer de nouveaux évènements !";
             lblPresentationForm.Text = "";
-
         }
 
         private void btnParticipant_Click(object sender, EventArgs e)

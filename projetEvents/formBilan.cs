@@ -230,7 +230,16 @@ namespace projetEvents
             dgvDepenseConcerme.DataSource = formMain.ds.Tables["mesDepensesConcerne"];
 
             // On additione tout les montants de chaque dépense pour faire une somme total de ce qu'il doit rembourser
-            int nbPart = int.Parse(formMain.ds.Tables["Participants"].Rows[cboParticipant.SelectedIndex]["nbParts"].ToString());
+            int nbPart = 0;
+            // On va cherche dans la BDD son nombre de parts
+            for(int i=0; i< formMain.ds.Tables["Participants"].Rows.Count; i++)
+            {
+                if(formMain.ds.Tables["Participants"].Rows[i]["codeParticipant"].ToString() == cboParticipant.SelectedValue.ToString())
+                {
+                    nbPart = int.Parse(formMain.ds.Tables["Participants"].Rows[i]["nbParts"].ToString());
+                }
+            }
+
             double calculRefund = 0;
             for (int i = 0; i < formMain.ds.Tables["mesDepensesConcerne"].Rows.Count; i++)
             {
@@ -359,7 +368,7 @@ namespace projetEvents
                 {
                     int codeParti = int.Parse(codeParticipant) - 1;
                     int nbPart = int.Parse(formMain.ds.Tables["Participants"].Rows[codeParti]["nbParts"].ToString());
-
+                   
                     totalDepense = 0;
                     for (int i = 0; i < formMain.ds.Tables["mesDepensesTotal"].Rows.Count; i++)
                     {
@@ -475,7 +484,7 @@ namespace projetEvents
                     connec.Open();
                     string requete = @"UPDATE Evenements SET soldeON = true WHERE codeEvent=" + codeEvent.ToString();
                     OleDbCommand cd = new OleDbCommand(requete, connec);
-                    int res = (int)cd.ExecuteNonQuery();
+                    cd.ExecuteNonQuery();
 
                     // On Update le DataSet après la modif
                     string rqt = "SELECT * FROM Evenements";
