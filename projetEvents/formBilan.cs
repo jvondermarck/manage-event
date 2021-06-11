@@ -152,13 +152,19 @@ namespace projetEvents
             OleDbDataAdapter da = new OleDbDataAdapter(cd1);
             da.Fill(formMain.ds, "mesDepenses");
 
+            // On change le nom des tables pour un meilleure affichage
+            formMain.ds.Tables["mesDepenses"].Columns[0].ColumnName = "Numéro dépense";
+            formMain.ds.Tables["mesDepenses"].Columns[1].ColumnName = "Date de la dépense";
+            formMain.ds.Tables["mesDepenses"].Columns[2].ColumnName = "Description";
+            formMain.ds.Tables["mesDepenses"].Columns[3].ColumnName = "Montant";
+
             dgvMesDepenses.DataSource = formMain.ds.Tables["mesDepenses"];
 
             // On additione tout les montants de chaque dépense pour faire une somme total de ce qu'il a dépensé
             double totalDepense = 0;
             for (int i = 0; i < formMain.ds.Tables["mesDepenses"].Rows.Count; i++)
             {
-                totalDepense += double.Parse(formMain.ds.Tables["mesDepenses"].Rows[i]["montant"].ToString());
+                totalDepense += double.Parse(formMain.ds.Tables["mesDepenses"].Rows[i]["Montant"].ToString());
             }
 
             lblTotalDepense.Text += String.Format("{0:0.00}", totalDepense) + "€";
@@ -213,6 +219,14 @@ namespace projetEvents
             }
             connec.Close();
 
+
+            // On change le nom des tables pour un meilleure affichage
+            formMain.ds.Tables["mesDepensesConcerne"].Columns[0].ColumnName = "Numéro dépense";
+            formMain.ds.Tables["mesDepensesConcerne"].Columns[1].ColumnName = "Montant";
+            formMain.ds.Tables["mesDepensesConcerne"].Columns[2].ColumnName = "Nombre de parts";
+            formMain.ds.Tables["mesDepensesConcerne"].Columns[3].ColumnName = "Description";
+
+            // On affiche la table dans la GDV
             dgvDepenseConcerme.DataSource = formMain.ds.Tables["mesDepensesConcerne"];
 
             // On additione tout les montants de chaque dépense pour faire une somme total de ce qu'il doit rembourser
@@ -220,8 +234,8 @@ namespace projetEvents
             double calculRefund = 0;
             for (int i = 0; i < formMain.ds.Tables["mesDepensesConcerne"].Rows.Count; i++)
             {
-                double montant = double.Parse(formMain.ds.Tables["mesDepensesConcerne"].Rows[i]["montant"].ToString());
-                int somme = int.Parse(formMain.ds.Tables["mesDepensesConcerne"].Rows[i]["SommeDenbParts"].ToString());
+                double montant = double.Parse(formMain.ds.Tables["mesDepensesConcerne"].Rows[i]["Montant"].ToString());
+                int somme = int.Parse(formMain.ds.Tables["mesDepensesConcerne"].Rows[i]["Nombre de parts"].ToString());
                 calculRefund += (montant / somme) * nbPart;
             }
 
@@ -446,27 +460,44 @@ namespace projetEvents
                 // Si tous les soldes sont nulle, on va mettre l'évènement en question comme Soldé, donc on n'y touchera plus
                 if (totalSoldeNull() == 0)
                 {
+                    // On affiche dans une rich text box, le récapitulatif du bilan Qui Doit Quoi à Qui
+                    recapitulatifRTB();
+
+                    // On récupère les élements sélectionner dans la cbo car en actualisant le DS, la liaison de donnés va se re-actualiser donc on l'user va perdre l'event qu'il a selec
+                    int indexEvent = cboEvent.SelectedIndex;
+                    int indexPart = -1;
+                    if(cboParticipant.SelectedIndex>=0)
+                    {
+                        indexPart = cboParticipant.SelectedIndex;
+                    }
+
                     connec.ConnectionString = chainconnec;
                     connec.Open();
                     string requete = @"UPDATE Evenements SET soldeON = true WHERE codeEvent=" + codeEvent.ToString();
                     OleDbCommand cd = new OleDbCommand(requete, connec);
                     int res = (int)cd.ExecuteNonQuery();
-                    
-                    // On Update le DataSet
-                    requete = "SELECT * FROM Evenements";
-                    OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
-                    formMain.ds.Tables["Evenements"].Clear();
-                    da.Update(formMain.ds, "Evenements");
 
+                    // On Update le DataSet après la modif
+                    string rqt = "SELECT * FROM Evenements";
+                    OleDbDataAdapter da = new OleDbDataAdapter(rqt, connec);
+                    formMain.ds.Tables["Evenements"].Clear();
+                    da.Fill(formMain.ds, "Evenements");
                     connec.Close();
+
+                    // On remet la sélection initial de l'utilisateur vu qu'on a re-start la liaison de données.
+                    cboEvent.SelectedIndex = indexEvent;
+                    cboParticipant.SelectedIndex = indexPart;
+
                     lblSolderEvent.Visible = false;
                     btnQuiDoitQuoiQui.Visible = false;
+                    rtbRecap.Visible = true;
                 }
+            } else
+            {
+                // On affiche dans une rich text box, le récapitulatif du bilan Qui Doit Quoi à Qui
+                rtbRecap.Visible = true;
+                recapitulatifRTB();
             }
-
-            // On affiche dans une rich text box, le récapitulatif du bilan Qui Doit Quoi à Qui
-            rtbRecap.Visible = true;
-            recapitulatifRTB();
         }
 
         // On calcul la somme total des soldes de tous les participants, pour voir si continue de calculer le solde donneur et receveur

@@ -25,7 +25,6 @@ namespace CustomControls.RJControls
         private Image calendarIcon = Resources.calendarWhite;
         private RectangleF iconButtonArea;
         private const int calendarIconWidth = 34;
-        private DateTimePicker dateTimePicker1;
         private const int arrowIconWidth = 17;
 
         //Properties
@@ -149,15 +148,7 @@ namespace CustomControls.RJControls
 
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 0;
             this.ResumeLayout(false);
 
         }

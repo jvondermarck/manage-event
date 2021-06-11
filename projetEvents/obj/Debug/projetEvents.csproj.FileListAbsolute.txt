@@ -21,3 +21,4 @@ C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bas
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.pdb
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.csprojAssemblyReference.cache
 C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\projetEvents.inviteNewEvents.resources
+C:\Users\Julien\Documents\DUT Info\D21 - Programmation et administration des bases de données\ProjetGit\projetEvents\obj\Debug\CustomControls.RJControls.RJDatePicker.resources

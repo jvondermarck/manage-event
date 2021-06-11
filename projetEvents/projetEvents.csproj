@@ -114,6 +114,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomDateTime.resx">
+      <DependentUpon>CustomDateTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formAccueil.resx">
       <DependentUpon>formAccueil.cs</DependentUpon>
     </EmbeddedResource>

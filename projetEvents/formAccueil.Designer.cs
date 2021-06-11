@@ -87,11 +87,11 @@ namespace projetEvents
             this.lblPresentationForm.AutoSize = true;
             this.lblPresentationForm.BackColor = System.Drawing.Color.Transparent;
             this.lblPresentationForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPresentationForm.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresentationForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPresentationForm.ForeColor = System.Drawing.Color.White;
             this.lblPresentationForm.Location = new System.Drawing.Point(512, 40);
             this.lblPresentationForm.Name = "lblPresentationForm";
-            this.lblPresentationForm.Size = new System.Drawing.Size(608, 27);
+            this.lblPresentationForm.Size = new System.Drawing.Size(597, 23);
             this.lblPresentationForm.TabIndex = 1;
             this.lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
             // 
@@ -100,11 +100,11 @@ namespace projetEvents
             this.lblNomForm.AutoSize = true;
             this.lblNomForm.BackColor = System.Drawing.Color.Transparent;
             this.lblNomForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNomForm.Font = new System.Drawing.Font("Montserrat", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomForm.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomForm.ForeColor = System.Drawing.Color.White;
-            this.lblNomForm.Location = new System.Drawing.Point(231, 23);
+            this.lblNomForm.Location = new System.Drawing.Point(231, 20);
             this.lblNomForm.Name = "lblNomForm";
-            this.lblNomForm.Size = new System.Drawing.Size(289, 60);
+            this.lblNomForm.Size = new System.Drawing.Size(289, 55);
             this.lblNomForm.TabIndex = 1;
             this.lblNomForm.Text = "Bienvenue ! ";
             // 

@@ -120,7 +120,6 @@
             this.btnBilan.TabIndex = 1;
             this.btnBilan.Tag = "5";
             this.btnBilan.Text = "   Bilan";
-            this.btnBilan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBilan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBilan.UseVisualStyleBackColor = true;
             this.btnBilan.Click += new System.EventHandler(this.btnBilan_Click);
@@ -139,7 +138,6 @@
             this.btnDepense.TabIndex = 1;
             this.btnDepense.Tag = "4";
             this.btnDepense.Text = "   Dépenses";
-            this.btnDepense.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDepense.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDepense.UseVisualStyleBackColor = true;
             this.btnDepense.Click += new System.EventHandler(this.btnDepense_Click);
@@ -158,7 +156,6 @@
             this.btnEvenements.TabIndex = 1;
             this.btnEvenements.Tag = "2";
             this.btnEvenements.Text = "  Evènements";
-            this.btnEvenements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEvenements.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEvenements.UseVisualStyleBackColor = true;
             this.btnEvenements.Click += new System.EventHandler(this.btnEvenements_Click);
@@ -177,7 +174,6 @@
             this.btnParticipant.TabIndex = 1;
             this.btnParticipant.Tag = "3";
             this.btnParticipant.Text = "   Participant";
-            this.btnParticipant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnParticipant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnParticipant.UseVisualStyleBackColor = true;
             this.btnParticipant.Click += new System.EventHandler(this.btnParticipant_Click);
@@ -196,7 +192,6 @@
             this.btnAccueil.TabIndex = 1;
             this.btnAccueil.Tag = "1";
             this.btnAccueil.Text = "   Accueil";
-            this.btnAccueil.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccueil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAccueil.UseVisualStyleBackColor = true;
             this.btnAccueil.Click += new System.EventHandler(this.btnAccueil_Click);
