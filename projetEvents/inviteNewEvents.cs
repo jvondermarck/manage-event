@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace projetEvents
 {
@@ -16,6 +17,12 @@ namespace projetEvents
          * Réalisé par Jad MACHKOUR
          * 
         */
+
+        // Déclaration de la chaine de connexion
+        private string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\Debug\bdd\bdEvents.mdb";
+
+        // Déclaration de la connexion active
+        OleDbConnection connec = new OleDbConnection();
 
         public inviteNewEvents()
         {

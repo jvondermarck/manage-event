@@ -86,9 +86,9 @@ namespace projetEvents
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(80, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(497, 27);
+            this.label2.Size = new System.Drawing.Size(512, 27);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Cochez les participants invités à cet évènement :";
+            this.label2.Text = "Cochez les participants à inviter à cet évènement :";
             // 
             // clbParticipants
             // 

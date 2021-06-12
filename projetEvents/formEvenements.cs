@@ -19,10 +19,15 @@ namespace projetEvents
          * 
         */
 
+        // Déclaration de la chaine de connexion
+        private string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\Debug\bdd\bdEvents.mdb";
+
+        // Déclaration de la connexion active
+        OleDbConnection connec = new OleDbConnection();
+
         public formEvenements()
         {
             InitializeComponent();
-            //ds = formMain.transfertDataSet;
         }
 
         private void formEvenements_Load(object sender, EventArgs e)

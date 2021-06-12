@@ -87,13 +87,13 @@ namespace projetEvents
             this.lblPresentationForm.AutoSize = true;
             this.lblPresentationForm.BackColor = System.Drawing.Color.Transparent;
             this.lblPresentationForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPresentationForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresentationForm.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPresentationForm.ForeColor = System.Drawing.Color.White;
-            this.lblPresentationForm.Location = new System.Drawing.Point(512, 40);
+            this.lblPresentationForm.Location = new System.Drawing.Point(510, 37);
             this.lblPresentationForm.Name = "lblPresentationForm";
-            this.lblPresentationForm.Size = new System.Drawing.Size(597, 23);
+            this.lblPresentationForm.Size = new System.Drawing.Size(749, 30);
             this.lblPresentationForm.TabIndex = 1;
-            this.lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l\'addition";
+            this.lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l\'addition...";
             // 
             // lblNomForm
             // 

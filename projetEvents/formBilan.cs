@@ -16,7 +16,8 @@ namespace projetEvents
     {
         /*
          * Réalisé par Julien VON DER MARCK
-         * 
+         * SI PROBLEME POUR PDF : clique droit sur projet > Gérer packages Nugets > et Download : NReco.PdfGenerator
+         * Mais, des tests ont été réalisés chez mes coéquipiers = pas besoin de l'installer !  :)
         */
 
         public formBilan()

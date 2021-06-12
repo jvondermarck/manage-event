@@ -35,7 +35,6 @@ namespace projetEvents
             this.lblErrorCombien = new System.Windows.Forms.Label();
             this.lblErrorQuoi = new System.Windows.Forms.Label();
             this.lblErrorEvenement = new System.Windows.Forms.Label();
-            this.pcbLoadingValidate = new System.Windows.Forms.PictureBox();
             this.lblTitre = new System.Windows.Forms.Label();
             this.Annuler = new System.Windows.Forms.Button();
             this.Valider = new System.Windows.Forms.Button();
@@ -57,8 +56,9 @@ namespace projetEvents
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDepense = new System.Windows.Forms.DateTimePicker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).BeginInit();
+            this.pcbLoadingValidate = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).BeginInit();
             this.SuspendLayout();
             // 
             // lblErrorBeneficiaire
@@ -68,9 +68,9 @@ namespace projetEvents
             this.lblErrorBeneficiaire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorBeneficiaire.Location = new System.Drawing.Point(632, 168);
             this.lblErrorBeneficiaire.Name = "lblErrorBeneficiaire";
-            this.lblErrorBeneficiaire.Size = new System.Drawing.Size(364, 24);
+            this.lblErrorBeneficiaire.Size = new System.Drawing.Size(355, 24);
             this.lblErrorBeneficiaire.TabIndex = 41;
-            this.lblErrorBeneficiaire.Text = "Sélectionner au moins un bénéficiaires";
+            this.lblErrorBeneficiaire.Text = "Sélectionner au moins un bénéficiaire";
             this.lblErrorBeneficiaire.Visible = false;
             // 
             // lblErrorPayePar
@@ -78,7 +78,7 @@ namespace projetEvents
             this.lblErrorPayePar.AutoSize = true;
             this.lblErrorPayePar.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPayePar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorPayePar.Location = new System.Drawing.Point(170, 316);
+            this.lblErrorPayePar.Location = new System.Drawing.Point(170, 320);
             this.lblErrorPayePar.Name = "lblErrorPayePar";
             this.lblErrorPayePar.Size = new System.Drawing.Size(264, 24);
             this.lblErrorPayePar.TabIndex = 40;
@@ -90,7 +90,7 @@ namespace projetEvents
             this.lblErrorCombien.AutoSize = true;
             this.lblErrorCombien.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorCombien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorCombien.Location = new System.Drawing.Point(170, 257);
+            this.lblErrorCombien.Location = new System.Drawing.Point(170, 258);
             this.lblErrorCombien.Name = "lblErrorCombien";
             this.lblErrorCombien.Size = new System.Drawing.Size(264, 24);
             this.lblErrorCombien.TabIndex = 39;
@@ -102,7 +102,7 @@ namespace projetEvents
             this.lblErrorQuoi.AutoSize = true;
             this.lblErrorQuoi.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorQuoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorQuoi.Location = new System.Drawing.Point(176, 185);
+            this.lblErrorQuoi.Location = new System.Drawing.Point(176, 193);
             this.lblErrorQuoi.Name = "lblErrorQuoi";
             this.lblErrorQuoi.Size = new System.Drawing.Size(233, 24);
             this.lblErrorQuoi.TabIndex = 38;
@@ -114,23 +114,12 @@ namespace projetEvents
             this.lblErrorEvenement.AutoSize = true;
             this.lblErrorEvenement.Font = new System.Drawing.Font("Montserrat", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorEvenement.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
-            this.lblErrorEvenement.Location = new System.Drawing.Point(168, 123);
+            this.lblErrorEvenement.Location = new System.Drawing.Point(168, 130);
             this.lblErrorEvenement.Name = "lblErrorEvenement";
             this.lblErrorEvenement.Size = new System.Drawing.Size(274, 24);
             this.lblErrorEvenement.TabIndex = 37;
             this.lblErrorEvenement.Text = "Sélectionnez un évènement...";
             this.lblErrorEvenement.Visible = false;
-            // 
-            // pcbLoadingValidate
-            // 
-            this.pcbLoadingValidate.Image = global::projetEvents.Properties.Resources.loading2;
-            this.pcbLoadingValidate.Location = new System.Drawing.Point(576, 457);
-            this.pcbLoadingValidate.Name = "pcbLoadingValidate";
-            this.pcbLoadingValidate.Size = new System.Drawing.Size(69, 64);
-            this.pcbLoadingValidate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbLoadingValidate.TabIndex = 36;
-            this.pcbLoadingValidate.TabStop = false;
-            this.pcbLoadingValidate.Visible = false;
             // 
             // lblTitre
             // 
@@ -152,9 +141,9 @@ namespace projetEvents
             this.Annuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Annuler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Annuler.ForeColor = System.Drawing.Color.White;
-            this.Annuler.Location = new System.Drawing.Point(670, 473);
+            this.Annuler.Location = new System.Drawing.Point(671, 596);
             this.Annuler.Name = "Annuler";
-            this.Annuler.Size = new System.Drawing.Size(108, 38);
+            this.Annuler.Size = new System.Drawing.Size(122, 38);
             this.Annuler.TabIndex = 34;
             this.Annuler.Text = "Annuler";
             this.Annuler.UseVisualStyleBackColor = false;
@@ -167,9 +156,9 @@ namespace projetEvents
             this.Valider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Valider.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Valider.ForeColor = System.Drawing.Color.White;
-            this.Valider.Location = new System.Drawing.Point(802, 473);
+            this.Valider.Location = new System.Drawing.Point(810, 596);
             this.Valider.Name = "Valider";
-            this.Valider.Size = new System.Drawing.Size(108, 38);
+            this.Valider.Size = new System.Drawing.Size(116, 38);
             this.Valider.TabIndex = 35;
             this.Valider.Text = "Valider";
             this.Valider.UseVisualStyleBackColor = false;
@@ -242,7 +231,7 @@ namespace projetEvents
             this.rtbCommentaire.ForeColor = System.Drawing.Color.White;
             this.rtbCommentaire.Location = new System.Drawing.Point(39, 412);
             this.rtbCommentaire.Name = "rtbCommentaire";
-            this.rtbCommentaire.Size = new System.Drawing.Size(381, 70);
+            this.rtbCommentaire.Size = new System.Drawing.Size(382, 86);
             this.rtbCommentaire.TabIndex = 30;
             this.rtbCommentaire.Text = "";
             // 
@@ -379,12 +368,23 @@ namespace projetEvents
             this.dtpDepense.Size = new System.Drawing.Size(141, 31);
             this.dtpDepense.TabIndex = 31;
             // 
+            // pcbLoadingValidate
+            // 
+            this.pcbLoadingValidate.Image = global::projetEvents.Properties.Resources.loading2;
+            this.pcbLoadingValidate.Location = new System.Drawing.Point(585, 580);
+            this.pcbLoadingValidate.Name = "pcbLoadingValidate";
+            this.pcbLoadingValidate.Size = new System.Drawing.Size(69, 64);
+            this.pcbLoadingValidate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLoadingValidate.TabIndex = 36;
+            this.pcbLoadingValidate.TabStop = false;
+            this.pcbLoadingValidate.Visible = false;
+            // 
             // FormAjoutDepense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(978, 553);
+            this.ClientSize = new System.Drawing.Size(978, 663);
             this.Controls.Add(this.dtpDepense);
             this.Controls.Add(this.lblErrorBeneficiaire);
             this.Controls.Add(this.lblErrorPayePar);
@@ -416,8 +416,8 @@ namespace projetEvents
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "FormAjoutDepense";
             this.Load += new System.EventHandler(this.FormAjoutDepense_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLoadingValidate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
