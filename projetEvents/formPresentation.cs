@@ -13,6 +13,11 @@ namespace projetEvents
 {
     public partial class formPresentation : Form
     {
+        /*
+         * Réalisé par Julien VON DER MARCK
+         * 
+        */
+
         public formPresentation()
         {
             InitializeComponent();

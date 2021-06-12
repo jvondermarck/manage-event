@@ -102,9 +102,9 @@ namespace projetEvents
             this.lblNomForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNomForm.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomForm.ForeColor = System.Drawing.Color.White;
-            this.lblNomForm.Location = new System.Drawing.Point(231, 20);
+            this.lblNomForm.Location = new System.Drawing.Point(231, 25);
             this.lblNomForm.Name = "lblNomForm";
-            this.lblNomForm.Size = new System.Drawing.Size(289, 55);
+            this.lblNomForm.Size = new System.Drawing.Size(282, 52);
             this.lblNomForm.TabIndex = 1;
             this.lblNomForm.Text = "Bienvenue ! ";
             // 

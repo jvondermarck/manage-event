@@ -13,6 +13,11 @@ namespace projetEvents
 {
     public partial class formStartup : Form
     {
+        /*
+         * Réalisé par Julien VON DER MARCK
+         * 
+        */
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         // gdi32.dll contient des fonctions pour Windows GDI (Interface de périphérique graphique)
         // qui aide les fenêtres en créant les objets à deux dimensions simples.

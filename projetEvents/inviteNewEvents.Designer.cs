@@ -39,13 +39,17 @@ namespace projetEvents
             // 
             // btnEnvoyer
             // 
+            this.btnEnvoyer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnEnvoyer.FlatAppearance.BorderSize = 0;
+            this.btnEnvoyer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnvoyer.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnvoyer.ForeColor = System.Drawing.Color.White;
             this.btnEnvoyer.Location = new System.Drawing.Point(579, 548);
             this.btnEnvoyer.Name = "btnEnvoyer";
             this.btnEnvoyer.Size = new System.Drawing.Size(163, 36);
             this.btnEnvoyer.TabIndex = 13;
             this.btnEnvoyer.Text = "Envoyer";
-            this.btnEnvoyer.UseVisualStyleBackColor = true;
+            this.btnEnvoyer.UseVisualStyleBackColor = false;
             this.btnEnvoyer.Click += new System.EventHandler(this.btnEnvoyer_Click);
             // 
             // cbToutCocher
@@ -62,13 +66,17 @@ namespace projetEvents
             // 
             // btnAnnuler
             // 
+            this.btnAnnuler.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAnnuler.FlatAppearance.BorderSize = 0;
+            this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnnuler.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnuler.ForeColor = System.Drawing.Color.White;
             this.btnAnnuler.Location = new System.Drawing.Point(759, 547);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(151, 37);
             this.btnAnnuler.TabIndex = 11;
             this.btnAnnuler.Text = "Annuler";
-            this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.UseVisualStyleBackColor = false;
             this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // label2

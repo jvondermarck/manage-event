@@ -186,6 +186,7 @@ namespace projetEvents
             // 
             this.cbEvenement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cbEvenement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEvenement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEvenement.ForeColor = System.Drawing.Color.White;
             this.cbEvenement.FormattingEnabled = true;
             this.cbEvenement.Location = new System.Drawing.Point(8, 49);
@@ -219,6 +220,7 @@ namespace projetEvents
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formDepense";
             this.Text = "formDepense";
+            this.Load += new System.EventHandler(this.formDepense_Load);
             this.gbDepense.ResumeLayout(false);
             this.gbDepense.PerformLayout();
             this.ResumeLayout(false);

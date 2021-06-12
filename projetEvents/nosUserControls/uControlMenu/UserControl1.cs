@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace uControlMenu
 {
+    /*
+     * Réalisé par Julien VON DER MARCK
+     * 
+    */
+
     // Déclaration de la signature du Deleguates pour les méthodes de Click (changementd de form)
     public delegate void btnAccueil(object sender, EventArgs e);
     public delegate void btnEvenements(object sender, EventArgs e);

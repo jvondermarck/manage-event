@@ -14,6 +14,10 @@ namespace projetEvents
 {
     public partial class formBilan : Form
     {
+        /*
+         * Réalisé par Julien VON DER MARCK
+         * 
+        */
 
         public formBilan()
         {
@@ -116,7 +120,7 @@ namespace projetEvents
 
             // Ce que j'ai dépensé - Procédures stockés MesDepenses
             dgvMesDepenses.DataSource = "";
-            lblTotalDepense.Text = "Total = ";
+            lblTotalDepense.Text = "";
 
             // On vérifie que la table n'existe pas déjà
             if (formMain.ds.Tables.Contains("mesDepenses"))
@@ -172,7 +176,7 @@ namespace projetEvents
 
             // Ce que je dois rembourser - Procédures stockés DepensesQuiMeConcernent
             dgvDepenseConcerme.DataSource = "";
-            lblDepenseConcerne.Text = "Total = ";
+            lblDepenseConcerne.Text = "";
 
             // On vérifie que la table n'existe pas déjà
             if (formMain.ds.Tables.Contains("mesDepensesConcerne"))

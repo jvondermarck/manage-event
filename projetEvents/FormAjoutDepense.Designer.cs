@@ -36,7 +36,7 @@ namespace projetEvents
             this.lblErrorQuoi = new System.Windows.Forms.Label();
             this.lblErrorEvenement = new System.Windows.Forms.Label();
             this.pcbLoadingValidate = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTitre = new System.Windows.Forms.Label();
             this.Annuler = new System.Windows.Forms.Button();
             this.Valider = new System.Windows.Forms.Button();
             this.txtCombien = new System.Windows.Forms.TextBox();
@@ -124,7 +124,7 @@ namespace projetEvents
             // pcbLoadingValidate
             // 
             this.pcbLoadingValidate.Image = global::projetEvents.Properties.Resources.loading2;
-            this.pcbLoadingValidate.Location = new System.Drawing.Point(565, 457);
+            this.pcbLoadingValidate.Location = new System.Drawing.Point(576, 457);
             this.pcbLoadingValidate.Name = "pcbLoadingValidate";
             this.pcbLoadingValidate.Size = new System.Drawing.Size(69, 64);
             this.pcbLoadingValidate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -132,22 +132,22 @@ namespace projetEvents
             this.pcbLoadingValidate.TabStop = false;
             this.pcbLoadingValidate.Visible = false;
             // 
-            // label4
+            // lblTitre
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Product Sans", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(33, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(469, 38);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Saissisez une nouvelle dépense...";
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTitre.Font = new System.Drawing.Font("Century Gothic", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.ForeColor = System.Drawing.Color.White;
+            this.lblTitre.Location = new System.Drawing.Point(33, 23);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(494, 38);
+            this.lblTitre.TabIndex = 25;
+            this.lblTitre.Text = "Saissisez une nouvelle dépense...";
             // 
             // Annuler
             // 
-            this.Annuler.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(20)))), ((int)(((byte)(100)))));
+            this.Annuler.BackColor = System.Drawing.SystemColors.Highlight;
             this.Annuler.FlatAppearance.BorderSize = 0;
             this.Annuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Annuler.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,6 +209,7 @@ namespace projetEvents
             this.cboPayePar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cboPayePar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboPayePar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPayePar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboPayePar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPayePar.ForeColor = System.Drawing.Color.White;
             this.cboPayePar.FormattingEnabled = true;
@@ -223,6 +224,7 @@ namespace projetEvents
             this.cboEvenements.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cboEvenements.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboEvenements.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEvenements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEvenements.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEvenements.ForeColor = System.Drawing.SystemColors.Window;
             this.cboEvenements.FormattingEnabled = true;
@@ -267,9 +269,9 @@ namespace projetEvents
             this.ckbToutLeMonde.ForeColor = System.Drawing.Color.White;
             this.ckbToutLeMonde.Location = new System.Drawing.Point(513, 379);
             this.ckbToutLeMonde.Name = "ckbToutLeMonde";
-            this.ckbToutLeMonde.Size = new System.Drawing.Size(152, 31);
+            this.ckbToutLeMonde.Size = new System.Drawing.Size(264, 31);
             this.ckbToutLeMonde.TabIndex = 33;
-            this.ckbToutLeMonde.Text = "Tout cocher";
+            this.ckbToutLeMonde.Text = "Tout cocher / décocher";
             this.ckbToutLeMonde.UseVisualStyleBackColor = true;
             this.ckbToutLeMonde.CheckedChanged += new System.EventHandler(this.ckbToutLeMonde_CheckedChanged);
             // 
@@ -375,7 +377,7 @@ namespace projetEvents
             this.dtpDepense.Location = new System.Drawing.Point(601, 99);
             this.dtpDepense.Name = "dtpDepense";
             this.dtpDepense.Size = new System.Drawing.Size(141, 31);
-            this.dtpDepense.TabIndex = 42;
+            this.dtpDepense.TabIndex = 31;
             // 
             // FormAjoutDepense
             // 
@@ -390,7 +392,7 @@ namespace projetEvents
             this.Controls.Add(this.lblErrorQuoi);
             this.Controls.Add(this.lblErrorEvenement);
             this.Controls.Add(this.pcbLoadingValidate);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.Annuler);
             this.Controls.Add(this.Valider);
             this.Controls.Add(this.txtCombien);
@@ -408,6 +410,7 @@ namespace projetEvents
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCommentaire);
             this.Controls.Add(this.lblEvents);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormAjoutDepense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -428,7 +431,7 @@ namespace projetEvents
         private System.Windows.Forms.Label lblErrorQuoi;
         private System.Windows.Forms.Label lblErrorEvenement;
         private System.Windows.Forms.PictureBox pcbLoadingValidate;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Button Annuler;
         private System.Windows.Forms.Button Valider;
         private System.Windows.Forms.TextBox txtCombien;

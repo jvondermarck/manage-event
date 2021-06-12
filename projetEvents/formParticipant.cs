@@ -16,6 +16,11 @@ namespace projetEvents
 {
     public partial class formParticipant : Form
     {
+        /*
+         * Réalisé par Gauthier LASSABLIERE
+         * 
+        */
+
         public formParticipant()
         {
             InitializeComponent();
@@ -36,6 +41,7 @@ namespace projetEvents
         private void GdP_Load(object sender, EventArgs e)
         {
             Initialisation();
+            lblevent.Focus(); // On met le titre comme focus au depart pour éviter que la cbo aie un background bleu vu qu'il le sélectionné en premier
         }
 
         //Liaison de données - A une colonne

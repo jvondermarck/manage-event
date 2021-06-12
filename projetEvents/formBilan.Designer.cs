@@ -30,16 +30,16 @@ namespace projetEvents
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBilan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tpRefund = new System.Windows.Forms.TabControl();
             this.tpRecap = new System.Windows.Forms.TabPage();
             this.pnlRecapPart = new System.Windows.Forms.Panel();
@@ -107,13 +107,13 @@ namespace projetEvents
             // 
             // pnlRecapPart
             // 
+            this.pnlRecapPart.Controls.Add(this.lblTotalDepense);
+            this.pnlRecapPart.Controls.Add(this.lblDepenseConcerne);
             this.pnlRecapPart.Controls.Add(this.dgvDepenseConcerme);
             this.pnlRecapPart.Controls.Add(this.dgvMesDepenses);
             this.pnlRecapPart.Controls.Add(this.label3);
             this.pnlRecapPart.Controls.Add(this.pcbGenerate);
             this.pnlRecapPart.Controls.Add(this.lblPDF);
-            this.pnlRecapPart.Controls.Add(this.lblTotalDepense);
-            this.pnlRecapPart.Controls.Add(this.lblDepenseConcerne);
             this.pnlRecapPart.Controls.Add(this.label4);
             this.pnlRecapPart.Location = new System.Drawing.Point(23, 93);
             this.pnlRecapPart.Name = "pnlRecapPart";
@@ -125,13 +125,13 @@ namespace projetEvents
             // 
             this.dgvDepenseConcerme.AllowUserToAddRows = false;
             this.dgvDepenseConcerme.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDepenseConcerme.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle76.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle76.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDepenseConcerme.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
             this.dgvDepenseConcerme.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -141,24 +141,24 @@ namespace projetEvents
             this.dgvDepenseConcerme.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDepenseConcerme.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDepenseConcerme.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDepenseConcerme.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDepenseConcerme.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.dgvDepenseConcerme.ColumnHeadersHeight = 30;
             this.dgvDepenseConcerme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDepenseConcerme.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDepenseConcerme.DefaultCellStyle = dataGridViewCellStyle78;
             this.dgvDepenseConcerme.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDepenseConcerme.EnableHeadersVisualStyles = false;
             this.dgvDepenseConcerme.GridColor = System.Drawing.Color.SteelBlue;
@@ -178,13 +178,13 @@ namespace projetEvents
             // 
             this.dgvMesDepenses.AllowUserToAddRows = false;
             this.dgvMesDepenses.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvMesDepenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle79.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle79.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvMesDepenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle79;
             this.dgvMesDepenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -194,24 +194,24 @@ namespace projetEvents
             this.dgvMesDepenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMesDepenses.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMesDepenses.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMesDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle80.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle80.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle80.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMesDepenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle80;
             this.dgvMesDepenses.ColumnHeadersHeight = 30;
             this.dgvMesDepenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMesDepenses.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle81.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle81.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle81.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle81.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle81.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMesDepenses.DefaultCellStyle = dataGridViewCellStyle81;
             this.dgvMesDepenses.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvMesDepenses.EnableHeadersVisualStyles = false;
             this.dgvMesDepenses.GridColor = System.Drawing.Color.SteelBlue;
@@ -230,18 +230,18 @@ namespace projetEvents
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(25, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(234, 27);
+            this.label3.Size = new System.Drawing.Size(188, 32);
             this.label3.TabIndex = 0;
-            this.label3.Text = "- Ce que j\'ai dépensé";
+            this.label3.Text = "- J\'ai dépensé ";
             // 
             // pcbGenerate
             // 
             this.pcbGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbGenerate.Image = global::projetEvents.Properties.Resources.generatepng;
-            this.pcbGenerate.Location = new System.Drawing.Point(772, 235);
+            this.pcbGenerate.Location = new System.Drawing.Point(772, 223);
             this.pcbGenerate.Name = "pcbGenerate";
             this.pcbGenerate.Size = new System.Drawing.Size(131, 130);
             this.pcbGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -255,8 +255,8 @@ namespace projetEvents
             // 
             this.lblPDF.AutoSize = true;
             this.lblPDF.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPDF.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblPDF.Location = new System.Drawing.Point(727, 194);
+            this.lblPDF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.lblPDF.Location = new System.Drawing.Point(727, 185);
             this.lblPDF.Name = "lblPDF";
             this.lblPDF.Size = new System.Drawing.Size(272, 33);
             this.lblPDF.TabIndex = 0;
@@ -265,43 +265,45 @@ namespace projetEvents
             // lblTotalDepense
             // 
             this.lblTotalDepense.AutoSize = true;
-            this.lblTotalDepense.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDepense.ForeColor = System.Drawing.Color.White;
-            this.lblTotalDepense.Location = new System.Drawing.Point(373, 24);
+            this.lblTotalDepense.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalDepense.Font = new System.Drawing.Font("Montserrat", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalDepense.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblTotalDepense.Location = new System.Drawing.Point(168, 24);
             this.lblTotalDepense.Name = "lblTotalDepense";
-            this.lblTotalDepense.Size = new System.Drawing.Size(82, 27);
+            this.lblTotalDepense.Size = new System.Drawing.Size(29, 32);
             this.lblTotalDepense.TabIndex = 4;
-            this.lblTotalDepense.Text = "Total = ";
+            this.lblTotalDepense.Text = "x";
             // 
             // lblDepenseConcerne
             // 
             this.lblDepenseConcerne.AutoSize = true;
-            this.lblDepenseConcerne.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepenseConcerne.ForeColor = System.Drawing.Color.White;
-            this.lblDepenseConcerne.Location = new System.Drawing.Point(373, 238);
+            this.lblDepenseConcerne.Font = new System.Drawing.Font("Montserrat", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepenseConcerne.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblDepenseConcerne.Location = new System.Drawing.Point(236, 237);
             this.lblDepenseConcerne.Name = "lblDepenseConcerne";
-            this.lblDepenseConcerne.Size = new System.Drawing.Size(82, 27);
+            this.lblDepenseConcerne.Size = new System.Drawing.Size(29, 32);
             this.lblDepenseConcerne.TabIndex = 4;
-            this.lblDepenseConcerne.Text = "Total = ";
+            this.lblDepenseConcerne.Text = "x";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(25, 237);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(308, 27);
+            this.label4.Size = new System.Drawing.Size(265, 32);
             this.label4.TabIndex = 0;
-            this.label4.Text = "- Ce que je dois rembourser";
+            this.label4.Text = "- Je dois rembourser";
             // 
             // cboParticipant
             // 
             this.cboParticipant.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.cboParticipant.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboParticipant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboParticipant.ForeColor = System.Drawing.Color.White;
             this.cboParticipant.FormattingEnabled = true;
-            this.cboParticipant.Location = new System.Drawing.Point(699, 27);
+            this.cboParticipant.Location = new System.Drawing.Point(687, 27);
             this.cboParticipant.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboParticipant.Name = "cboParticipant";
             this.cboParticipant.Size = new System.Drawing.Size(249, 35);
@@ -312,11 +314,11 @@ namespace projetEvents
             // lblPart
             // 
             this.lblPart.AutoSize = true;
-            this.lblPart.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPart.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPart.ForeColor = System.Drawing.Color.White;
             this.lblPart.Location = new System.Drawing.Point(491, 30);
             this.lblPart.Name = "lblPart";
-            this.lblPart.Size = new System.Drawing.Size(229, 30);
+            this.lblPart.Size = new System.Drawing.Size(221, 28);
             this.lblPart.TabIndex = 0;
             this.lblPart.Text = "Quel participant ?";
             this.lblPart.Visible = false;
@@ -324,11 +326,11 @@ namespace projetEvents
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(18, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 30);
+            this.label1.Size = new System.Drawing.Size(225, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quel évènement ?";
             // 
@@ -337,9 +339,10 @@ namespace projetEvents
             this.cboEvent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.cboEvent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboEvent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboEvent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboEvent.ForeColor = System.Drawing.Color.White;
             this.cboEvent.FormattingEnabled = true;
-            this.cboEvent.Location = new System.Drawing.Point(221, 27);
+            this.cboEvent.Location = new System.Drawing.Point(210, 27);
             this.cboEvent.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cboEvent.Name = "cboEvent";
             this.cboEvent.Size = new System.Drawing.Size(249, 35);
@@ -387,7 +390,7 @@ namespace projetEvents
             // 
             this.lblSolderEvent.AutoSize = true;
             this.lblSolderEvent.Font = new System.Drawing.Font("Montserrat", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSolderEvent.Location = new System.Drawing.Point(290, 266);
+            this.lblSolderEvent.Location = new System.Drawing.Point(313, 266);
             this.lblSolderEvent.Name = "lblSolderEvent";
             this.lblSolderEvent.Size = new System.Drawing.Size(423, 52);
             this.lblSolderEvent.TabIndex = 5;
@@ -425,13 +428,13 @@ namespace projetEvents
             // 
             this.dgvBilanEvent.AllowUserToAddRows = false;
             this.dgvBilanEvent.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvBilanEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle73.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle73.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvBilanEvent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle73;
             this.dgvBilanEvent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -441,24 +444,24 @@ namespace projetEvents
             this.dgvBilanEvent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBilanEvent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvBilanEvent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBilanEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle74.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle74.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle74.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBilanEvent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle74;
             this.dgvBilanEvent.ColumnHeadersHeight = 30;
             this.dgvBilanEvent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBilanEvent.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle75.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle75.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBilanEvent.DefaultCellStyle = dataGridViewCellStyle75;
             this.dgvBilanEvent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvBilanEvent.EnableHeadersVisualStyles = false;
             this.dgvBilanEvent.GridColor = System.Drawing.Color.SteelBlue;

@@ -65,7 +65,6 @@ namespace projetEvents
             this.lblCreateur = new System.Windows.Forms.Label();
             this.lblNumEvenement = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rjDatePicker1 = new CustomControls.RJControls.RJDatePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.checkBoxSolde = new System.Windows.Forms.CheckBox();
@@ -374,10 +373,10 @@ namespace projetEvents
             // rtbDescPage1
             // 
             this.rtbDescPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.rtbDescPage1.Enabled = false;
             this.rtbDescPage1.ForeColor = System.Drawing.Color.White;
             this.rtbDescPage1.Location = new System.Drawing.Point(412, 211);
             this.rtbDescPage1.Name = "rtbDescPage1";
+            this.rtbDescPage1.ReadOnly = true;
             this.rtbDescPage1.Size = new System.Drawing.Size(339, 112);
             this.rtbDescPage1.TabIndex = 13;
             this.rtbDescPage1.Text = "";
@@ -467,7 +466,6 @@ namespace projetEvents
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.tabPage2.Controls.Add(this.rjDatePicker1);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.checkBoxSolde);
@@ -491,19 +489,6 @@ namespace projetEvents
             this.tabPage2.Size = new System.Drawing.Size(1077, 657);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nouvel évènement";
-            // 
-            // rjDatePicker1
-            // 
-            this.rjDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjDatePicker1.BorderSize = 0;
-            this.rjDatePicker1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjDatePicker1.Location = new System.Drawing.Point(361, 136);
-            this.rjDatePicker1.MinimumSize = new System.Drawing.Size(4, 35);
-            this.rjDatePicker1.Name = "rjDatePicker1";
-            this.rjDatePicker1.Size = new System.Drawing.Size(346, 35);
-            this.rjDatePicker1.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.rjDatePicker1.TabIndex = 17;
-            this.rjDatePicker1.TextColor = System.Drawing.Color.White;
             // 
             // label14
             // 
@@ -560,7 +545,7 @@ namespace projetEvents
             // dtpDateDebut
             // 
             this.dtpDateDebut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDateDebut.Location = new System.Drawing.Point(48, 591);
+            this.dtpDateDebut.Location = new System.Drawing.Point(361, 141);
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(346, 32);
             this.dtpDateDebut.TabIndex = 10;
@@ -678,9 +663,9 @@ namespace projetEvents
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(730, 452);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 480);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(312, 187);
+            this.pictureBox1.Size = new System.Drawing.Size(254, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -780,6 +765,5 @@ namespace projetEvents
         private System.Windows.Forms.PictureBox btnPageFin;
         private System.Windows.Forms.PictureBox btnPageSuivante;
         private System.Windows.Forms.PictureBox btnPagePrecedente;
-        private CustomControls.RJControls.RJDatePicker rjDatePicker1;
     }
 }

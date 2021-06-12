@@ -12,6 +12,11 @@ namespace projetEvents
 {
     public partial class inviteNewEvents : Form
     {
+        /*
+         * Réalisé par Jad MACHKOUR
+         * 
+        */
+
         public inviteNewEvents()
         {
             InitializeComponent();

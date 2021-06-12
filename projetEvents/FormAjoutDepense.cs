@@ -13,6 +13,11 @@ namespace projetEvents
 {
     public partial class FormAjoutDepense : Form
     {
+        /*
+         * Réalisé par Julien VON DER MARCK
+         * 
+        */
+
         public FormAjoutDepense()
         {
             InitializeComponent();
@@ -42,6 +47,7 @@ namespace projetEvents
             designAffichage();
 
             cboEvenements.SelectedIndex = -1;
+            lblTitre.Focus(); // On met le titre comme focus au depart pour éviter que la cbo aie un background bleu vu qu'il le sélectionné en premier
             txtCombien.ShortcutsEnabled = false;
         }
 
