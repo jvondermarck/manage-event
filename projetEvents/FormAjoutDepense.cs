@@ -75,6 +75,7 @@ namespace projetEvents
                 OleDbCommand cmd = new OleDbCommand(requete, connec);
                 OleDbDataReader dr = cmd.ExecuteReader();
 
+                // On crée une table pour pouvoir mettre le nom prenom de tous les participants invités à l'event (creation de table pour faire une liaison de données)
                 if (!formMain.ds.Tables.Contains("participantsDepense"))
                 {
                     DataTable dt = new DataTable("participantsDepense");
@@ -95,6 +96,7 @@ namespace projetEvents
                     formMain.ds.Tables["participantsDepense"].Rows.Add(ligne);
                 }
 
+                // On ajoute tous les participants dans la CheckedListBox
                 for(int i=0; i< formMain.ds.Tables["participantsDepense"].Rows.Count; i++)
                 {
                     clbListeBeneficiaire.Items.Add(formMain.ds.Tables["participantsDepense"].Rows[i]["nomPrenom"]);
@@ -110,6 +112,7 @@ namespace projetEvents
             catch (Exception exp) { MessageBox.Show(exp.GetType().ToString()); }
         }
 
+        // On coche automatiquement celui qui a fait la dépense
         private void autoCheckCreateur()
         {
             if (clbListeBeneficiaire.Items.Count >= 1 && cboPayePar.SelectedIndex != -1)
@@ -140,7 +143,7 @@ namespace projetEvents
                         clbListeBeneficiaire.SetItemChecked(i, true);
                     }
                 }
-                autoCheckCreateur();
+                autoCheckCreateur(); // On oublie pas de cocher celui qui fait la dépense
             } else
             {
                 ckbToutLeMonde.Checked = false;
@@ -156,20 +159,20 @@ namespace projetEvents
         private Boolean verficationRemplissage()
         {
             Boolean remplissageCorrect;
-            int nombreErreur = 5;
+            int nombreErreur = 5; // Il y a 5 erreurs maximun que la personne peut commetre
 
             // Vérification de la ComboBox Evènements
-            if (String.IsNullOrEmpty(cboEvenements.Text))
+            if (String.IsNullOrEmpty(cboEvenements.Text)) // Si la cbo est vide
             {
                 errorProvider.SetError(cboEvenements, "Veuillez sélectionner un évènement.");
-                nombreErreur++;
-                lblErrorEvenement.Visible = true;
+                nombreErreur++; // On augmente le nbr d'erreur
+                lblErrorEvenement.Visible = true; // On affiche un messsage d'erreur
             }
-            else
+            else // Si la cbo est rempli
             {
-                errorProvider.SetError(cboEvenements, "");
-                nombreErreur--;
-                lblErrorEvenement.Visible = false;
+                errorProvider.SetError(cboEvenements, ""); // On enleve le error provider
+                nombreErreur--; // On décremente le nbr d'erreur
+                lblErrorEvenement.Visible = false; // On cache le message d'erreur
             }
 
             // Vérification de la TextBox "Quoi"
@@ -228,9 +231,9 @@ namespace projetEvents
                 lblErrorBeneficiaire.Visible = false;
             }
 
-            if (nombreErreur <= 0)
+            if (nombreErreur <= 0) // Si le nbr d'erreur est nulle
             {
-                remplissageCorrect = true;
+                remplissageCorrect = true; // On dit que tout est correcte
             }
             else
             {
@@ -244,7 +247,7 @@ namespace projetEvents
         {
             // On va vérifier que l'utilisateur a bien tout remplit
             Boolean remplissageComplet = verficationRemplissage();
-            //saisieDepense();
+            // Si l'user a bien tout coché, on va commencer à insérer les données dans la BDD
             if (remplissageComplet)
             {
                 saisieDepense();
@@ -294,7 +297,7 @@ namespace projetEvents
                 requete = "SELECT * FROM Depenses";
                 OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
                 formMain.ds.Tables["Depenses"].Clear();
-                da.Update(formMain.ds, "Depenses");
+                da.Fill(formMain.ds, "Depenses");
             }
             catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }
             catch (InvalidOperationException) { MessageBox.Show("Erreur d'acces à la base de donnée"); }
@@ -334,7 +337,7 @@ namespace projetEvents
                 string requete2 = "SELECT * FROM Beneficiaires";
                 OleDbDataAdapter da = new OleDbDataAdapter(requete2, connec);
                 formMain.ds.Tables["Beneficiaires"].Clear();
-                da.Update(formMain.ds, "Beneficiaires");
+                da.Fill(formMain.ds, "Beneficiaires");
 
                 pcbLoadingValidate.Visible = true;
                 Timer Clock = new Timer();
@@ -350,7 +353,7 @@ namespace projetEvents
             finally { connec.Close();}
         }
 
-        // Quand on clique sur validé, un temps de chargement s'active, on veut désactiver le gif de chargemenebt après ca
+        // Quand on clique sur validé, un temps de chargement s'active, on veut désactiver le gif de chargemenent après ca
         private void MyTimer_Tick(object sender, EventArgs e)
         {
             pcbLoadingValidate.Visible = false;
@@ -369,7 +372,7 @@ namespace projetEvents
             return numeroDepense;
         }
 
-        // On efface tous les champs de saisie du formulaire ajout d'une dépense
+        // On efface tous les champs de saisie du formulaire quand il a inséré une nouvelle dépense ou qu'il appuie sur le btn annuler
         private void toutEffacerDepense()
         {
             cboEvenements.SelectedIndex = -1;
@@ -396,12 +399,13 @@ namespace projetEvents
             toutEffacerDepense();
             formNotification.Alert("Vous avez annulé la saisie de dépense", formNotification.enmType.Warning);
         }
-
+        
+        // On fait un petit design pour pas que le texte soit trop collé sur les bords de la rich text box
         private void designAffichage()
         {
             rtbCommentaire.SelectAll();
-            rtbCommentaire.SelectionIndent += 15;//play with this values to match yours
-            rtbCommentaire.SelectionRightIndent += 15;//this too
+            rtbCommentaire.SelectionIndent += 15;// On augmente un peu la marge dans la RTB
+            rtbCommentaire.SelectionRightIndent += 15;
             rtbCommentaire.SelectionLength = 0;
         }
 
@@ -417,6 +421,7 @@ namespace projetEvents
             autoCheckCreateur();
         }
 
+        // Des qu'il sélectionner un participant, on coche direct celui-ci dans la checkedlistBox
         private void cboPayePar_SelectionChangeCommitted(object sender, EventArgs e)
         {
             autoCheckCreateur();
@@ -460,6 +465,7 @@ namespace projetEvents
             }
         }
 
+        // On affiche le signe Euros quand l'user sors de la zone de texte
         private void txtCombien_Leave(object sender, EventArgs e)
         {
             if(!String.IsNullOrEmpty(txtCombien.Text)) // Si on va dans la txt et on resort sans rien mettre, on ne ve pas afficher le symbol euro tout seul
@@ -468,6 +474,7 @@ namespace projetEvents
             }
         }
 
+        // Des qu'il reclique sur la zone de texte, on efface tout pour eviter qu'il se retrouve avec le symbol euros et provoque une erreur lors de l'insertion dans la BDD
         private void txtCombien_Enter(object sender, EventArgs e)
         {
             txtCombien.Text = "";
@@ -479,6 +486,7 @@ namespace projetEvents
             toolTip1.Show("Entrez uniquement des chiffres", txtCombien);
         }
 
+        // On efface le message tooltip quand il sort de la zone de texte
         private void txtCombien_MouseLeave(object sender, EventArgs e)
         {
             toolTip1.Hide(txtCombien);
