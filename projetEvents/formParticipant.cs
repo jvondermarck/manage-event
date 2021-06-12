@@ -456,6 +456,12 @@ namespace projetEvents
 
                 int nbLigneInsert = cd2.ExecuteNonQuery();
                 //MessageBox.Show("L'invité à bien été ajouté");
+
+                // On Update la BDD
+                string requete = "SELECT * FROM Invites";
+                OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+                formMain.ds.Tables["Invites"].Clear();
+                da.Fill(formMain.ds, "Invites");
             }
 
             catch (OleDbException) { MessageBox.Show("Erreur dans la requete SQL"); }

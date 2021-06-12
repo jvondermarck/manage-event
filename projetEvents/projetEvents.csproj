@@ -301,5 +301,8 @@
   <ItemGroup>
     <None Include="Resources\undraw_events.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\budget.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

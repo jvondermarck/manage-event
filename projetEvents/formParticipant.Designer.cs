@@ -44,13 +44,13 @@ namespace projetEvents
             this.lblevent = new System.Windows.Forms.Label();
             this.cboajoutparticipant = new System.Windows.Forms.ComboBox();
             this.cboevent = new System.Windows.Forms.ComboBox();
-            this.dgvparticipant = new System.Windows.Forms.DataGridView();
             this.lblChooseModeInvit = new System.Windows.Forms.Label();
             this.rdbMailAuto = new System.Windows.Forms.RadioButton();
             this.rdbMailPersonnalise = new System.Windows.Forms.RadioButton();
             this.lblInviter = new System.Windows.Forms.Label();
-            this.btninviter = new System.Windows.Forms.PictureBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.dgvparticipant = new System.Windows.Forms.DataGridView();
+            this.btninviter = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvparticipant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btninviter)).BeginInit();
             this.SuspendLayout();
@@ -107,9 +107,9 @@ namespace projetEvents
             this.lblparticipant.Location = new System.Drawing.Point(19, 179);
             this.lblparticipant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblparticipant.Name = "lblparticipant";
-            this.lblparticipant.Size = new System.Drawing.Size(555, 33);
+            this.lblparticipant.Size = new System.Drawing.Size(517, 33);
             this.lblparticipant.TabIndex = 46;
-            this.lblparticipant.Text = "Liste des participants à cette évènements :";
+            this.lblparticipant.Text = "Liste des participants à cet évènement :";
             // 
             // lblcontenu
             // 
@@ -143,9 +143,9 @@ namespace projetEvents
             this.lblajoutparticipant.Location = new System.Drawing.Point(555, 21);
             this.lblajoutparticipant.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblajoutparticipant.Name = "lblajoutparticipant";
-            this.lblajoutparticipant.Size = new System.Drawing.Size(148, 27);
+            this.lblajoutparticipant.Size = new System.Drawing.Size(163, 27);
             this.lblajoutparticipant.TabIndex = 43;
-            this.lblajoutparticipant.Text = "Futur invité :";
+            this.lblajoutparticipant.Text = "Nouvel invité :";
             // 
             // lblevent
             // 
@@ -157,7 +157,7 @@ namespace projetEvents
             this.lblevent.Name = "lblevent";
             this.lblevent.Size = new System.Drawing.Size(151, 27);
             this.lblevent.TabIndex = 42;
-            this.lblevent.Text = "Evenement : ";
+            this.lblevent.Text = "Évènement : ";
             // 
             // cboajoutparticipant
             // 
@@ -187,52 +187,6 @@ namespace projetEvents
             this.cboevent.TabIndex = 40;
             this.cboevent.SelectionChangeCommitted += new System.EventHandler(this.Cboevent_SelectionChangeCommitted);
             // 
-            // dgvparticipant
-            // 
-            this.dgvparticipant.AllowUserToAddRows = false;
-            this.dgvparticipant.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvparticipant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvparticipant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvparticipant.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvparticipant.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.dgvparticipant.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(121)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvparticipant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvparticipant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvparticipant.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvparticipant.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvparticipant.EnableHeadersVisualStyles = false;
-            this.dgvparticipant.GridColor = System.Drawing.Color.White;
-            this.dgvparticipant.Location = new System.Drawing.Point(24, 226);
-            this.dgvparticipant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dgvparticipant.Name = "dgvparticipant";
-            this.dgvparticipant.ReadOnly = true;
-            this.dgvparticipant.RowHeadersVisible = false;
-            this.dgvparticipant.RowHeadersWidth = 51;
-            this.dgvparticipant.RowTemplate.Height = 24;
-            this.dgvparticipant.Size = new System.Drawing.Size(921, 176);
-            this.dgvparticipant.TabIndex = 52;
-            this.dgvparticipant.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvparticipant_CellClick);
-            // 
             // lblChooseModeInvit
             // 
             this.lblChooseModeInvit.AutoSize = true;
@@ -248,7 +202,7 @@ namespace projetEvents
             // 
             this.rdbMailAuto.AutoSize = true;
             this.rdbMailAuto.ForeColor = System.Drawing.Color.White;
-            this.rdbMailAuto.Location = new System.Drawing.Point(321, 86);
+            this.rdbMailAuto.Location = new System.Drawing.Point(297, 85);
             this.rdbMailAuto.Name = "rdbMailAuto";
             this.rdbMailAuto.Size = new System.Drawing.Size(331, 31);
             this.rdbMailAuto.TabIndex = 54;
@@ -262,7 +216,7 @@ namespace projetEvents
             // 
             this.rdbMailPersonnalise.AutoSize = true;
             this.rdbMailPersonnalise.ForeColor = System.Drawing.Color.White;
-            this.rdbMailPersonnalise.Location = new System.Drawing.Point(321, 123);
+            this.rdbMailPersonnalise.Location = new System.Drawing.Point(297, 122);
             this.rdbMailPersonnalise.Name = "rdbMailPersonnalise";
             this.rdbMailPersonnalise.Size = new System.Drawing.Size(208, 31);
             this.rdbMailPersonnalise.TabIndex = 55;
@@ -275,13 +229,66 @@ namespace projetEvents
             // lblInviter
             // 
             this.lblInviter.AutoSize = true;
-            this.lblInviter.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInviter.Font = new System.Drawing.Font("Montserrat", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInviter.ForeColor = System.Drawing.Color.White;
-            this.lblInviter.Location = new System.Drawing.Point(738, 71);
+            this.lblInviter.Location = new System.Drawing.Point(725, 70);
             this.lblInviter.Name = "lblInviter";
-            this.lblInviter.Size = new System.Drawing.Size(205, 27);
+            this.lblInviter.Size = new System.Drawing.Size(244, 33);
             this.lblInviter.TabIndex = 57;
             this.lblInviter.Text = "Envoyer l\'invitation";
+            // 
+            // dgvparticipant
+            // 
+            this.dgvparticipant.AllowUserToAddRows = false;
+            this.dgvparticipant.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvparticipant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvparticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvparticipant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvparticipant.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvparticipant.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.dgvparticipant.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvparticipant.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvparticipant.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvparticipant.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvparticipant.ColumnHeadersHeight = 30;
+            this.dgvparticipant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvparticipant.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvparticipant.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvparticipant.EnableHeadersVisualStyles = false;
+            this.dgvparticipant.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvparticipant.Location = new System.Drawing.Point(25, 238);
+            this.dgvparticipant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvparticipant.Name = "dgvparticipant";
+            this.dgvparticipant.ReadOnly = true;
+            this.dgvparticipant.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvparticipant.RowHeadersVisible = false;
+            this.dgvparticipant.RowHeadersWidth = 51;
+            this.dgvparticipant.RowTemplate.Height = 24;
+            this.dgvparticipant.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvparticipant.Size = new System.Drawing.Size(932, 159);
+            this.dgvparticipant.TabIndex = 58;
             // 
             // btninviter
             // 
@@ -302,6 +309,7 @@ namespace projetEvents
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(980, 674);
+            this.Controls.Add(this.dgvparticipant);
             this.Controls.Add(this.lblInviter);
             this.Controls.Add(this.btninviter);
             this.Controls.Add(this.rdbMailPersonnalise);
@@ -317,7 +325,6 @@ namespace projetEvents
             this.Controls.Add(this.lblevent);
             this.Controls.Add(this.cboajoutparticipant);
             this.Controls.Add(this.cboevent);
-            this.Controls.Add(this.dgvparticipant);
             this.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -342,12 +349,12 @@ namespace projetEvents
         private System.Windows.Forms.Label lblevent;
         private System.Windows.Forms.ComboBox cboajoutparticipant;
         private System.Windows.Forms.ComboBox cboevent;
-        private System.Windows.Forms.DataGridView dgvparticipant;
         private System.Windows.Forms.Label lblChooseModeInvit;
         private System.Windows.Forms.RadioButton rdbMailAuto;
         private System.Windows.Forms.RadioButton rdbMailPersonnalise;
         private System.Windows.Forms.PictureBox btninviter;
         private System.Windows.Forms.Label lblInviter;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.DataGridView dgvparticipant;
     }
 }

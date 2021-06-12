@@ -162,7 +162,10 @@ namespace projetEvents
             formMain.ds.Tables["mesDepenses"].Columns[2].ColumnName = "Description";
             formMain.ds.Tables["mesDepenses"].Columns[3].ColumnName = "Montant";
 
-            dgvMesDepenses.DataSource = formMain.ds.Tables["mesDepenses"];
+            if(formMain.ds.Tables["mesDepenses"].Rows.Count>0)
+            {
+                dgvMesDepenses.DataSource = formMain.ds.Tables["mesDepenses"];
+            }
 
             // On additione tout les montants de chaque dépense pour faire une somme total de ce qu'il a dépensé
             double totalDepense = 0;
@@ -231,7 +234,10 @@ namespace projetEvents
             formMain.ds.Tables["mesDepensesConcerne"].Columns[3].ColumnName = "Description";
 
             // On affiche la table dans la GDV
-            dgvDepenseConcerme.DataSource = formMain.ds.Tables["mesDepensesConcerne"];
+            if(formMain.ds.Tables["mesDepensesConcerne"].Rows.Count>0)
+            {
+                dgvDepenseConcerme.DataSource = formMain.ds.Tables["mesDepensesConcerne"];
+            }
 
             // On additione tout les montants de chaque dépense pour faire une somme total de ce qu'il doit rembourser
             int nbPart = 0;
@@ -809,7 +815,6 @@ namespace projetEvents
              );
 
             // RICHARD doit payer à : 
-
             htmlContent.Append(
                 @"<ul><li><h3>" + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + @" doit payer à : </h3></li></ul>
                  <table class=""tableCenter"" style=""text-align:center;"">

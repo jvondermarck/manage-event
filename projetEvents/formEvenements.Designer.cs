@@ -386,7 +386,7 @@ namespace projetEvents
             this.lblNumEnregistrement.AutoSize = true;
             this.lblNumEnregistrement.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumEnregistrement.ForeColor = System.Drawing.Color.White;
-            this.lblNumEnregistrement.Location = new System.Drawing.Point(447, 492);
+            this.lblNumEnregistrement.Location = new System.Drawing.Point(433, 492);
             this.lblNumEnregistrement.Name = "lblNumEnregistrement";
             this.lblNumEnregistrement.Size = new System.Drawing.Size(171, 23);
             this.lblNumEnregistrement.TabIndex = 8;
@@ -517,7 +517,7 @@ namespace projetEvents
             this.checkBoxSolde.AutoSize = true;
             this.checkBoxSolde.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxSolde.ForeColor = System.Drawing.Color.White;
-            this.checkBoxSolde.Location = new System.Drawing.Point(378, 396);
+            this.checkBoxSolde.Location = new System.Drawing.Point(413, 401);
             this.checkBoxSolde.Name = "checkBoxSolde";
             this.checkBoxSolde.Size = new System.Drawing.Size(162, 27);
             this.checkBoxSolde.TabIndex = 13;
@@ -529,7 +529,7 @@ namespace projetEvents
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(258, 392);
+            this.label1.Location = new System.Drawing.Point(293, 397);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 30);
             this.label1.TabIndex = 12;
@@ -537,15 +537,15 @@ namespace projetEvents
             // 
             // dtpDateFin
             // 
-            this.dtpDateFin.Location = new System.Drawing.Point(361, 185);
+            this.dtpDateFin.Location = new System.Drawing.Point(390, 197);
             this.dtpDateFin.Name = "dtpDateFin";
-            this.dtpDateFin.Size = new System.Drawing.Size(346, 32);
+            this.dtpDateFin.Size = new System.Drawing.Size(352, 32);
             this.dtpDateFin.TabIndex = 11;
             // 
             // dtpDateDebut
             // 
             this.dtpDateDebut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpDateDebut.Location = new System.Drawing.Point(361, 141);
+            this.dtpDateDebut.Location = new System.Drawing.Point(396, 120);
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(346, 32);
             this.dtpDateDebut.TabIndex = 10;
@@ -556,7 +556,7 @@ namespace projetEvents
             this.cbCreateur.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbCreateur.ForeColor = System.Drawing.Color.White;
             this.cbCreateur.FormattingEnabled = true;
-            this.cbCreateur.Location = new System.Drawing.Point(377, 452);
+            this.cbCreateur.Location = new System.Drawing.Point(412, 459);
             this.cbCreateur.Name = "cbCreateur";
             this.cbCreateur.Size = new System.Drawing.Size(330, 31);
             this.cbCreateur.TabIndex = 7;
@@ -566,7 +566,7 @@ namespace projetEvents
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(250, 452);
+            this.label13.Location = new System.Drawing.Point(285, 459);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(122, 30);
             this.label13.TabIndex = 6;
@@ -576,7 +576,7 @@ namespace projetEvents
             // 
             this.rtbDescPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.rtbDescPage2.ForeColor = System.Drawing.Color.White;
-            this.rtbDescPage2.Location = new System.Drawing.Point(361, 257);
+            this.rtbDescPage2.Location = new System.Drawing.Point(396, 266);
             this.rtbDescPage2.Name = "rtbDescPage2";
             this.rtbDescPage2.Size = new System.Drawing.Size(346, 100);
             this.rtbDescPage2.TabIndex = 5;
@@ -587,7 +587,7 @@ namespace projetEvents
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(219, 257);
+            this.label12.Location = new System.Drawing.Point(254, 266);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(159, 30);
             this.label12.TabIndex = 4;
@@ -598,7 +598,7 @@ namespace projetEvents
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(248, 190);
+            this.label11.Location = new System.Drawing.Point(283, 195);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(119, 30);
             this.label11.TabIndex = 3;
@@ -609,7 +609,7 @@ namespace projetEvents
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(222, 141);
+            this.label10.Location = new System.Drawing.Point(257, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(156, 30);
             this.label10.TabIndex = 2;
@@ -619,7 +619,7 @@ namespace projetEvents
             // 
             this.tbTitreEvenement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.tbTitreEvenement.ForeColor = System.Drawing.Color.White;
-            this.tbTitreEvenement.Location = new System.Drawing.Point(361, 85);
+            this.tbTitreEvenement.Location = new System.Drawing.Point(396, 52);
             this.tbTitreEvenement.Name = "tbTitreEvenement";
             this.tbTitreEvenement.Size = new System.Drawing.Size(346, 32);
             this.tbTitreEvenement.TabIndex = 1;
@@ -630,7 +630,7 @@ namespace projetEvents
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Montserrat", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(140, 85);
+            this.label9.Location = new System.Drawing.Point(175, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(264, 30);
             this.label9.TabIndex = 0;
