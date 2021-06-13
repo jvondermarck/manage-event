@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
-using System.Runtime.InteropServices;
 
 namespace projetEvents
 {
@@ -43,8 +42,6 @@ namespace projetEvents
             bindingsNavigator(); //Codage des boutons pour naviguer et récupérer les infos de la table
             chargementNumPage(); //Chargement des infos des événements pour le parcours 1 à 1
             chargement_cbCreateur();
-            btnPageFin_Click(sender, e);
-            btnPageDebut_Click(sender, e);
         }
 
         //////////////////////////////////////////////////////////////////////////////////

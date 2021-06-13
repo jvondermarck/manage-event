@@ -129,10 +129,11 @@ namespace projetEvents
         {
             this.panelAllForm.Controls.Clear();
             userControlMenu1.BarrePanel = 2;
-            formEvenements formEvenements = new formEvenements() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
+            formEvenements formEvenements = new formEvenements() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true } ;
             formEvenements.FormBorderStyle = FormBorderStyle.None;
-            this.panelAllForm.Controls.Add(formEvenements);
             formEvenements.Show();
+            this.panelAllForm.Controls.Add(formEvenements);
+            formEvenements.Focus();
             lblNomForm.Text = "Créer de nouveaux évènements !";
             lblPresentationForm.Text = "";
         }

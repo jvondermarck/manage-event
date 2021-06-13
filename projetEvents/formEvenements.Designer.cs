@@ -110,7 +110,7 @@ namespace projetEvents
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1085, 693);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -140,6 +140,7 @@ namespace projetEvents
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1077, 657);
             this.tabPage1.TabIndex = 0;
+            this.tabPage1.Tag = "1";
             this.tabPage1.Text = "          Parcours 1 à 1";
             // 
             // label7
@@ -602,9 +603,12 @@ namespace projetEvents
             // bn
             // 
             this.bn.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bn.CountItem = this.bindingNavigatorCountItem;
             this.bn.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bn.Dock = System.Windows.Forms.DockStyle.None;
             this.bn.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bn.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -618,14 +622,14 @@ namespace projetEvents
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bn.Location = new System.Drawing.Point(3, 627);
+            this.bn.Location = new System.Drawing.Point(37, 599);
             this.bn.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bn.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bn.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bn.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bn.Name = "bn";
             this.bn.PositionItem = this.bindingNavigatorPositionItem;
-            this.bn.Size = new System.Drawing.Size(1071, 27);
+            this.bn.Size = new System.Drawing.Size(304, 27);
             this.bn.TabIndex = 26;
             this.bn.Text = " ";
             this.bn.Visible = false;
