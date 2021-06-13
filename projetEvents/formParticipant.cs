@@ -145,7 +145,7 @@ namespace projetEvents
                 ligne[1] = dr.GetString(1) + " " + dr.GetString(2);
                 ligne[2] = dr.GetString(3);
                 ligne[3] = 0;
-                ligne[4] = dr.GetInt32(4).ToString();
+                ligne[4] = String.Format("{0:0.00}", dr.GetInt32(4).ToString());
 
                 formMain.ds.Tables["datadgv"].Rows.Add(ligne);
             }

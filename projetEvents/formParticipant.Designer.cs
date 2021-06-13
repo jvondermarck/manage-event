@@ -289,6 +289,7 @@ namespace projetEvents
             this.dgvparticipant.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvparticipant.Size = new System.Drawing.Size(932, 159);
             this.dgvparticipant.TabIndex = 58;
+            this.dgvparticipant.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvparticipant_CellClick);
             // 
             // btninviter
             // 

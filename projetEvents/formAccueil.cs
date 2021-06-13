@@ -124,12 +124,15 @@ namespace projetEvents
             lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l'addition";
         }
 
+        //Déclaration du Binding Source
+        public static BindingSource bs = new BindingSource();
+
         private void btnEvenements_Click(object sender, EventArgs e)
         {
+            this.panelAllForm.Controls.Clear();
             userControlMenu1.BarrePanel = 2;
             formEvenements formEvenements = new formEvenements() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; ;
             formEvenements.FormBorderStyle = FormBorderStyle.None;
-            this.panelAllForm.Controls.Clear();
             this.panelAllForm.Controls.Add(formEvenements);
             formEvenements.Show();
             lblNomForm.Text = "Créer de nouveaux évènements !";

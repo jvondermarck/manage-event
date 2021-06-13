@@ -65,6 +65,7 @@ namespace projetEvents
             this.gbDepense.Size = new System.Drawing.Size(563, 625);
             this.gbDepense.TabIndex = 7;
             this.gbDepense.TabStop = false;
+            this.gbDepense.Visible = false;
             // 
             // btnAnnuler
             // 
@@ -79,6 +80,7 @@ namespace projetEvents
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = false;
             this.btnAnnuler.Visible = false;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnValider
             // 
@@ -93,6 +95,7 @@ namespace projetEvents
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Visible = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // cbBeneficiaires
             // 
@@ -120,6 +123,7 @@ namespace projetEvents
             this.btnSupprimerDep.TabIndex = 6;
             this.btnSupprimerDep.Text = "Supprimer cette dépense";
             this.btnSupprimerDep.UseVisualStyleBackColor = false;
+            this.btnSupprimerDep.Click += new System.EventHandler(this.btnSupprimerDep_Click);
             // 
             // btnAjoutBeneficiaire
             // 
@@ -134,6 +138,7 @@ namespace projetEvents
             this.btnAjoutBeneficiaire.TabIndex = 5;
             this.btnAjoutBeneficiaire.Text = "Ajouter un bénéficiaire";
             this.btnAjoutBeneficiaire.UseVisualStyleBackColor = false;
+            this.btnAjoutBeneficiaire.Click += new System.EventHandler(this.btnAjoutBeneficiaire_Click);
             // 
             // label4
             // 
@@ -181,27 +186,37 @@ namespace projetEvents
             // 
             // lbBeneficiaires
             // 
+            this.lbBeneficiaires.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbBeneficiaires.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.lbBeneficiaires.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbBeneficiaires.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBeneficiaires.ForeColor = System.Drawing.Color.White;
             this.lbBeneficiaires.FormattingEnabled = true;
-            this.lbBeneficiaires.ItemHeight = 24;
+            this.lbBeneficiaires.ItemHeight = 32;
             this.lbBeneficiaires.Location = new System.Drawing.Point(28, 286);
             this.lbBeneficiaires.Name = "lbBeneficiaires";
-            this.lbBeneficiaires.Size = new System.Drawing.Size(498, 240);
+            this.lbBeneficiaires.Size = new System.Drawing.Size(498, 224);
             this.lbBeneficiaires.TabIndex = 0;
             // 
             // lbDepenses
             // 
+            this.lbDepenses.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDepenses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.lbDepenses.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbDepenses.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDepenses.ForeColor = System.Drawing.Color.White;
             this.lbDepenses.FormattingEnabled = true;
-            this.lbDepenses.ItemHeight = 24;
+            this.lbDepenses.ItemHeight = 32;
             this.lbDepenses.Location = new System.Drawing.Point(12, 213);
             this.lbDepenses.Name = "lbDepenses";
-            this.lbDepenses.Size = new System.Drawing.Size(363, 240);
+            this.lbDepenses.Size = new System.Drawing.Size(363, 224);
             this.lbDepenses.TabIndex = 6;
+            this.lbDepenses.Visible = false;
+            this.lbDepenses.SelectedIndexChanged += new System.EventHandler(this.lbDepenses_SelectedIndexChanged);
             // 
             // cbEvenement
             // 
@@ -214,15 +229,17 @@ namespace projetEvents
             this.cbEvenement.Name = "cbEvenement";
             this.cbEvenement.Size = new System.Drawing.Size(363, 32);
             this.cbEvenement.TabIndex = 5;
+            this.cbEvenement.SelectedIndexChanged += new System.EventHandler(this.cbEvenement_SelectedIndexChanged_1);
+            this.cbEvenement.SelectionChangeCommitted += new System.EventHandler(this.cbEvenement_SelectionChangeCommitted);
             // 
             // lblNbDepenses
             // 
             this.lblNbDepenses.AutoSize = true;
             this.lblNbDepenses.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNbDepenses.ForeColor = System.Drawing.Color.White;
-            this.lblNbDepenses.Location = new System.Drawing.Point(76, 50);
+            this.lblNbDepenses.Location = new System.Drawing.Point(12, 45);
             this.lblNbDepenses.Name = "lblNbDepenses";
-            this.lblNbDepenses.Size = new System.Drawing.Size(91, 37);
+            this.lblNbDepenses.Size = new System.Drawing.Size(92, 39);
             this.lblNbDepenses.TabIndex = 4;
             this.lblNbDepenses.Text = "Il y a ";
             // 

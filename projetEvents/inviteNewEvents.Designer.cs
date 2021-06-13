@@ -63,6 +63,7 @@ namespace projetEvents
             this.cbToutCocher.TabIndex = 12;
             this.cbToutCocher.Text = "Tout cocher";
             this.cbToutCocher.UseVisualStyleBackColor = true;
+            this.cbToutCocher.CheckedChanged += new System.EventHandler(this.cbToutCocher_CheckedChanged);
             // 
             // btnAnnuler
             // 
@@ -100,6 +101,7 @@ namespace projetEvents
             this.clbParticipants.Name = "clbParticipants";
             this.clbParticipants.Size = new System.Drawing.Size(756, 274);
             this.clbParticipants.TabIndex = 9;
+            this.clbParticipants.SelectedIndexChanged += new System.EventHandler(this.clbParticipants_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -129,6 +131,8 @@ namespace projetEvents
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "inviteNewEvents";
             this.Text = "inviteNewEvents";
+            this.Load += new System.EventHandler(this.inviteNewEvents_Load);
+            this.Click += new System.EventHandler(this.btnAnnuler_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
