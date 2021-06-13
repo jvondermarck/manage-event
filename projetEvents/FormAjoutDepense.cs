@@ -271,6 +271,7 @@ namespace projetEvents
             string numeroDepense = numDepense();
             string description = txtQuoi.Text;
             string montant = txtCombien.Text.Substring(0, txtCombien.TextLength-1); // On enleve le € du montant
+            montant = (Math.Round(double.Parse(montant), 2)).ToString();
             dtpDepense.CustomFormat = "MM/dd/yyyy HH:mm:ss";
             string dateDepense = dtpDepense.Value.ToString();
             string commentaire;

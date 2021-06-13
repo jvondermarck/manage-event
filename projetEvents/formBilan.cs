@@ -97,7 +97,7 @@ namespace projetEvents
             cboParticipant.SelectedIndex = -1;
 
             creationTableBilan(); // On dresse la table Bilan qui sert a s'occuper du Bilan avec le solde de chaque personne
-            if (totalSoldeNull() == 0)
+            if (rechercheDejaSolde())
             {
                 recapitulatifRTB();
                 rtbRecap.Visible = true;
@@ -831,7 +831,7 @@ namespace projetEvents
             connec.Open();
             for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
             {
-                if (formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString() == cboParticipant.SelectedValue.ToString())
+                if (formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
                 {
                     // On prend le Prénom et Nom du receveur
                     string receveurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString();
@@ -873,7 +873,7 @@ namespace projetEvents
 
             for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
             {
-                if (formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString() == cboParticipant.SelectedValue.ToString())
+                if (formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
                 {
                     // On prend le Prénom et Nom du donneur
                     string donneurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString();
