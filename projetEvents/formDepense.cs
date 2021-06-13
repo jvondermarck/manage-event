@@ -87,13 +87,14 @@ namespace projetEvents
             {
                 lbDepenses.Visible = false;
                 gbDepense.Visible = false;
+                formNotification.Alert("Aucune dépense disponible.", formNotification.enmType.Warning);
             }
             else
             {
                 lbDepenses.Visible = true;
             }
             lbDepenses.AutoSize = true;
-            lbDepenses.MaximumSize = new System.Drawing.Size(363, 224);
+            lbDepenses.MaximumSize = new System.Drawing.Size(294, 224);
             btnSupprimerDep.Visible = false;
             gbDepense.Visible = false;
         }
@@ -283,6 +284,7 @@ namespace projetEvents
                     RAZinfosDepenses(); //On efface l'affichage des infos sur l'évènement fraichement supprimé
                 }
 
+                formNotification.Alert("Vous avez supprimé une dépense.", formNotification.enmType.Warning);
                 nbDepenses(); //On met à jour le total des dépenses stockées
             }
         }
@@ -354,6 +356,7 @@ namespace projetEvents
             chargementInfosDepense(); //MAJ des infos de la dépense
             remplissagecbBeneficiaires(); //Maj de la listBox avec les bénéficiaires
             cbBeneficiaires.Text = "";
+            formNotification.Alert("Bénéficiaire ajouté !.", formNotification.enmType.Success);
         }
 
 
@@ -423,6 +426,9 @@ namespace projetEvents
                 btnAjoutBeneficiaire.Visible = false;
                 btnValider.Visible = false;
                 btnAnnuler.Visible = false;
+            } else
+            {
+                btnAjoutBeneficiaire.Visible = true;
             }
         }
 
@@ -433,9 +439,9 @@ namespace projetEvents
         private void cbEvenement_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             RAZinfosDepenses();
-            lbDepenses.Size = new System.Drawing.Size(363, 0);
+            lbDepenses.Size = new System.Drawing.Size(294, 0);
             lbDepenses.AutoSize = true;
-            lbDepenses.MaximumSize = new System.Drawing.Size(363, 224);
+            lbDepenses.MaximumSize = new System.Drawing.Size(294, 224);
             btnSupprimerDep.Visible = false;
         }
 

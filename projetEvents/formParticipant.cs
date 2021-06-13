@@ -165,7 +165,7 @@ namespace projetEvents
                 }
                 else
                 {
-                    formMain.ds.Tables["datadgv"].Rows[i]["Solde"] = solde.ToString();
+                    formMain.ds.Tables["datadgv"].Rows[i]["Solde"] = (Math.Round(solde, 2)).ToString();
                 }
             }
             dgvparticipant.DataSource = formMain.ds.Tables["datadgv"];

@@ -281,7 +281,7 @@ namespace projetEvents
             //On vérifie si le titre de l'évènement est entré
             if (String.IsNullOrEmpty(tbTitreEvenement.Text))
             {
-                errorProvider.SetError(tbTitreEvenement, "Veuillez sélectionner un créateur.");
+                errorProvider.SetError(tbTitreEvenement, "Veuillez sélectionner un titre.");
                 remplissageCorrect = false;
                 //nombreErreur++;
                 lblErrorTitre.Visible = true;

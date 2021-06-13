@@ -199,9 +199,9 @@ namespace projetEvents
             this.lbBeneficiaires.ForeColor = System.Drawing.Color.White;
             this.lbBeneficiaires.FormattingEnabled = true;
             this.lbBeneficiaires.ItemHeight = 32;
-            this.lbBeneficiaires.Location = new System.Drawing.Point(28, 286);
+            this.lbBeneficiaires.Location = new System.Drawing.Point(82, 284);
             this.lbBeneficiaires.Name = "lbBeneficiaires";
-            this.lbBeneficiaires.Size = new System.Drawing.Size(498, 224);
+            this.lbBeneficiaires.Size = new System.Drawing.Size(411, 224);
             this.lbBeneficiaires.TabIndex = 0;
             // 
             // lbDepenses
@@ -215,9 +215,9 @@ namespace projetEvents
             this.lbDepenses.ForeColor = System.Drawing.Color.White;
             this.lbDepenses.FormattingEnabled = true;
             this.lbDepenses.ItemHeight = 32;
-            this.lbDepenses.Location = new System.Drawing.Point(12, 213);
+            this.lbDepenses.Location = new System.Drawing.Point(38, 213);
             this.lbDepenses.Name = "lbDepenses";
-            this.lbDepenses.Size = new System.Drawing.Size(363, 64);
+            this.lbDepenses.Size = new System.Drawing.Size(294, 64);
             this.lbDepenses.TabIndex = 6;
             this.lbDepenses.Visible = false;
             this.lbDepenses.SelectedIndexChanged += new System.EventHandler(this.lbDepenses_SelectedIndexChanged);
@@ -230,9 +230,9 @@ namespace projetEvents
             this.cbEvenement.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEvenement.ForeColor = System.Drawing.Color.White;
             this.cbEvenement.FormattingEnabled = true;
-            this.cbEvenement.Location = new System.Drawing.Point(12, 146);
+            this.cbEvenement.Location = new System.Drawing.Point(38, 146);
             this.cbEvenement.Name = "cbEvenement";
-            this.cbEvenement.Size = new System.Drawing.Size(363, 35);
+            this.cbEvenement.Size = new System.Drawing.Size(294, 35);
             this.cbEvenement.TabIndex = 5;
             this.cbEvenement.SelectedIndexChanged += new System.EventHandler(this.cbEvenement_SelectedIndexChanged_1);
             this.cbEvenement.SelectionChangeCommitted += new System.EventHandler(this.cbEvenement_SelectionChangeCommitted);
@@ -242,7 +242,7 @@ namespace projetEvents
             this.lblNbDepenses.AutoSize = true;
             this.lblNbDepenses.Font = new System.Drawing.Font("Montserrat", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNbDepenses.ForeColor = System.Drawing.Color.White;
-            this.lblNbDepenses.Location = new System.Drawing.Point(12, 45);
+            this.lblNbDepenses.Location = new System.Drawing.Point(10, 45);
             this.lblNbDepenses.Name = "lblNbDepenses";
             this.lblNbDepenses.Size = new System.Drawing.Size(92, 39);
             this.lblNbDepenses.TabIndex = 4;
@@ -252,9 +252,9 @@ namespace projetEvents
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::projetEvents.Properties.Resources.budget;
-            this.pictureBox1.Location = new System.Drawing.Point(77, 489);
+            this.pictureBox1.Location = new System.Drawing.Point(110, 504);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 168);
+            this.pictureBox1.Size = new System.Drawing.Size(145, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -265,13 +265,14 @@ namespace projetEvents
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(33, 459);
+            this.label1.Location = new System.Drawing.Point(93, 443);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(317, 27);
+            this.label1.Size = new System.Drawing.Size(219, 64);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Saissiez une nouvelle dépense";
+            this.label1.Text = "Saissiez une \r\nnouvelle dépense";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formDepense
             // 
