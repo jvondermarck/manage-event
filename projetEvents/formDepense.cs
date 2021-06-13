@@ -171,7 +171,6 @@ namespace projetEvents
         //Procédure qui met à jour les infos quand on clique sur une autre dépense
         private void lbDepenses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            gbDepense.Visible = true;
             chargementInfosDepense();
 
             cbBeneficiaires.Visible = false;
@@ -188,6 +187,7 @@ namespace projetEvents
             {
                 btnSupprimerDep.Visible = true;
             }
+            gbDepense.Visible = true;
         }
 
         // On regarde si l'évenement est déja soldé
@@ -282,6 +282,8 @@ namespace projetEvents
                 else
                 {
                     RAZinfosDepenses(); //On efface l'affichage des infos sur l'évènement fraichement supprimé
+                    gbDepense.Visible = false;
+                    lbDepenses.Visible = false;
                 }
 
                 formNotification.Alert("Vous avez supprimé une dépense.", formNotification.enmType.Warning);

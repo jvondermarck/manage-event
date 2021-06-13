@@ -755,13 +755,14 @@ namespace projetEvents
 
             htmlContent.Append(
                 @"<h2>Récapitulatif du participant </h2>" +
-                " <p> Nom - Prénom : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " </p>" +
+                " <p> Prénom - Nom  : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " </p>" +
                 " <p> Nombre de parts : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nbParts"] + " </p>"
                 );
 
             // Dépenses effectuées par RICHARD
-
-            htmlContent.Append(
+            if (formMain.ds.Tables["mesDepenses"].Rows.Count != 0)
+            {
+                htmlContent.Append(
                 @"<ul><li><h3>Les dépenses effectuées par : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + @" </h3></ul></li>
                  <table class=""tableCenter"" style=""text-align:center;"">
                        <thead>
@@ -772,24 +773,33 @@ namespace projetEvents
                     </thead>
                     <tbody>");
 
-            for (int i = 0; i < formMain.ds.Tables["mesDepenses"].Rows.Count; i++)
-            {
-                htmlContent.Append(
-                @"<tr>
+                for (int i = 0; i < formMain.ds.Tables["mesDepenses"].Rows.Count; i++)
+                {
+                    htmlContent.Append(
+                    @"<tr>
                     <td>" + formMain.ds.Tables["mesDepenses"].Rows[i]["description"] + @"</td>
                     <td>" + formMain.ds.Tables["mesDepenses"].Rows[i]["montant"] + @"€</td>
                  </tr>"
-                );
+                    );
+                }
+
+                htmlContent.Append(
+                 @"</tbody>
+                </table><br>"
+                 );
+            }
+            else
+            {
+                htmlContent.Append(
+                @"<ul><li><h3>" + " " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " n'a éffectué aucune dépense" + @" </h3></li></ul>");
             }
 
-            htmlContent.Append(
-             @"</tbody>
-                </table><br>"
-             );
 
             // Dépenses dont a bénéficier RICHARD
 
-            htmlContent.Append(
+            if (formMain.ds.Tables["mesDepensesConcerne"].Rows.Count != 0)
+            {
+                htmlContent.Append(
                 @"<ul><li><h3>Les dépenses dont a bénéficiées : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + @" </h3></li></ul>
                  <table class=""tableCenter"" style=""text-align:center;"">
                     <thead>
@@ -800,67 +810,109 @@ namespace projetEvents
                     </thead>
                     <tbody>");
 
-            for (int i = 0; i < formMain.ds.Tables["mesDepensesConcerne"].Rows.Count; i++)
-            {
-                htmlContent.Append(
-                @"<tr>
+                for (int i = 0; i < formMain.ds.Tables["mesDepensesConcerne"].Rows.Count; i++)
+                {
+                    htmlContent.Append(
+                    @"<tr>
                     <td>" + formMain.ds.Tables["mesDepensesConcerne"].Rows[i]["description"] + @"</td>
                     <td>" + formMain.ds.Tables["mesDepensesConcerne"].Rows[i]["montant"] + @"€</td>
                  </tr>"
-                );
+                    );
+                }
+
+                htmlContent.Append(
+                 @"</tbody>
+                </table>"
+                 );
+            }
+            else
+            {
+                htmlContent.Append(
+                @"<ul><li><h3>" + " " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " n'a bénéficié d'aucune dépense" + @" </h3></li></ul>");
             }
 
-            htmlContent.Append(
-             @"</tbody>
-                </table>"
-             );
 
             // RICHARD doit payer à : 
-            htmlContent.Append(
-                @"<ul><li><h3>" + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + @" doit payer à : </h3></li></ul>
-                 <table class=""tableCenter"" style=""text-align:center;"">
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Montant</th>
-                        </tr>
-                    </thead>
-                    <tbody>");
-
-            connec.ConnectionString = chainconnec;
-            connec.Open();
-            for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
+            if (formMain.ds.Tables["BilanPart"].Rows.Count != 0)
             {
-                if (formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
+                int d = 0;
+                for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
                 {
-                    // On prend le Prénom et Nom du receveur
-                    string receveurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString();
-                    string receveurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + receveurCode;
-
-                    OleDbCommand cd2 = new OleDbCommand(receveurName, connec);
-                    OleDbDataReader dr2 = cd2.ExecuteReader();
-                    while (dr2.Read())
+                    if (formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
                     {
-                        receveurName = dr2.GetString(0) + " " + dr2.GetString(1);
+                        d++;
+                    }
+                }
+
+                if (d != 0)
+                {
+                    htmlContent.Append(
+                        @"<ul><li><h3>" + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + @" doit payer à : </h3></li></ul>
+                         <table class=""tableCenter"" style=""text-align:center;"">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Montant</th>
+                                </tr>
+                            </thead>
+                            <tbody>");
+
+                    connec.ConnectionString = chainconnec;
+                    connec.Open();
+                    for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
+                    {
+                        if (formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
+                        {
+                            // On prend le Prénom et Nom du receveur
+                            string receveurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString();
+                            string receveurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + receveurCode;
+                            OleDbCommand cd2 = new OleDbCommand(receveurName, connec);
+                            OleDbDataReader dr2 = cd2.ExecuteReader();
+                            while (dr2.Read())
+                            {
+                                receveurName = dr2.GetString(0) + " " + dr2.GetString(1);
+                            }
+                            connec.Close();
+                            htmlContent.Append(
+                            @"<tr>
+                                <td>" + receveurName + @"</td>
+                                <td>" + formMain.ds.Tables["BilanPart"].Rows[i]["montant"] + @"€</td>
+                             </tr>"
+                            );
+                        }
                     }
 
                     htmlContent.Append(
-                    @"<tr>
-                        <td>" + receveurName + @"</td>
-                        <td>" + formMain.ds.Tables["BilanPart"].Rows[i]["montant"] + @"€</td>
-                     </tr>"
-                    );
+                     @"</tbody>
+                        </table><br>"
+                     );
+                }
+                else
+                {
+                    htmlContent.Append(@"<ul><li><h3>" + " " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " ne doit rien payer" + @" </h3></li></ul>");
+
                 }
             }
-
-            htmlContent.Append(
-             @"</tbody>
-                </table><br>"
-             );
+            else
+            {
+                htmlContent.Append(@"<ul><li><h3>" + " " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " ne doit rien payer" + @" </h3></li></ul>");
+            }
 
             // RICHARD doit recevoir de : 
+            if (formMain.ds.Tables["BilanPart"].Rows.Count != 0)
+            {
+                int c = 0;
+                for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
+                {
+                    if (formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
+                    {
+                        c++;
+                    }
+                }
 
-            htmlContent.Append(
+                if (c != 0)
+                {
+                    htmlContent.Append(
                 @"<ul><li><h3>" + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + @" doit recevoir de : </h3></li></ul>
                  <table class=""tableCenter"" style=""text-align:center;"">
                     <thead>
@@ -871,36 +923,45 @@ namespace projetEvents
                     </thead>
                     <tbody>");
 
-            for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
-            {
-                if (formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
-                {
-                    // On prend le Prénom et Nom du donneur
-                    string donneurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString();
-                    string donneurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + donneurCode;
-
-                    OleDbCommand cd1 = new OleDbCommand(donneurName, connec);
-                    OleDbDataReader dr1 = cd1.ExecuteReader();
-                    while (dr1.Read())
+                    connec.ConnectionString = chainconnec;
+                    connec.Open();
+                    for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
                     {
-                        donneurName = dr1.GetString(0) + " " + dr1.GetString(1);
-                    }
-
-                    htmlContent.Append(
-                    @"<tr>
+                        if (formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
+                        {
+                            // On prend le Prénom et Nom du donneur
+                            string donneurCode = formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString();
+                            string donneurName = "SELECT prenomPart, nomPart FROM Participants WHERE codeParticipant = " + donneurCode;
+                            
+                            OleDbCommand cd1 = new OleDbCommand(donneurName, connec);
+                            OleDbDataReader dr1 = cd1.ExecuteReader();
+                            while (dr1.Read())
+                            {
+                                donneurName = dr1.GetString(0) + " " + dr1.GetString(1);
+                            }
+                            htmlContent.Append(
+                            @"<tr>
                         <td>" + donneurName + @"</td>
                         <td>" + formMain.ds.Tables["BilanPart"].Rows[i]["montant"] + @"€</td>
                      </tr>"
-                    );
+                            );
+                        }
+                    }
+                    connec.Close();
+
+                    htmlContent.Append(@"</tbody></table><br>");
+                }
+                else
+                {
+                    htmlContent.Append(@"<ul><li><h3>" + " " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " ne doit rien recevoir" + @" </h3></li></ul>");
                 }
             }
-            connec.Close();
+            else
+            {
+                htmlContent.Append(
+               @"<ul><li><h3>" + " " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " ne doit rien recevoir" + @" </h3></li></ul>");
 
-            htmlContent.Append(
-             @"</tbody>
-                </table><br>"
-             );
-
+            }
 
             htmlContent.AppendLine(@"
             </body>
