@@ -555,7 +555,7 @@ namespace projetEvents
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(850, 236);
+            this.label14.Location = new System.Drawing.Point(858, 236);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(157, 33);
             this.label14.TabIndex = 16;

@@ -217,7 +217,7 @@ namespace projetEvents
                     "Description : " + description;
 
                 lancerInvitations("Invitations à un nouvel évènements !", contenuMail, adrMail);
-                quitterApplication();
+                quitterApplication(true);
             }
 
             else
@@ -248,11 +248,9 @@ namespace projetEvents
                         mdp = login;
 
                         string rqt = @"INSERT into Invites (codeEvent, codePart, login, mdp) VALUES (" + codeevent + "," + codepart + ",'" + login + "', '" + mdp + "')";
-                        //MessageBox.Show(rqt);
                         OleDbCommand cd2 = new OleDbCommand(rqt, connec);
 
                         int nbLigneInsert = cd2.ExecuteNonQuery();
-                        //MessageBox.Show("L'invité à bien été ajouté");
                     }
                 }
 
@@ -284,19 +282,7 @@ namespace projetEvents
             return login;
         }
 
-        //Procédure qui vérifie si au moins un invité est coché
-        private bool verifCheck()
-        {
-            bool correct = true;
-            if (clbParticipants.CheckedItems.Count < 1)
-            {
-                correct = false;
-            }
-
-            return correct;
-        }
-
-        private void quitterApplication()
+        private void quitterApplication(bool success)
         {
             formMain form = (formMain)ActiveForm;
             form.panelAllForm.Controls.Clear();
@@ -306,13 +292,20 @@ namespace projetEvents
             formEvenements.Show();
             form.lblNomForm.Text = "Créer de nouveaux évènements !";
             form.lblPresentationForm.Text = "";
+
+            if(success)
+            {
+                formNotification.Alert("Bravo ! Invitation(s) envoyée(s) !", formNotification.enmType.Success);
+            }
+            else
+            {
+                formNotification.Alert("Vous avez annulé les invitations!", formNotification.enmType.Warning);
+            }
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
-            quitterApplication();
+            quitterApplication(false);
         }
-
-
     }
 }

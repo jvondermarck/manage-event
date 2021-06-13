@@ -223,7 +223,7 @@ namespace projetEvents
                 }
             }
 
-            //else { formNotification.Alert("Veuillez saisir tous les champs.", formNotification.enmType.Error); }
+            else { formNotification.Alert("Veuillez saisir tous les champs.", formNotification.enmType.Error); }
 
         }
 
