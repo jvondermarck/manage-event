@@ -50,8 +50,6 @@ namespace projetEvents
          */
         private void bindingsNavigator()
         {
-
-
             lblNumEvenement.DataBindings.Add("Text", formMain.bs, "codeEvent");
             lblCreateur.DataBindings.Add("Text", formMain.bs, "codeCreateur");
             lblDateDebut.DataBindings.Add("Text", formMain.bs, "dateDebut");
@@ -124,8 +122,6 @@ namespace projetEvents
             chargementNumPage();//maj du numéro de l'enregistrement/page
             modificationsNavigator();
         }
-
-
 
 
         //////////////////////////////////////////////////////////////////////////////////
@@ -298,8 +294,8 @@ namespace projetEvents
             }
 
             //On vérifie si la date début de l'évènement est supérieur ou égale à la date du système
-            DateTime dt = (DateTime)dtpDateDebut.Value;
-            DateTime dt2 = (DateTime)dtpDateFin.Value;
+            DateTime dt = (DateTime)dtpDateDebut.Value.Date;
+            DateTime dt2 = (DateTime)dtpDateFin.Value.Date;
             if (DateTime.Compare(dt, dt2) > 0)
             {
                 errorProvider.SetError(dtpDateDebut, "Veuillez sélectionner une date supérieur à la date du jour.");

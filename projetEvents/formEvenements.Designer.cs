@@ -321,7 +321,7 @@ namespace projetEvents
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(446, 346);
+            this.label6.Location = new System.Drawing.Point(485, 346);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 23);
             this.label6.TabIndex = 19;
@@ -397,7 +397,7 @@ namespace projetEvents
             // 
             this.lblSolde.AutoSize = true;
             this.lblSolde.ForeColor = System.Drawing.Color.White;
-            this.lblSolde.Location = new System.Drawing.Point(498, 405);
+            this.lblSolde.Location = new System.Drawing.Point(433, 405);
             this.lblSolde.Name = "lblSolde";
             this.lblSolde.Size = new System.Drawing.Size(137, 23);
             this.lblSolde.TabIndex = 6;
@@ -407,7 +407,7 @@ namespace projetEvents
             // 
             this.lblDateFin.AutoSize = true;
             this.lblDateFin.ForeColor = System.Drawing.Color.White;
-            this.lblDateFin.Location = new System.Drawing.Point(528, 346);
+            this.lblDateFin.Location = new System.Drawing.Point(534, 346);
             this.lblDateFin.Name = "lblDateFin";
             this.lblDateFin.Size = new System.Drawing.Size(53, 23);
             this.lblDateFin.TabIndex = 5;
@@ -417,7 +417,7 @@ namespace projetEvents
             // 
             this.lblDateDebut.AutoSize = true;
             this.lblDateDebut.ForeColor = System.Drawing.Color.White;
-            this.lblDateDebut.Location = new System.Drawing.Point(339, 346);
+            this.lblDateDebut.Location = new System.Drawing.Point(304, 346);
             this.lblDateDebut.Name = "lblDateDebut";
             this.lblDateDebut.Size = new System.Drawing.Size(54, 23);
             this.lblDateDebut.TabIndex = 4;
