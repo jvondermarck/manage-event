@@ -410,7 +410,7 @@ namespace projetEvents
         // Quand on clique sur Qui-doit-Quoi, on va mettre tous les soldes à 0.
         private void btnQuiDoitQuoiQui_Click(object sender, EventArgs e)
         {
-            int codeEvent = 0;
+            int codeEvent = (int)cboEvent.SelectedValue;
             if (rechercheDejaSolde() == false)
             {
                 double totalSolde = totalSoldeNull(); // On regarde la somme total des soldes de chaque participant

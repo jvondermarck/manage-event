@@ -89,6 +89,17 @@ namespace projetEvents
             {
                 lblparticipant.Visible = false;
                 btnadd.Visible = false;
+                lblajoutparticipant.Visible = false;
+                cboajoutparticipant.Visible = false;
+                lblChooseModeInvit.Visible = false;
+                btninviter.Visible = false;
+                lblInviter.Visible = false;
+                rdbMailAuto.Visible = false;
+                rdbMailPersonnalise.Visible = false;
+                RTBcontenu.Visible = false;
+                RTBobj.Visible = false;
+                lblobj.Visible = false;
+                lblcontenu.Visible = false;
             }
 
             //apparition de la datagridview des participant à l'évenement
