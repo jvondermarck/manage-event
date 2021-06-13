@@ -756,7 +756,7 @@ namespace projetEvents
             htmlContent.Append(
                 @"<h2>Récapitulatif du participant </h2>" +
                 " <p> Nom - Prénom : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nomPrenom"] + " </p>" +
-                " <p> Nombre de parts : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboEvent.SelectedIndex]["nbParts"] + " </p>"
+                " <p> Nombre de parts : " + formMain.ds.Tables["participantsOnEvent"].Rows[cboParticipant.SelectedIndex]["nbParts"] + " </p>"
                 );
 
             // Dépenses effectuées par RICHARD

@@ -365,16 +365,6 @@ namespace projetEvents
             cbo.Text = ""; //Pour ne pas afficher le 1er element de la cbo au demarage 
         }
 
-        //Surcharge - A deux colonnes 
-        private void surchageComboBoxV2(ComboBox cbo, String table, String column, String column2)
-        {
-            for (int i = 0; i < formMain.ds.Tables[table].Rows.Count; i++)
-            {
-                cbo.Items.Add(formMain.ds.Tables[table].Rows[i][column] + " " + formMain.ds.Tables[table].Rows[i][column2]);
-            }
-        }
-
-
         private void affichageFormInvite(int codeEvent, int codeCreateur)
         {
             formMain form = (formMain)ActiveForm;
