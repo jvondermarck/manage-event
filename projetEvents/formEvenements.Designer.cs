@@ -521,10 +521,11 @@ namespace projetEvents
             // cbErrorCreateur
             // 
             this.cbErrorCreateur.AutoSize = true;
-            this.cbErrorCreateur.ForeColor = System.Drawing.Color.Red;
+            this.cbErrorCreateur.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbErrorCreateur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.cbErrorCreateur.Location = new System.Drawing.Point(400, 498);
             this.cbErrorCreateur.Name = "cbErrorCreateur";
-            this.cbErrorCreateur.Size = new System.Drawing.Size(410, 23);
+            this.cbErrorCreateur.Size = new System.Drawing.Size(405, 23);
             this.cbErrorCreateur.TabIndex = 21;
             this.cbErrorCreateur.Text = "Séléctionnez le créateur de l\'évènement";
             this.cbErrorCreateur.Visible = false;
@@ -532,10 +533,11 @@ namespace projetEvents
             // lblErrorDescription
             // 
             this.lblErrorDescription.AutoSize = true;
-            this.lblErrorDescription.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorDescription.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorDescription.Location = new System.Drawing.Point(395, 371);
             this.lblErrorDescription.Name = "lblErrorDescription";
-            this.lblErrorDescription.Size = new System.Drawing.Size(451, 23);
+            this.lblErrorDescription.Size = new System.Drawing.Size(455, 23);
             this.lblErrorDescription.TabIndex = 20;
             this.lblErrorDescription.Text = "Veuillez saisir une déscription de l\'évènement";
             this.lblErrorDescription.Visible = false;
@@ -543,10 +545,11 @@ namespace projetEvents
             // lblErrorDateDebut
             // 
             this.lblErrorDateDebut.AutoSize = true;
-            this.lblErrorDateDebut.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorDateDebut.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorDateDebut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorDateDebut.Location = new System.Drawing.Point(392, 155);
             this.lblErrorDateDebut.Name = "lblErrorDateDebut";
-            this.lblErrorDateDebut.Size = new System.Drawing.Size(470, 23);
+            this.lblErrorDateDebut.Size = new System.Drawing.Size(471, 23);
             this.lblErrorDateDebut.TabIndex = 18;
             this.lblErrorDateDebut.Text = "Séléctionnez une date inférieur à celle de la fin";
             this.lblErrorDateDebut.Visible = false;
@@ -554,10 +557,11 @@ namespace projetEvents
             // lblErrorTitre
             // 
             this.lblErrorTitre.AutoSize = true;
-            this.lblErrorTitre.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorTitre.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorTitre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
             this.lblErrorTitre.Location = new System.Drawing.Point(392, 87);
             this.lblErrorTitre.Name = "lblErrorTitre";
-            this.lblErrorTitre.Size = new System.Drawing.Size(205, 23);
+            this.lblErrorTitre.Size = new System.Drawing.Size(211, 23);
             this.lblErrorTitre.TabIndex = 17;
             this.lblErrorTitre.Text = "Veuillez saisir un titre";
             this.lblErrorTitre.Visible = false;

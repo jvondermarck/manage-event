@@ -160,6 +160,11 @@ namespace projetEvents
             lblPresentationForm.Text = "";
         }
 
+        public void setBarrePanel(int i)
+        {
+            userControlMenu1.BarrePanel = i;
+        }
+
         // Méthodes qui permettent de deplacer le form quand on clique sur la panel header
         bool drag = false;
         Point start_point = new Point(0, 0);

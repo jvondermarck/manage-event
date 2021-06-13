@@ -288,8 +288,9 @@ namespace projetEvents
             form.panelAllForm.Controls.Clear();
             formEvenements formEvenements = new formEvenements() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             formEvenements.FormBorderStyle = FormBorderStyle.None;
-            form.panelAllForm.Controls.Add(formEvenements);
             formEvenements.Show();
+            form.panelAllForm.Controls.Add(formEvenements);
+            formEvenements.Focus();
             form.lblNomForm.Text = "Créer de nouveaux évènements !";
             form.lblPresentationForm.Text = "";
 

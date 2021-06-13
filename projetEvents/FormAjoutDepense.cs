@@ -296,8 +296,8 @@ namespace projetEvents
 
                 string requete =
                     @"Insert into Depenses (numDepense, description, montant, dateDepense, commentaire, codeEvent, codePart) Values('"
-                     + numeroDepense + "', '" + description + "', '" + montant + "', '" + dateDepense + "', '"
-                     + commentaire + "', '" + codeEvents + "', '" + codePart + "')";
+                     + numeroDepense + "', '" + description + "', '" + montant + "', '" + dateDepense + "', \""
+                     + commentaire + "\", '" + codeEvents + "', '" + codePart + "')";
 
                 OleDbCommand cmd = new OleDbCommand(requete, connec);
                 int nbLigneInsert = cmd.ExecuteNonQuery();
@@ -433,6 +433,13 @@ namespace projetEvents
         // Des qu'il sélectionner un participant, on coche direct celui-ci dans la checkedlistBox
         private void cboPayePar_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            if(clbListeBeneficiaire.Items.Count>0)
+            {
+                for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
+                {
+                    clbListeBeneficiaire.SetItemChecked(i, false);
+                }
+            }
             autoCheckCreateur();
         }
 
