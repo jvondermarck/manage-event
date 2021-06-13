@@ -72,8 +72,7 @@ namespace projetEvents
         private void modificationsNavigator()
         {
             //On va chercher le prenom et nom du createur grâce au codeCreateur dans la table Participants
-            nomPrenom = formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["prenomPart"].ToString() + " " + formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["nomPart"].ToString();
-            lblCreateur.Text = nomPrenom;
+            lblCreateur.Text = formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["prenomPart"].ToString() + " " + formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["nomPart"].ToString();
             if (lblSolde.Text == "True") { lblSolde.Text = " soldé"; } //évènement soldé oui ou non
             else { lblSolde.Text = " non soldé"; }
             lblDateDebut.Text = lblDateDebut.Text.Substring(0, 8); //date sous la forme "DD/MM/YYYY"
