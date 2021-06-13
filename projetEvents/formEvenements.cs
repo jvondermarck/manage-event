@@ -68,7 +68,6 @@ namespace projetEvents
         /* modificationsNavigator() : procédure
          * Affiche le prénom et nom du créateur, modifie le format de la date
          */
-        private string nomPrenom;
         private void modificationsNavigator()
         {
             //On va chercher le prenom et nom du createur grâce au codeCreateur dans la table Participants

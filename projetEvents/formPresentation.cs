@@ -21,21 +21,17 @@ namespace projetEvents
         public formPresentation()
         {
             InitializeComponent();
-
         }
-
 
         // Déclaration de la chaine de connexion
         private static string chainconnec = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\Debug\bdd\bdEvents.mdb";
-
-        // Création d'un DataSet
-        DataSet ds = formMain.transfertDataSet;
 
         // Déclaration de la connexion active
         OleDbConnection connec = new OleDbConnection(chainconnec);
 
         private void formPresentation_Load(object sender, EventArgs e)
         {
+            // On cherche le nbr de participants, de depenses et d'event
             string eventEnrengistre = chercheDonnee("Evenements");
             string partEnrengistre = chercheDonnee("Participants");
             string depEnrengistre = chercheDonnee("Depenses");

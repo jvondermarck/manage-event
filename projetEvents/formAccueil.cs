@@ -51,19 +51,6 @@ namespace projetEvents
         // Déclaration de la connexion active
         OleDbConnection connec = new OleDbConnection();
 
-        //Accesseur permettant de transférer une DataSet d'un form à l'autre (Form Parent)
-        public static DataSet transfertDataSet
-        {
-            get // this makes you to access value in form2
-            {
-                return ds;
-            }
-            set // this makes you to change value in form2
-            {
-                ds = value;
-            }
-        }
-
         // Ramener l'intégralité des tables voyages dans le dataSet .
         public void ChargementDsLocal()
         {
@@ -100,10 +87,10 @@ namespace projetEvents
         {
             foreach (Control a in this.Controls)
             {
-                if (a is uControlMenu.userControlMenu)
+                if (a is uControlMenu.userControlMenu) // Je cherche mon User control
                 {
                     uControlMenu.userControlMenu a1 = (uControlMenu.userControlMenu)a; // On reprend l'élement checkBox 
-                    a1.accueil = btnAccueil_Click;
+                    a1.accueil = btnAccueil_Click; // On crée nous meme l'évenement grace a mon deleguate
                     a1.evenements = btnEvenements_Click;
                     a1.participant = btnParticipant_Click;
                     a1.depenses = btnDepenses_Click;
@@ -114,12 +101,12 @@ namespace projetEvents
 
         private void btnAccueil_Click(object sender, EventArgs e)
         {
-            this.panelAllForm.Controls.Clear();
+            this.panelAllForm.Controls.Clear(); // On supprime l'ancien form qui se trouve dans le panel actuellement
             userControlMenu1.BarrePanel = 1; // Cela équivaut à avoir une couleur différente sur le menu où on se trouve
-            formPresentation formPresentation = new formPresentation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            formPresentation.FormBorderStyle = FormBorderStyle.None;
-            this.panelAllForm.Controls.Add(formPresentation);
-            formPresentation.Show();
+            formPresentation formPresentation = new formPresentation() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true }; // On affiche le form au 1er plan et on va l'ancrer danss le panel
+            formPresentation.FormBorderStyle = FormBorderStyle.None; // On enleve les bordures
+            this.panelAllForm.Controls.Add(formPresentation); // On ajoute le form dans le panel
+            formPresentation.Show(); // On affiche le form dans le panel
             lblNomForm.Text = "Bienvenue !";
             lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l'addition";
         }
