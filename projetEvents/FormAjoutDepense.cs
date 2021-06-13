@@ -474,9 +474,13 @@ namespace projetEvents
         // On affiche le signe Euros quand l'user sors de la zone de texte
         private void txtCombien_Leave(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(txtCombien.Text)) // Si on va dans la txt et on resort sans rien mettre, on ne ve pas afficher le symbol euro tout seul
+            if (!String.IsNullOrEmpty(txtCombien.Text)) // Si on va dans la txt et on resort sans rien mettre, on ne ve pas afficher le symbol euro tout seul
             {
                 txtCombien.Text += "€";
+                if (txtCombien.Text[0] == ',')
+                {
+                    txtCombien.Text = "0" + txtCombien.Text;
+                }
             }
         }
 
