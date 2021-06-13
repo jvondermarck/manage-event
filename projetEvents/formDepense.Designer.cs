@@ -216,7 +216,7 @@ namespace projetEvents
             this.lbDepenses.ItemHeight = 32;
             this.lbDepenses.Location = new System.Drawing.Point(12, 213);
             this.lbDepenses.Name = "lbDepenses";
-            this.lbDepenses.Size = new System.Drawing.Size(363, 224);
+            this.lbDepenses.Size = new System.Drawing.Size(363, 64);
             this.lbDepenses.TabIndex = 6;
             this.lbDepenses.Visible = false;
             this.lbDepenses.SelectedIndexChanged += new System.EventHandler(this.lbDepenses_SelectedIndexChanged);

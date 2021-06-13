@@ -70,7 +70,29 @@ namespace projetEvents
         private void cbEvenement_SelectedIndexChanged(object sender, EventArgs e)
         {
             chargementDepenses();
-            lbDepenses.Visible = true;
+            if (lbDepenses.Items.Count == 0)
+            {
+                lbDepenses.Visible = false;
+            } else
+            {
+                lbDepenses.Visible = true;
+            }
+        }
+
+        //Met à jour les dépenses dans listBox quand l'évènement de la cbo change
+        private void cbEvenement_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            chargementDepenses();
+            if (lbDepenses.Items.Count == 0)
+            {
+                lbDepenses.Visible = false;
+            }
+            else
+            {
+                lbDepenses.Visible = true;
+            }
+            lbDepenses.AutoSize = true;
+            lbDepenses.MaximumSize = new System.Drawing.Size(363, 224);
         }
 
 
@@ -86,6 +108,8 @@ namespace projetEvents
                     lbDepenses.Items.Add(formMain.ds.Tables["Depenses"].Rows[i]["description"].ToString());
                 }
             }
+
+            
         }
 
         //procédure qui va afficher les infos d'une dépense
@@ -102,28 +126,31 @@ namespace projetEvents
 
             for (int i = 0; i < formMain.ds.Tables["Depenses"].Rows.Count; i++)
             {
-                if (formMain.ds.Tables["Depenses"].Rows[i]["description"].ToString() == lbDepenses.SelectedItem.ToString() && formMain.ds.Tables["Depenses"].Rows[i]["codeEvent"].ToString() == cbEvenement.SelectedValue.ToString())
+                if(!String.IsNullOrEmpty(lbDepenses.SelectedItem.ToString()))
                 {
-                    lblDescription.Text += formMain.ds.Tables["Depenses"].Rows[i]["description"].ToString();
-
-                    lblMontant.Text += formMain.ds.Tables["Depenses"].Rows[i]["montant"].ToString() + "€";
-
-                    string codePart = formMain.ds.Tables["Depenses"].Rows[i]["codePart"].ToString();
-                    string nom = formMain.ds.Tables["Participants"].Rows[int.Parse(codePart) - 1]["nomPart"].ToString();
-                    string prenom = formMain.ds.Tables["Participants"].Rows[int.Parse(codePart) - 1]["prenomPart"].ToString();
-                    lblAcheteur.Text += prenom + " " + nom;
-
-                    string numDepense = formMain.ds.Tables["Depenses"].Rows[i]["numDepense"].ToString();
-                    string numPart = "";
-                    for (int j = 0; j < formMain.ds.Tables["Beneficiaires"].Rows.Count; j++)
+                    if (formMain.ds.Tables["Depenses"].Rows[i]["description"].ToString() == lbDepenses.SelectedItem.ToString() && formMain.ds.Tables["Depenses"].Rows[i]["codeEvent"].ToString() == cbEvenement.SelectedValue.ToString())
                     {
-                        if (formMain.ds.Tables["Beneficiaires"].Rows[j]["numDepense"].ToString() == numDepense)
+                        lblDescription.Text += formMain.ds.Tables["Depenses"].Rows[i]["description"].ToString();
+
+                        lblMontant.Text += formMain.ds.Tables["Depenses"].Rows[i]["montant"].ToString() + "€";
+
+                        string codePart = formMain.ds.Tables["Depenses"].Rows[i]["codePart"].ToString();
+                        string nom = formMain.ds.Tables["Participants"].Rows[int.Parse(codePart) - 1]["nomPart"].ToString();
+                        string prenom = formMain.ds.Tables["Participants"].Rows[int.Parse(codePart) - 1]["prenomPart"].ToString();
+                        lblAcheteur.Text += prenom + " " + nom;
+
+                        string numDepense = formMain.ds.Tables["Depenses"].Rows[i]["numDepense"].ToString();
+                        string numPart = "";
+                        for (int j = 0; j < formMain.ds.Tables["Beneficiaires"].Rows.Count; j++)
                         {
-                            numPart = formMain.ds.Tables["Beneficiaires"].Rows[j]["codePart"].ToString();
-                            lbBeneficiaires.Items.Add(formMain.ds.Tables["Participants"].Rows[int.Parse(numPart) - 1]["prenomPart"].ToString() + " " + formMain.ds.Tables["Participants"].Rows[int.Parse(numPart) - 1]["nomPart"].ToString());
+                            if (formMain.ds.Tables["Beneficiaires"].Rows[j]["numDepense"].ToString() == numDepense)
+                            {
+                                numPart = formMain.ds.Tables["Beneficiaires"].Rows[j]["codePart"].ToString();
+                                lbBeneficiaires.Items.Add(formMain.ds.Tables["Participants"].Rows[int.Parse(numPart) - 1]["prenomPart"].ToString() + " " + formMain.ds.Tables["Participants"].Rows[int.Parse(numPart) - 1]["nomPart"].ToString());
+                            }
                         }
+                        break;
                     }
-                    break;
                 }
             }
         }
@@ -375,18 +402,16 @@ namespace projetEvents
             }
         }
 
-        //Met à jour les dépenses dans listBox quand l'évènement de la cbo change
-        private void cbEvenement_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            chargementDepenses();
-            lbDepenses.Visible = true;
-        }
+
 
 
         //On efface les infos dépenses quand on change d'évènement dans la comboBox cbEvenement 
         private void cbEvenement_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             RAZinfosDepenses();
+            lbDepenses.Size = new System.Drawing.Size(363, 0);
+            lbDepenses.AutoSize = true;
+            lbDepenses.MaximumSize = new System.Drawing.Size(363, 224);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
