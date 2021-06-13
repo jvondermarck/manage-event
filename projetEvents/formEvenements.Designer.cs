@@ -66,7 +66,6 @@ namespace projetEvents
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cbErrorCreateur = new System.Windows.Forms.Label();
             this.lblErrorDescription = new System.Windows.Forms.Label();
-            this.lblErrorDateFin = new System.Windows.Forms.Label();
             this.lblErrorDateDebut = new System.Windows.Forms.Label();
             this.lblErrorTitre = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -470,7 +469,6 @@ namespace projetEvents
             this.tabPage2.Controls.Add(this.cbCreateur);
             this.tabPage2.Controls.Add(this.cbErrorCreateur);
             this.tabPage2.Controls.Add(this.lblErrorDescription);
-            this.tabPage2.Controls.Add(this.lblErrorDateFin);
             this.tabPage2.Controls.Add(this.lblErrorDateDebut);
             this.tabPage2.Controls.Add(this.lblErrorTitre);
             this.tabPage2.Controls.Add(this.label14);
@@ -516,17 +514,6 @@ namespace projetEvents
             this.lblErrorDescription.Text = "Veuillez saisir une déscription de l\'évènement";
             this.lblErrorDescription.Visible = false;
             // 
-            // lblErrorDateFin
-            // 
-            this.lblErrorDateFin.AutoSize = true;
-            this.lblErrorDateFin.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorDateFin.Location = new System.Drawing.Point(386, 232);
-            this.lblErrorDateFin.Name = "lblErrorDateFin";
-            this.lblErrorDateFin.Size = new System.Drawing.Size(521, 23);
-            this.lblErrorDateFin.TabIndex = 19;
-            this.lblErrorDateFin.Text = "Séléctionnez une date supérieur à la date de début";
-            this.lblErrorDateFin.Visible = false;
-            // 
             // lblErrorDateDebut
             // 
             this.lblErrorDateDebut.AutoSize = true;
@@ -552,11 +539,11 @@ namespace projetEvents
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(866, 491);
+            this.label14.Location = new System.Drawing.Point(859, 236);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(143, 27);
+            this.label14.Size = new System.Drawing.Size(165, 32);
             this.label14.TabIndex = 16;
             this.label14.Text = "Enrengistrer ";
             // 
@@ -677,7 +664,7 @@ namespace projetEvents
             // 
             this.btnEnregistrer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnregistrer.Image = global::projetEvents.Properties.Resources.save1;
-            this.btnEnregistrer.Location = new System.Drawing.Point(871, 521);
+            this.btnEnregistrer.Location = new System.Drawing.Point(855, 271);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(133, 102);
             this.btnEnregistrer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -807,7 +794,6 @@ namespace projetEvents
         private System.Windows.Forms.PictureBox btnPagePrecedente;
         private System.Windows.Forms.Label cbErrorCreateur;
         private System.Windows.Forms.Label lblErrorDescription;
-        private System.Windows.Forms.Label lblErrorDateFin;
         private System.Windows.Forms.Label lblErrorDateDebut;
         private System.Windows.Forms.Label lblErrorTitre;
         private System.Windows.Forms.ErrorProvider errorProvider;

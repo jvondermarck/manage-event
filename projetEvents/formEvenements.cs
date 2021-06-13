@@ -149,7 +149,7 @@ namespace projetEvents
                 connec.ConnectionString = chainconnec;
                 connec.Open();
                 string requete = @"INSERT INTO [Evenements] (codeEvent, titreEvent, dateDebut, dateFin, description, soldeON, codeCreateur)
-                                    VALUES (" + codeEvent + ", '" + titreEvent + "', '" + dateDebut + "', '" + dateFin + "', '" + description + "', " + soldeON + ", " + codeCreateur + ")";
+                                    VALUES (" + codeEvent + ", '" + titreEvent + "', '" + dateDebut + "', '" + dateFin + "', \"" + description + "\", " + soldeON + ", " + codeCreateur + ")";
                 OleDbCommand cd1 = new OleDbCommand(requete, connec);
                 int nbLigneDelete = cd1.ExecuteNonQuery();
 
@@ -316,21 +316,6 @@ namespace projetEvents
                 //nombreErreur--;
                 lblErrorDateDebut.Visible = false;
             }
-
-            //On vérifie si la date fin de l'évènement est supérieure ou égale à la date de début
-            //if (DateTime.Compare(dt2, dt) < 1 && !DateTime.Equals(dt, dt2))
-            //{
-            //    errorProvider.SetError(dtpDateFin, "Veuillez sélectionner une date supérieur à la date du début.");
-            //    //nombreErreur++;
-            //    remplissageCorrect = false;
-            //    lblErrorDateFin.Visible = true;
-            //}
-            //else
-            //{
-            //    errorProvider.SetError(dtpDateFin, "");
-            //    //nombreErreur--;
-            //    lblErrorDateFin.Visible = false;
-            //}
 
             //On vérifie si l'utilisateur entre une description de l'évènement
             if (String.IsNullOrEmpty(rtbDescPage2.Text))
