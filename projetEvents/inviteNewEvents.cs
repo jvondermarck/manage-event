@@ -217,13 +217,12 @@ namespace projetEvents
                     "Description : " + description;
 
                 lancerInvitations("Invitations à un nouvel évènements !", contenuMail, adrMail);
-                MessageBox.Show("Les invitations ont été envoyé !");
                 quitterApplication();
             }
 
             else
             {
-                MessageBox.Show("Veuillez choisir au moins 1 invité");
+                formNotification.Alert("Veuillez choisir au moins 1 invité ! ", formNotification.enmType.Error);
             }
 
         }

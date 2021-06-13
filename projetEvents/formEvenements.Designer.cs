@@ -533,9 +533,9 @@ namespace projetEvents
             this.lblErrorDateDebut.ForeColor = System.Drawing.Color.Red;
             this.lblErrorDateDebut.Location = new System.Drawing.Point(392, 155);
             this.lblErrorDateDebut.Name = "lblErrorDateDebut";
-            this.lblErrorDateDebut.Size = new System.Drawing.Size(454, 23);
+            this.lblErrorDateDebut.Size = new System.Drawing.Size(470, 23);
             this.lblErrorDateDebut.TabIndex = 18;
-            this.lblErrorDateDebut.Text = "Séléctionnez une date supérieur à aujourd\'hui";
+            this.lblErrorDateDebut.Text = "Séléctionnez une date inférieur à celle de la fin";
             this.lblErrorDateDebut.Visible = false;
             // 
             // lblErrorTitre
@@ -554,7 +554,7 @@ namespace projetEvents
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(866, 480);
+            this.label14.Location = new System.Drawing.Point(866, 491);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(143, 27);
             this.label14.TabIndex = 16;

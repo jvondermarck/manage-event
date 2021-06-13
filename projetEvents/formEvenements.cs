@@ -300,7 +300,7 @@ namespace projetEvents
             //On vérifie si la date début de l'évènement est supérieur ou égale à la date du système
             DateTime dt = (DateTime)dtpDateDebut.Value;
             DateTime dt2 = (DateTime)dtpDateFin.Value;
-            if (DateTime.Compare(dt, dt2) > 1)
+            if (DateTime.Compare(dt, dt2) > 0)
             {
                 errorProvider.SetError(dtpDateDebut, "Veuillez sélectionner une date supérieur à la date du jour.");
                 //nombreErreur++;
