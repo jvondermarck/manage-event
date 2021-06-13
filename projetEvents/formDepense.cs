@@ -207,6 +207,24 @@ namespace projetEvents
                 catch (Exception exp) { MessageBox.Show(exp.GetType().ToString()); }
                 finally { connec.Close(); }
 
+                try
+                {
+                    connec.ConnectionString = chainconnec;
+                    connec.Open();
+                    string requete = @"DELETE FROM Depenses WHERE numDepense = " + numDepense;
+                    OleDbCommand cd1 = new OleDbCommand(requete, connec);
+                    int nbLigneDelete = cd1.ExecuteNonQuery();
+
+                    requete = "SELECT * FROM Depenses";
+                    OleDbDataAdapter da = new OleDbDataAdapter(requete, connec);
+                    formMain.ds.Tables["Depenses"].Clear();
+                    da.Fill(formMain.ds, "Depenses");
+                }
+                catch (OleDbException ex) { MessageBox.Show("Erreur dans la requete SQL" + ex); }
+                catch (InvalidOperationException) { MessageBox.Show("Erreur d'accès à la base de donnée"); }
+                catch (Exception exp) { MessageBox.Show(exp.GetType().ToString()); }
+                finally { connec.Close(); }
+
                 chargementDepenses();
                 if (lbDepenses.Items.Count != 0) { lbDepenses.SelectedIndex = 0; }
                 else
@@ -347,6 +365,14 @@ namespace projetEvents
             cbBeneficiaires.DisplayMember = "nomPrenom";
             cbBeneficiaires.ValueMember = "codeParticipant";
             cbBeneficiaires.SelectedIndex = -1;
+
+            if(cbBeneficiaires.Items.Count == 0)
+            {
+                cbBeneficiaires.Visible = false;
+                btnAjoutBeneficiaire.Visible = false;
+                btnValider.Visible = false;
+                btnAnnuler.Visible = false;
+            }
         }
 
         //Met à jour les dépenses dans listBox quand l'évènement de la cbo change
@@ -361,6 +387,28 @@ namespace projetEvents
         private void cbEvenement_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             RAZinfosDepenses();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            formMain form = (formMain)ActiveForm;
+            form.panelAllForm.Controls.Clear();
+            FormAjoutDepense formAjoutDepense = new FormAjoutDepense() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            formAjoutDepense.FormBorderStyle = FormBorderStyle.None;
+            form.panelAllForm.Controls.Add(formAjoutDepense);
+            formAjoutDepense.Show();
+            form.lblNomForm.Text = "Ajouter une nouvelle dépense !";
+            form.lblPresentationForm.Text = "";
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(pictureBox1, "Cliquez ici pour ajouter une dépense");
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            toolTip.Hide(pictureBox1);
         }
     }
 }

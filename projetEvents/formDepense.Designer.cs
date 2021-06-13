@@ -29,6 +29,7 @@ namespace projetEvents
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbDepense = new System.Windows.Forms.GroupBox();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
@@ -44,6 +45,8 @@ namespace projetEvents
             this.cbEvenement = new System.Windows.Forms.ComboBox();
             this.lblNbDepenses = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.gbDepense.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -245,13 +248,28 @@ namespace projetEvents
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::projetEvents.Properties.Resources.budget;
-            this.pictureBox1.Location = new System.Drawing.Point(-36, 486);
+            this.pictureBox1.Location = new System.Drawing.Point(77, 489);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 168);
+            this.pictureBox1.Size = new System.Drawing.Size(180, 168);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(25, 459);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(317, 27);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Saissiez une nouvelle dépense";
             // 
             // formDepense
             // 
@@ -259,6 +277,7 @@ namespace projetEvents
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(985, 665);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbDepense);
             this.Controls.Add(this.lbDepenses);
@@ -295,5 +314,7 @@ namespace projetEvents
         private System.Windows.Forms.ComboBox cbEvenement;
         private System.Windows.Forms.Label lblNbDepenses;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

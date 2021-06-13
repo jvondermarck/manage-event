@@ -260,42 +260,42 @@ namespace projetEvents
             OleDbDataReader dr = cd1.ExecuteReader();
 
             // On crée une table
-            DataTable dt = new DataTable("datacbo");
+            DataTable dt = new DataTable("cboAddInvite");
             //on crée les colonnes
             dt.Columns.Add("codeParticipant");
             dt.Columns.Add("nomPrenom");
             dt.Columns.Add("adresseMail");
             //si la table existe déja on la supprime, sinon on l'ajoute au dataset
-            if (!formMain.ds.Tables.Contains("datacbo"))
+            if (!formMain.ds.Tables.Contains("cboAddInvite"))
             {
                 formMain.ds.Tables.Add(dt);
             }
             else
             {
-                formMain.ds.Tables["datacbo"].Clear();
+                formMain.ds.Tables["cboAddInvite"].Clear();
             }
 
-            for (int i = 0; i < formMain.ds.Tables["datacbo"].Rows.Count; i++)
+            for (int i = 0; i < formMain.ds.Tables["cboAddInvite"].Rows.Count; i++)
             {
-                if (formMain.ds.Tables["datadgv"].Rows[i]["codeParticipant"] == formMain.ds.Tables["datacbo"].Rows[i]["codeParticipant"])
+                if (formMain.ds.Tables["cboAddInvite"].Rows[i]["codeParticipant"] == formMain.ds.Tables["cboAddInvite"].Rows[i]["codeParticipant"])
                 {
-                    formMain.ds.Tables["datacbo"].Rows[i].Delete();
+                    formMain.ds.Tables["cboAddInvite"].Rows[i].Delete();
                 }
             }
             // Pour chaque participant, on ajoute dans le DataSet les infos de la personnes
             while (dr.Read())
             {
-                DataRow ligne = formMain.ds.Tables["datacbo"].NewRow();
+                DataRow ligne = formMain.ds.Tables["cboAddInvite"].NewRow();
 
                 ligne[0] = dr.GetInt32(0).ToString();
                 ligne[1] = dr.GetString(1) + " " + dr.GetString(2);
                 ligne[2] = dr.GetString(3);
 
-                formMain.ds.Tables["datacbo"].Rows.Add(ligne);
+                formMain.ds.Tables["cboAddInvite"].Rows.Add(ligne);
             }
             connec.Close();
             //remplissage de la combobox par liaison de donnée
-            cboajoutparticipant.DataSource = formMain.ds.Tables["datacbo"];
+            cboajoutparticipant.DataSource = formMain.ds.Tables["cboAddInvite"];
             cboajoutparticipant.DisplayMember = "nomPrenom";
             cboajoutparticipant.ValueMember = "codeParticipant";
             cboajoutparticipant.SelectedIndex = -1;
@@ -367,7 +367,7 @@ namespace projetEvents
         //renvoie l'addresse mail
         public string Mail()
         {
-            return formMain.ds.Tables["datacbo"].Rows[cboajoutparticipant.SelectedIndex]["adresseMail"].ToString();
+            return formMain.ds.Tables["cboAddInvite"].Rows[cboajoutparticipant.SelectedIndex]["adresseMail"].ToString();
         }
 
         //envoi du mail
