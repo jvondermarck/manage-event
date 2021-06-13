@@ -479,6 +479,10 @@ namespace projetEvents
         {
             if (!String.IsNullOrEmpty(txtCombien.Text)) // Si on va dans la txt et on resort sans rien mettre, on ne ve pas afficher le symbol euro tout seul
             {
+                if (txtCombien.Text[txtCombien.TextLength - 1] == ',')
+                {
+                    txtCombien.Text = txtCombien.Text.Substring(0, txtCombien.TextLength - 1);
+                }
                 txtCombien.Text += "€";
                 if (txtCombien.Text[0] == ',')
                 {

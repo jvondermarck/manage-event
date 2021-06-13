@@ -124,8 +124,6 @@ namespace projetEvents
             lblPresentationForm.Text = "Créez des évènements, invitez des gens, partagez l'addition";
         }
 
-        //Déclaration du Binding Source
-        public static BindingSource bs = new BindingSource();
 
         private void btnEvenements_Click(object sender, EventArgs e)
         {

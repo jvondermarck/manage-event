@@ -25,8 +25,12 @@ namespace projetEvents
         // Déclaration de la connexion active
         OleDbConnection connec = new OleDbConnection();
 
+        //Déclaration du Binding Source
+        private BindingSource bs = new BindingSource();
+
         private int enregistrement = 1;
-        private int codeEvent = 1;
+        private int codeEvent;
+
 
         public formEvenements()
         {
@@ -35,10 +39,12 @@ namespace projetEvents
 
         private void formEvenements_Load(object sender, EventArgs e)
         {
-            formMain.bs.DataSource = formMain.ds.Tables["Evenements"];
+            bs.DataSource = formMain.ds.Tables["Evenements"];
             bindingsNavigator(); //Codage des boutons pour naviguer et récupérer les infos de la table
             chargementNumPage(); //Chargement des infos des événements pour le parcours 1 à 1
             chargement_cbCreateur();
+            btnPageFin_Click(sender, e);
+            btnPageDebut_Click(sender, e);
         }
 
         //////////////////////////////////////////////////////////////////////////////////
@@ -50,25 +56,27 @@ namespace projetEvents
          */
         private void bindingsNavigator()
         {
-            lblNumEvenement.DataBindings.Add("Text", formMain.bs, "codeEvent");
-            lblCreateur.DataBindings.Add("Text", formMain.bs, "codeCreateur");
-            lblDateDebut.DataBindings.Add("Text", formMain.bs, "dateDebut");
-            lblDateFin.DataBindings.Add("Text", formMain.bs, "dateFin");
-            lblIntitule.DataBindings.Add("Text", formMain.bs, "titreEvent");
-            rtbDescPage1.DataBindings.Add("Text", formMain.bs, "description");
-            lblSolde.DataBindings.Add("Text", formMain.bs, "soldeON");
+            lblNumEvenement.DataBindings.Add("Text", bs, "codeEvent");
+            lblCreateur.DataBindings.Add("Text", bs, "codeCreateur");
+            lblDateDebut.DataBindings.Add("Text", bs, "dateDebut");
+            lblDateFin.DataBindings.Add("Text", bs, "dateFin");
+            lblIntitule.DataBindings.Add("Text", bs, "titreEvent");
+            rtbDescPage1.DataBindings.Add("Text", bs, "description");
+            lblSolde.DataBindings.Add("Text", bs, "soldeON");
 
-            //modificationsNavigator(); //procédure qui modifie certaines infos recueilli 
+            modificationsNavigator(); //procédure qui modifie certaines infos recueilli 
         }
 
 
         /* modificationsNavigator() : procédure
          * Affiche le prénom et nom du créateur, modifie le format de la date
          */
+        private string nomPrenom;
         private void modificationsNavigator()
         {
             //On va chercher le prenom et nom du createur grâce au codeCreateur dans la table Participants
-            lblCreateur.Text = formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["prenomPart"].ToString() + " " + formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["nomPart"].ToString();
+            nomPrenom = formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["prenomPart"].ToString() + " " + formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["nomPart"].ToString();
+            lblCreateur.Text = nomPrenom;
             if (lblSolde.Text == "True") { lblSolde.Text = " soldé"; } //évènement soldé oui ou non
             else { lblSolde.Text = " non soldé"; }
             lblDateDebut.Text = lblDateDebut.Text.Substring(0, 8); //date sous la forme "DD/MM/YYYY"
@@ -93,7 +101,7 @@ namespace projetEvents
         //Codage des 4 boutons qui vont nous permettre de naviguer dans le parcours 1 à 1
         private void btnPageDebut_Click(object sender, EventArgs e)
         {
-            formMain.bs.MoveFirst();
+            bs.MoveFirst();
             enregistrement = 1;
             chargementNumPage(); //maj du numéro de l'enregistrement/page
             modificationsNavigator();
@@ -101,7 +109,7 @@ namespace projetEvents
 
         private void btnPagePrecedente_Click(object sender, EventArgs e)
         {
-            formMain.bs.MovePrevious();
+            bs.MovePrevious();
             enregistrement--;
             chargementNumPage();//maj du numéro de l'enregistrement/page
             modificationsNavigator();
@@ -109,7 +117,7 @@ namespace projetEvents
 
         private void btnPageSuivante_Click(object sender, EventArgs e)
         {
-            formMain.bs.MoveNext();
+            bs.MoveNext();
             enregistrement++;
             chargementNumPage();//maj du numéro de l'enregistrement/page
             modificationsNavigator();
@@ -117,7 +125,7 @@ namespace projetEvents
 
         private void btnPageFin_Click(object sender, EventArgs e)
         {
-            formMain.bs.MoveLast();
+            bs.MoveLast();
             enregistrement = formMain.ds.Tables["Evenements"].Rows.Count;
             chargementNumPage();//maj du numéro de l'enregistrement/page
             modificationsNavigator();
