@@ -138,15 +138,18 @@ namespace projetEvents
         {
             if(clbListeBeneficiaire.Items.Count > 0)
             {
-                for(int i=0; i<clbListeBeneficiaire.Items.Count; i++)
+                if (ckbToutLeMonde.Checked == true)
                 {
-                    if(clbListeBeneficiaire.GetItemCheckState(i) == CheckState.Checked)
+                    for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
+                    {
+                       clbListeBeneficiaire.SetItemChecked(i, true);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < clbListeBeneficiaire.Items.Count; i++)
                     {
                         clbListeBeneficiaire.SetItemChecked(i, false);
-                    }
-                    else
-                    {
-                        clbListeBeneficiaire.SetItemChecked(i, true);
                     }
                 }
                 autoCheckCreateur(); // On oublie pas de cocher celui qui fait la dépense
@@ -154,7 +157,6 @@ namespace projetEvents
             {
                 ckbToutLeMonde.Checked = false;
             }
-    
         }
 
         //
