@@ -126,6 +126,7 @@ namespace projetEvents
             this.btnSupprimerDep.TabIndex = 6;
             this.btnSupprimerDep.Text = "Supprimer cette dépense";
             this.btnSupprimerDep.UseVisualStyleBackColor = false;
+            this.btnSupprimerDep.Visible = false;
             this.btnSupprimerDep.Click += new System.EventHandler(this.btnSupprimerDep_Click);
             // 
             // btnAjoutBeneficiaire
@@ -226,11 +227,12 @@ namespace projetEvents
             this.cbEvenement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.cbEvenement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEvenement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbEvenement.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEvenement.ForeColor = System.Drawing.Color.White;
             this.cbEvenement.FormattingEnabled = true;
             this.cbEvenement.Location = new System.Drawing.Point(12, 146);
             this.cbEvenement.Name = "cbEvenement";
-            this.cbEvenement.Size = new System.Drawing.Size(363, 32);
+            this.cbEvenement.Size = new System.Drawing.Size(363, 35);
             this.cbEvenement.TabIndex = 5;
             this.cbEvenement.SelectedIndexChanged += new System.EventHandler(this.cbEvenement_SelectedIndexChanged_1);
             this.cbEvenement.SelectionChangeCommitted += new System.EventHandler(this.cbEvenement_SelectionChangeCommitted);
@@ -265,7 +267,7 @@ namespace projetEvents
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 459);
+            this.label1.Location = new System.Drawing.Point(33, 459);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(317, 27);
             this.label1.TabIndex = 9;

@@ -94,6 +94,7 @@ namespace projetEvents
             // clbParticipants
             // 
             this.clbParticipants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.clbParticipants.CheckOnClick = true;
             this.clbParticipants.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clbParticipants.ForeColor = System.Drawing.Color.White;
             this.clbParticipants.FormattingEnabled = true;

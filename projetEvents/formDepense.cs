@@ -64,8 +64,6 @@ namespace projetEvents
             lblNbDepenses.Text = "Il y a " + formMain.ds.Tables["Depenses"].Rows.Count.ToString() + " dépenses enregistrées.";
         }
 
-
-
         //lance le remplissage de la listeBox ave les dépenses rattaché à un évènement de la cbEvenement
         private void cbEvenement_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -78,6 +76,7 @@ namespace projetEvents
             {
                 lbDepenses.Visible = true;
             }
+            btnAjoutBeneficiaire.Visible = true;
         }
 
         //Met à jour les dépenses dans listBox quand l'évènement de la cbo change
@@ -95,7 +94,8 @@ namespace projetEvents
             }
             lbDepenses.AutoSize = true;
             lbDepenses.MaximumSize = new System.Drawing.Size(363, 224);
-           
+            btnSupprimerDep.Visible = false;
+            gbDepense.Visible = false;
         }
 
 
@@ -158,8 +158,6 @@ namespace projetEvents
             }
         }
 
-
-
         //procédure qui efface l'affichage des infos d'une dépense
         private void RAZinfosDepenses()
         {
@@ -178,6 +176,29 @@ namespace projetEvents
             cbBeneficiaires.Visible = false;
             btnValider.Visible = false;
             btnAnnuler.Visible = false;
+            remplissagecbBeneficiaires();
+
+            // Si event deja soldé, on peut pas enlever la depense
+            if(rechercheDejaSolde())
+            {
+                btnSupprimerDep.Visible = false;
+                btnAjoutBeneficiaire.Visible = false;
+            } else
+            {
+                btnSupprimerDep.Visible = true;
+            }
+        }
+
+        // On regarde si l'évenement est déja soldé
+        private bool rechercheDejaSolde()
+        {
+            connec.ConnectionString = chainconnec;
+            connec.Open();
+            string requete = @"SELECT soldeON FROM Evenements WHERE codeEvent=" + cbEvenement.SelectedValue;
+            OleDbCommand cd = new OleDbCommand(requete, connec);
+            bool res = (bool)cd.ExecuteScalar();
+            connec.Close();
+            return res;
         }
 
         //Procédure qui va supprimer la dépense sélectionner
@@ -276,7 +297,7 @@ namespace projetEvents
                 btnValider.Visible = true;
                 btnAnnuler.Visible = true;
 
-                remplissagecbBeneficiaires();
+                //remplissagecbBeneficiaires();
             }
         }
 
@@ -415,6 +436,7 @@ namespace projetEvents
             lbDepenses.Size = new System.Drawing.Size(363, 0);
             lbDepenses.AutoSize = true;
             lbDepenses.MaximumSize = new System.Drawing.Size(363, 224);
+            btnSupprimerDep.Visible = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

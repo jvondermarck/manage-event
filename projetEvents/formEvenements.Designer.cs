@@ -74,7 +74,6 @@ namespace projetEvents
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDateFin = new System.Windows.Forms.DateTimePicker();
             this.dtpDateDebut = new System.Windows.Forms.DateTimePicker();
-            this.cbCreateur = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.rtbDescPage2 = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -86,6 +85,7 @@ namespace projetEvents
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbCreateur = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPageDebut)).BeginInit();
@@ -115,6 +115,7 @@ namespace projetEvents
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage1.Controls.Add(this.lblSolde);
             this.tabPage1.Controls.Add(this.btnPageDebut);
             this.tabPage1.Controls.Add(this.btnPageFin);
             this.tabPage1.Controls.Add(this.btnPageSuivante);
@@ -128,7 +129,6 @@ namespace projetEvents
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.rtbDescPage1);
             this.tabPage1.Controls.Add(this.lblNumEnregistrement);
-            this.tabPage1.Controls.Add(this.lblSolde);
             this.tabPage1.Controls.Add(this.lblDateFin);
             this.tabPage1.Controls.Add(this.lblDateDebut);
             this.tabPage1.Controls.Add(this.lblDescription);
@@ -308,11 +308,11 @@ namespace projetEvents
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(250, 405);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(240, 23);
+            this.label7.Size = new System.Drawing.Size(283, 28);
             this.label7.TabIndex = 20;
             this.label7.Text = "L\'évènement est soldé :";
             // 
@@ -330,44 +330,44 @@ namespace projetEvents
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(250, 346);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 23);
+            this.label5.Size = new System.Drawing.Size(57, 28);
             this.label5.TabIndex = 18;
             this.label5.Text = "Du :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(250, 153);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 23);
+            this.label4.Size = new System.Drawing.Size(102, 28);
             this.label4.TabIndex = 17;
             this.label4.Text = "Intitulé :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(250, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 23);
+            this.label3.Size = new System.Drawing.Size(130, 28);
             this.label3.TabIndex = 16;
             this.label3.Text = "Créé par :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(250, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 23);
+            this.label2.Size = new System.Drawing.Size(192, 28);
             this.label2.TabIndex = 15;
             this.label2.Text = "Evènement n° : ";
             // 
@@ -397,7 +397,7 @@ namespace projetEvents
             // 
             this.lblSolde.AutoSize = true;
             this.lblSolde.ForeColor = System.Drawing.Color.White;
-            this.lblSolde.Location = new System.Drawing.Point(433, 405);
+            this.lblSolde.Location = new System.Drawing.Point(485, 408);
             this.lblSolde.Name = "lblSolde";
             this.lblSolde.Size = new System.Drawing.Size(137, 23);
             this.lblSolde.TabIndex = 6;
@@ -426,11 +426,11 @@ namespace projetEvents
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.White;
             this.lblDescription.Location = new System.Drawing.Point(250, 214);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(137, 23);
+            this.lblDescription.Size = new System.Drawing.Size(163, 28);
             this.lblDescription.TabIndex = 3;
             this.lblDescription.Text = "Description : ";
             // 
@@ -467,6 +467,7 @@ namespace projetEvents
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage2.Controls.Add(this.cbCreateur);
             this.tabPage2.Controls.Add(this.cbErrorCreateur);
             this.tabPage2.Controls.Add(this.lblErrorDescription);
             this.tabPage2.Controls.Add(this.lblErrorDateFin);
@@ -477,7 +478,6 @@ namespace projetEvents
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.dtpDateFin);
             this.tabPage2.Controls.Add(this.dtpDateDebut);
-            this.tabPage2.Controls.Add(this.cbCreateur);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.rtbDescPage2);
             this.tabPage2.Controls.Add(this.label12);
@@ -498,7 +498,7 @@ namespace projetEvents
             // 
             this.cbErrorCreateur.AutoSize = true;
             this.cbErrorCreateur.ForeColor = System.Drawing.Color.Red;
-            this.cbErrorCreateur.Location = new System.Drawing.Point(408, 502);
+            this.cbErrorCreateur.Location = new System.Drawing.Point(400, 498);
             this.cbErrorCreateur.Name = "cbErrorCreateur";
             this.cbErrorCreateur.Size = new System.Drawing.Size(410, 23);
             this.cbErrorCreateur.TabIndex = 21;
@@ -509,7 +509,7 @@ namespace projetEvents
             // 
             this.lblErrorDescription.AutoSize = true;
             this.lblErrorDescription.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorDescription.Location = new System.Drawing.Point(395, 375);
+            this.lblErrorDescription.Location = new System.Drawing.Point(395, 371);
             this.lblErrorDescription.Name = "lblErrorDescription";
             this.lblErrorDescription.Size = new System.Drawing.Size(451, 23);
             this.lblErrorDescription.TabIndex = 20;
@@ -565,7 +565,7 @@ namespace projetEvents
             this.checkBoxSolde.AutoSize = true;
             this.checkBoxSolde.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxSolde.ForeColor = System.Drawing.Color.White;
-            this.checkBoxSolde.Location = new System.Drawing.Point(413, 401);
+            this.checkBoxSolde.Location = new System.Drawing.Point(397, 401);
             this.checkBoxSolde.Name = "checkBoxSolde";
             this.checkBoxSolde.Size = new System.Drawing.Size(162, 27);
             this.checkBoxSolde.TabIndex = 13;
@@ -585,9 +585,9 @@ namespace projetEvents
             // 
             // dtpDateFin
             // 
-            this.dtpDateFin.Location = new System.Drawing.Point(390, 197);
+            this.dtpDateFin.Location = new System.Drawing.Point(396, 197);
             this.dtpDateFin.Name = "dtpDateFin";
-            this.dtpDateFin.Size = new System.Drawing.Size(352, 32);
+            this.dtpDateFin.Size = new System.Drawing.Size(346, 32);
             this.dtpDateFin.TabIndex = 11;
             // 
             // dtpDateDebut
@@ -597,17 +597,6 @@ namespace projetEvents
             this.dtpDateDebut.Name = "dtpDateDebut";
             this.dtpDateDebut.Size = new System.Drawing.Size(346, 32);
             this.dtpDateDebut.TabIndex = 10;
-            // 
-            // cbCreateur
-            // 
-            this.cbCreateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.cbCreateur.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbCreateur.ForeColor = System.Drawing.Color.White;
-            this.cbCreateur.FormattingEnabled = true;
-            this.cbCreateur.Location = new System.Drawing.Point(412, 459);
-            this.cbCreateur.Name = "cbCreateur";
-            this.cbCreateur.Size = new System.Drawing.Size(330, 31);
-            this.cbCreateur.TabIndex = 7;
             // 
             // label13
             // 
@@ -719,6 +708,19 @@ namespace projetEvents
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
+            // cbCreateur
+            // 
+            this.cbCreateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cbCreateur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCreateur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCreateur.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCreateur.ForeColor = System.Drawing.Color.White;
+            this.cbCreateur.FormattingEnabled = true;
+            this.cbCreateur.Location = new System.Drawing.Point(399, 459);
+            this.cbCreateur.Name = "cbCreateur";
+            this.cbCreateur.Size = new System.Drawing.Size(343, 35);
+            this.cbCreateur.TabIndex = 22;
+            // 
             // formEvenements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -787,7 +789,6 @@ namespace projetEvents
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDateFin;
         private System.Windows.Forms.DateTimePicker dtpDateDebut;
-        private System.Windows.Forms.ComboBox cbCreateur;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.RichTextBox rtbDescPage2;
         private System.Windows.Forms.Label label12;
@@ -810,5 +811,6 @@ namespace projetEvents
         private System.Windows.Forms.Label lblErrorDateDebut;
         private System.Windows.Forms.Label lblErrorTitre;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ComboBox cbCreateur;
     }
 }
