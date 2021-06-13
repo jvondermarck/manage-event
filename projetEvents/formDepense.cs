@@ -329,6 +329,18 @@ namespace projetEvents
                 formMain.ds.Tables["datacbo"].Rows.Add(ligne);
             }
 
+            for(int i=0; i< lbBeneficiaires.Items.Count; i++)
+            {
+                for (int j = 0; j <formMain.ds.Tables["datacbo"].Rows.Count; j++)
+                {
+                    if(formMain.ds.Tables["datacbo"].Rows[j]["nomPrenom"].ToString() == lbBeneficiaires.Items[i].ToString())
+                    {
+                        formMain.ds.Tables["datacbo"].Rows[j].Delete();
+                        i = 0;
+                    }
+                }
+            }
+
             connec.Close();
             //remplissage de la combobox par liaison de donnée
             cbBeneficiaires.DataSource = formMain.ds.Tables["datacbo"];
