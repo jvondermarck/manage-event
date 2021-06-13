@@ -835,7 +835,7 @@ namespace projetEvents
             // RICHARD doit payer à : 
             if (formMain.ds.Tables["BilanPart"].Rows.Count != 0)
             {
-                int d = 0;
+                int d = 0; // Sa sert a faire en sorte d'avoir un meilleure affichage si il n'y a aucune dépense, au lieu d'afficher un tableau vide
                 for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
                 {
                     if (formMain.ds.Tables["BilanPart"].Rows[i]["codeDonneur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
@@ -901,7 +901,7 @@ namespace projetEvents
             // RICHARD doit recevoir de : 
             if (formMain.ds.Tables["BilanPart"].Rows.Count != 0)
             {
-                int c = 0;
+                int c = 0; // Sa sert a faire en sorte d'avoir un meilleure affichage si il n'y a aucune dépense, au lieu d'afficher un tableau vide
                 for (int i = 0; i < formMain.ds.Tables["BilanPart"].Rows.Count; i++)
                 {
                     if (formMain.ds.Tables["BilanPart"].Rows[i]["codeReceveur"].ToString() == cboParticipant.SelectedValue.ToString() && formMain.ds.Tables["BilanPart"].Rows[i]["codeEvent"].ToString() == cboEvent.SelectedValue.ToString())
