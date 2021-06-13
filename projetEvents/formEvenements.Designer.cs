@@ -32,6 +32,7 @@ namespace projetEvents
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblSolde = new System.Windows.Forms.Label();
             this.btnPageDebut = new System.Windows.Forms.PictureBox();
             this.btnPageFin = new System.Windows.Forms.PictureBox();
             this.btnPageSuivante = new System.Windows.Forms.PictureBox();
@@ -56,7 +57,6 @@ namespace projetEvents
             this.label2 = new System.Windows.Forms.Label();
             this.rtbDescPage1 = new System.Windows.Forms.RichTextBox();
             this.lblNumEnregistrement = new System.Windows.Forms.Label();
-            this.lblSolde = new System.Windows.Forms.Label();
             this.lblDateFin = new System.Windows.Forms.Label();
             this.lblDateDebut = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@ namespace projetEvents
             this.lblCreateur = new System.Windows.Forms.Label();
             this.lblNumEvenement = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbCreateur = new System.Windows.Forms.ComboBox();
             this.cbErrorCreateur = new System.Windows.Forms.Label();
             this.lblErrorDescription = new System.Windows.Forms.Label();
             this.lblErrorDateDebut = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@ namespace projetEvents
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbCreateur = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPageDebut)).BeginInit();
@@ -114,13 +114,13 @@ namespace projetEvents
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.lblSolde);
             this.tabPage1.Controls.Add(this.btnPageDebut);
             this.tabPage1.Controls.Add(this.btnPageFin);
             this.tabPage1.Controls.Add(this.btnPageSuivante);
             this.tabPage1.Controls.Add(this.btnPagePrecedente);
             this.tabPage1.Controls.Add(this.bn);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
@@ -140,6 +140,17 @@ namespace projetEvents
             this.tabPage1.Size = new System.Drawing.Size(1077, 657);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "          Parcours 1 à 1";
+            // 
+            // lblSolde
+            // 
+            this.lblSolde.AutoSize = true;
+            this.lblSolde.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSolde.ForeColor = System.Drawing.Color.White;
+            this.lblSolde.Location = new System.Drawing.Point(415, 407);
+            this.lblSolde.Name = "lblSolde";
+            this.lblSolde.Size = new System.Drawing.Size(122, 27);
+            this.lblSolde.TabIndex = 6;
+            this.lblSolde.Text = "non soldé";
             // 
             // btnPageDebut
             // 
@@ -311,16 +322,16 @@ namespace projetEvents
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(250, 405);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(283, 28);
+            this.label7.Size = new System.Drawing.Size(213, 28);
             this.label7.TabIndex = 20;
-            this.label7.Text = "L\'évènement est soldé :";
+            this.label7.Text = "L\'évènement est :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(485, 346);
+            this.label6.Location = new System.Drawing.Point(485, 350);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 23);
             this.label6.TabIndex = 19;
@@ -392,21 +403,11 @@ namespace projetEvents
             this.lblNumEnregistrement.TabIndex = 8;
             this.lblNumEnregistrement.Text = "Enregistrement : ";
             // 
-            // lblSolde
-            // 
-            this.lblSolde.AutoSize = true;
-            this.lblSolde.ForeColor = System.Drawing.Color.White;
-            this.lblSolde.Location = new System.Drawing.Point(485, 408);
-            this.lblSolde.Name = "lblSolde";
-            this.lblSolde.Size = new System.Drawing.Size(137, 23);
-            this.lblSolde.TabIndex = 6;
-            this.lblSolde.Text = "Soldé(O/N) : ";
-            // 
             // lblDateFin
             // 
             this.lblDateFin.AutoSize = true;
             this.lblDateFin.ForeColor = System.Drawing.Color.White;
-            this.lblDateFin.Location = new System.Drawing.Point(534, 346);
+            this.lblDateFin.Location = new System.Drawing.Point(534, 350);
             this.lblDateFin.Name = "lblDateFin";
             this.lblDateFin.Size = new System.Drawing.Size(53, 23);
             this.lblDateFin.TabIndex = 5;
@@ -416,7 +417,7 @@ namespace projetEvents
             // 
             this.lblDateDebut.AutoSize = true;
             this.lblDateDebut.ForeColor = System.Drawing.Color.White;
-            this.lblDateDebut.Location = new System.Drawing.Point(304, 346);
+            this.lblDateDebut.Location = new System.Drawing.Point(304, 350);
             this.lblDateDebut.Name = "lblDateDebut";
             this.lblDateDebut.Size = new System.Drawing.Size(54, 23);
             this.lblDateDebut.TabIndex = 4;
@@ -492,6 +493,19 @@ namespace projetEvents
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nouvel évènement";
             // 
+            // cbCreateur
+            // 
+            this.cbCreateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.cbCreateur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCreateur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbCreateur.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCreateur.ForeColor = System.Drawing.Color.White;
+            this.cbCreateur.FormattingEnabled = true;
+            this.cbCreateur.Location = new System.Drawing.Point(399, 459);
+            this.cbCreateur.Name = "cbCreateur";
+            this.cbCreateur.Size = new System.Drawing.Size(343, 35);
+            this.cbCreateur.TabIndex = 22;
+            // 
             // cbErrorCreateur
             // 
             this.cbErrorCreateur.AutoSize = true;
@@ -541,11 +555,11 @@ namespace projetEvents
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(859, 236);
+            this.label14.Location = new System.Drawing.Point(850, 236);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 32);
+            this.label14.Size = new System.Drawing.Size(157, 33);
             this.label14.TabIndex = 16;
-            this.label14.Text = "Enrengistrer ";
+            this.label14.Text = "Enregistrer ";
             // 
             // checkBoxSolde
             // 
@@ -694,19 +708,6 @@ namespace projetEvents
             // 
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
-            // 
-            // cbCreateur
-            // 
-            this.cbCreateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.cbCreateur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCreateur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbCreateur.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCreateur.ForeColor = System.Drawing.Color.White;
-            this.cbCreateur.FormattingEnabled = true;
-            this.cbCreateur.Location = new System.Drawing.Point(399, 459);
-            this.cbCreateur.Name = "cbCreateur";
-            this.cbCreateur.Size = new System.Drawing.Size(343, 35);
-            this.cbCreateur.TabIndex = 22;
             // 
             // formEvenements
             // 

@@ -26,7 +26,7 @@ namespace projetEvents
         OleDbConnection connec = new OleDbConnection();
 
         private int enregistrement = 1;
-        private int codeEvent = 0;
+        private int codeEvent = 1;
 
         public formEvenements()
         {
@@ -58,7 +58,7 @@ namespace projetEvents
             rtbDescPage1.DataBindings.Add("Text", formMain.bs, "description");
             lblSolde.DataBindings.Add("Text", formMain.bs, "soldeON");
 
-            modificationsNavigator(); //procédure qui modifie certaines infos recueilli 
+            //modificationsNavigator(); //procédure qui modifie certaines infos recueilli 
         }
 
 
@@ -69,8 +69,8 @@ namespace projetEvents
         {
             //On va chercher le prenom et nom du createur grâce au codeCreateur dans la table Participants
             lblCreateur.Text = formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["prenomPart"].ToString() + " " + formMain.ds.Tables["Participants"].Rows[int.Parse(lblCreateur.Text) - 1]["nomPart"].ToString();
-            if (lblSolde.Text == "True") { lblSolde.Text = "Oui"; } //évènement soldé oui ou non
-            else { lblSolde.Text = "Non"; }
+            if (lblSolde.Text == "True") { lblSolde.Text = " soldé"; } //évènement soldé oui ou non
+            else { lblSolde.Text = " non soldé"; }
             lblDateDebut.Text = lblDateDebut.Text.Substring(0, 8); //date sous la forme "DD/MM/YYYY"
             lblDateFin.Text = lblDateFin.Text.Substring(0, 8); //date sous la forme "DD/MM/YYYY"
         }
@@ -192,9 +192,6 @@ namespace projetEvents
             login += codepart;
             return login;
         }
-
-
-
 
         // btnEnregistrer_Click() : procédure : quand on clique sur btnEnregistrer, processus d'insertion dans la base Evenements
         private void btnEnregistrer_Click(object sender, EventArgs e)
