@@ -73,6 +73,7 @@ namespace projetEvents
             if (lbDepenses.Items.Count == 0)
             {
                 lbDepenses.Visible = false;
+                gbDepense.Visible = false;
             } else
             {
                 lbDepenses.Visible = true;
@@ -86,6 +87,7 @@ namespace projetEvents
             if (lbDepenses.Items.Count == 0)
             {
                 lbDepenses.Visible = false;
+                gbDepense.Visible = false;
             }
             else
             {
@@ -93,6 +95,7 @@ namespace projetEvents
             }
             lbDepenses.AutoSize = true;
             lbDepenses.MaximumSize = new System.Drawing.Size(363, 224);
+           
         }
 
 
