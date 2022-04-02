@@ -21,6 +21,11 @@ Application allowing the complete management of the expenses made during an even
 - [Test the application](#test-the-application)
 - [Authors](#authors)
 
+
+# Presentation 
+
+https://user-images.githubusercontent.com/62793491/161386682-7b924dfb-6deb-49c6-b60b-805065f831a5.mp4
+
 # Open the project
 
 - To open the project go to : `/projetEvents/projetEvents.sln `
